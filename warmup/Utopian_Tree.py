@@ -8,6 +8,15 @@ import sys
 
 # Complete the utopianTree function below.
 def utopianTree(n):
+    height = 0
+    for i in range(n):
+        if i % 2 == 0:
+            height += 1
+
+        elif not i % 2 == 0:
+            height *= height
+
+        return height
 
     return 
 
