@@ -10,15 +10,9 @@ import sys
 def utopianTree(n):
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    t = int(input())
+    n = [0, 1, 4]
 
-    for t_itr in range(t):
-        n = int(input())
-
-        result = utopianTree(n)
-
-        fptr.write(str(result) + '\n')
-
-    fptr.close()
+    result = utopianTree(n)
+  
+    print(result)
