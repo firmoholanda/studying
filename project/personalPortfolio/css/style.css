@@ -1,13 +1,73 @@
-.nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        overflow-x: hidden;
+body {
+    margin: 0;
+      padding: 0;
+    text-align: ;
+      background-color: lightgray;
+    }
+h1, h2 {
+    color: gray;
+      text-align: center;
+}
+#navbar {
+    padding: 20px;
+    position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background-color: gray;
+      display: flex;
+      justify-content: flex-end;
+      box-sizing: border-box;
+    }
+#navbar a {
+    margin-right: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      color: yellow;
+}
+#welcome-section {
+    margin-top: 50px;
+      margin-bottom:15px;
+      height: 80vh;
+      color: red;
+      padding-top: 20vh;
+}
+#projects {       	  
+    width: 80%;	
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      border: 2px solid red;
+      border-radius: 15px;
+      background-color: yellow;
+  display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+}
+.project-tile {
+    background-color: violet;
+      width: 50%;
+      padding: 20px;
+      border: 2px solid red;	
+  margin-bottom: 15px;		
+}
+.project-tile img {
+  display: block;
+    width: 50%;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;	
+}
+#footer {
+    height:100px;
+      background-color: gray;
+      text-align: center;
+  padding-top: 20px;	    
+} 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    #welcome-section {
+      height: 100px;
       }
-.section#welcome-section {
-        height: 100%;
-        display: block;
-      }
-@media only screen and (min-width: 800px) {
-
-      }
+}
