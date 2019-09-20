@@ -3,14 +3,15 @@ body {
     text-align: -webkit-center;
 }
 
-
 .logo {
     margin-top: 200;
-    
 }
 
 .imputText {
     margin: 5%;
+    border-radius: 25px;
+    line-height: 34px;
+    display: block;
 }
 
 .buttons {

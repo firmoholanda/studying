@@ -18,13 +18,16 @@
     
     <!-- text imput -->
     <div class="imputText">
-        <input maxlength="2048" name="q" type="text" aria-autocomplete="both" aria-haspopup="false" autocapitalize="off" autocomplete="off" autocorrect="off" role="combobox" spellcheck="false" title="Search" value="" aria-label="Search">
+        <form action="http://www.google.com/search" method="get">
+            <input type="text" name="q"/><br>
+            <input type="submit" value="Google Search" aria-label="Google Search" name="btnK" type="submit">
+            <input value="I'm Feeling Lucky" aria-label="I'm Feeling Lucky" name="btnI" type="submit">
+        </form>   
     </div>
 
     <!-- buttons -->
     <div class="buttons">
-        <input value="Google Search" aria-label="Google Search" name="btnK" type="submit">
-        <input value="I'm Feeling Lucky" aria-label="I'm Feeling Lucky" name="btnI" type="submit">
+        
     </div>
 
     <!-- lower text -->
