@@ -1,16 +1,22 @@
+
+body {
+    text-align: -webkit-center;
+}
+
+
 .logo {
-    display: table;
-    text-align: center;
+    margin-top: 200;
+    
 }
 
 .imputText {
-
+    margin: 5%;
 }
 
 .buttons {
-
+    margin: 3;
 }
 
 .lowerText {
-    
+    margin: 3;
 }
