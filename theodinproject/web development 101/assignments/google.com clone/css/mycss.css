@@ -1,5 +1,16 @@
-body {
-  display: grid;
-  place-items: center;
-  height: 100vh;
+.logo {
+    display: table;
+    text-align: center;
+}
+
+.imputText {
+
+}
+
+.buttons {
+
+}
+
+.lowerText {
+    
 }
