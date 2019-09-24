@@ -52,6 +52,8 @@ body {
     left: 0;
     right: 0;
     position: absolute;
+    border-top: 1px solid #e4e4e4;
+    border-width: 1px;
 }
 
 .footerLeft {
