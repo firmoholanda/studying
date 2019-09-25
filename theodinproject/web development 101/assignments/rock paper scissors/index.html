@@ -20,13 +20,30 @@
                 case 2:
                     return "scissors";
             }
-            
-            return result;
+
         }
 
-        //p1
-        console.log(computerPlay());
+        function playerPlay() {
+            var correct = false;
+            do {
+                var result = prompt("please enter: rock, paper or scissors.").toLowerCase();
+                if ( (result == "rock") || (result == "paper") || (result == "scissors") ) {
+                    return result;
+                }
+                else {
+                    console.log("invalid imput!")
+                }
+            } while(!correct);
+        }
 
+        function playRound(playerSelection, computerSelection) {
+            console.log("player  : " + playerSelection)
+            console.log("computer: " + computerSelection)
+        }
+
+        const playerSelection = playerPlay()
+        const computerSelection = computerPlay()
+        console.log(playRound(playerSelection, computerSelection))
         
     </script>
 </body>
