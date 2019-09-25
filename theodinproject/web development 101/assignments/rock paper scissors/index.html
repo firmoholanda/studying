@@ -35,8 +35,8 @@
         function playerPlay() {
             var correct = false;
             do {
-                //var result = prompt("please enter: rock, paper or scissors.").toLowerCase();
-                var result = "rock";
+                var result = prompt("please enter: rock, paper or scissors.").toLowerCase();
+                //var result = "rock";
                 if ( (result == "rock") || (result == "paper") || (result == "scissors") ) {
                     return result;
                 }
@@ -47,8 +47,6 @@
         }
 
         function playRound(playerSelection, computerSelection) {
-            //console.log("player  : " + playerSelection)
-            //console.log("computer: " + computerSelection)
 
             if (playerSelection == computerSelection){
                 console.log("the game was a tie");
@@ -81,6 +79,7 @@
 
         function game(times){
             let gameHistory = [];
+            let winner = "";
 
             for(var i=0; i < times; i++){
                 const playerSelection = playerPlay()
@@ -89,12 +88,26 @@
                 gameHistory.push(result)
             }
             
-            console.log(gameHistory);
+            const ties = totalItemsInArray("t", gameHistory);
+            const playerWins = totalItemsInArray("p", gameHistory);
+            const computerWins = totalItemsInArray("c", gameHistory);
 
-            //console.log(gameHistory.slice("p"))
+            if (playerWins == computerWins){
+                winner = "its a tie";
+            }
+            else if (playerWins > computerWins){
+                winner = "the player wins";
+            }
+            else {
+                winner = "the computer wins";
+            }
 
-            console.log( totalItemsInArray("p", gameHistory) );
-            
+            //console.log(gameHistory);
+            console.log("-----------------------------");
+            console.log("ties         : " + ties );
+            console.log("player   wins: " + playerWins );
+            console.log("computer wins: " + computerWins );
+            console.log("result       : " + winner);
 
         }
         //-------------------------------------------------------------------------------
