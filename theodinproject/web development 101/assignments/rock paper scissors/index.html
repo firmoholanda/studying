@@ -9,6 +9,15 @@
 <body>
     <script>
 
+        function totalItemsInArray(item, arr) {
+            var count = 0;
+            for(var i = 0; i < arr.length; ++i){
+                if(arr[i] == item)
+                    count++;
+            }
+            return count;
+        }
+
         function computerPlay() {
             var result = Math.floor(Math.random() * 3);;
 
@@ -26,7 +35,8 @@
         function playerPlay() {
             var correct = false;
             do {
-                var result = prompt("please enter: rock, paper or scissors.").toLowerCase();
+                //var result = prompt("please enter: rock, paper or scissors.").toLowerCase();
+                var result = "rock";
                 if ( (result == "rock") || (result == "paper") || (result == "scissors") ) {
                     return result;
                 }
@@ -37,13 +47,60 @@
         }
 
         function playRound(playerSelection, computerSelection) {
-            console.log("player  : " + playerSelection)
-            console.log("computer: " + computerSelection)
+            //console.log("player  : " + playerSelection)
+            //console.log("computer: " + computerSelection)
+
+            if (playerSelection == computerSelection){
+                console.log("the game was a tie");
+                return ("t");
+            }
+            else if (playerSelection === 'paper' && computerSelection === 'rock'){
+                console.log("you win! paper beats rock");
+                return ("p");
+            }else if (playerSelection === 'rock' && computerSelection === 'scissors'){
+                console.log("you win! rock beats scissors");
+                return ("p");
+            }else if (playerSelection === 'scissors' && computerSelection === 'rock'){
+                console.log("you lose! rock beats scissors");
+                return ("c");
+            }else if (playerSelection === 'rock' && computerSelection === 'paper'){
+                console.log("you lose! paper beats rock");
+                return ("c");
+            }else if (playerSelection === 'paper' && computerSelection === 'scissors'){
+                console.log("you lose! scissors beats paper");
+                return ("c");
+            }else if (playerSelection === 'scissors' || computerSelection === 'paper'){
+                console.log("you win! scissors beats paper");
+                return ("p");
+            }
+            else{
+                console.log("invalid input, please try again");
+            }
+
         }
 
-        const playerSelection = playerPlay()
-        const computerSelection = computerPlay()
-        console.log(playRound(playerSelection, computerSelection))
+        function game(times){
+            let gameHistory = [];
+
+            for(var i=0; i < times; i++){
+                const playerSelection = playerPlay()
+                const computerSelection = computerPlay()
+                result = playRound(playerSelection, computerSelection);
+                gameHistory.push(result)
+            }
+            
+            console.log(gameHistory);
+
+            //console.log(gameHistory.slice("p"))
+
+            console.log( totalItemsInArray("p", gameHistory) );
+            
+
+        }
+        //-------------------------------------------------------------------------------
+
+        // play the game        
+        game(5);
         
     </script>
 </body>
