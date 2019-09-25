@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>the odin project - rock paper scissors</title>
+</head>
+<body>
+    <script>
+
+        function computerPlay() {
+            var result = Math.floor(Math.random() * 3);;
+
+            switch (result) {
+                case 0:
+                    return "rock";
+                case 1:
+                    return "paper";
+                case 2:
+                    return "scissors";
+            }
+            
+            return result;
+        }
+
+        //p1
+        console.log(computerPlay());
+
+        
+    </script>
+</body>
+</html>
