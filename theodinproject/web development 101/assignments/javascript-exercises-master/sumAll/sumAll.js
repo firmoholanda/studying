@@ -24,6 +24,6 @@ const sumAll = function(n1, n2) {
 }
 
 module.exports = sumAll
-
+//---------------------------------------------------------------------------------------
 
 console.log( sumAll(10, "10") );
