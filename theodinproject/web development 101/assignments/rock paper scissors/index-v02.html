@@ -13,19 +13,15 @@
     
     <img src="img/rpc.jpg">
 
-    <div id="SplashScreen">
-        <h1>Game Title</h1>
-         <input id="StartButton" type="button" value="Start"/>
+    <div id="buttons">
+         <input id="startButton" type="button" value="rock" onclick="game(5)"/>
+         <input id="startButton" type="button" value="paper" onclick="game(5)"/>
+         <input id="startButton" type="button" value="scissors" onclick="game(5)"/>
     </div>
-        
-    <canvas id="GameCanvas" style="display: none;">Game Stuff</canvas>
-        
-    <script>
-        $("#StartButton").click(function () {
-            $("#SplashScreen").hide();
-            $("#GameCanvas").show();
-        });
-    </script>
+
+    <!-- div container for js -->
+    <div id="container"></div>
+    
 
     <!-- load js on page -->
     <script src="js/myJS.js"></script>
