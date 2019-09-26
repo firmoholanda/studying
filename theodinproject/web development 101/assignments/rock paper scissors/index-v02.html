@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>the odin project - rock paper scissors version 2</title>
+    <!-- load my css -->
+    <link class="center" href="css/mycss.css" rel="stylesheet">
+</head>
+<body>
+    <h1>lets play rock paper scissors!</h1>
+    
+    <img src="img/rpc.jpg">
+
+    <div id="SplashScreen">
+        <h1>Game Title</h1>
+         <input id="StartButton" type="button" value="Start"/>
+    </div>
+        
+    <canvas id="GameCanvas" style="display: none;">Game Stuff</canvas>
+        
+    <script>
+        $("#StartButton").click(function () {
+            $("#SplashScreen").hide();
+            $("#GameCanvas").show();
+        });
+    </script>
+
+    <!-- load js on page -->
+    <script src="js/myJS.js"></script>
+</body>
+</html>
