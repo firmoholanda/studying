@@ -1,5 +1,3 @@
-
-
 //---------------------------------------------------------------------------------------
 
 
@@ -10,6 +8,26 @@ function totalItemsInArray(item, arr) {
             count++;
     }
     return count;
+}
+
+function consoleLogToDOM(classID, domTag) {
+    // Overriding console object
+    const console = {};
+
+    // Getting div to insert logs
+    const logger = document.getElementById(classID);
+
+    // Adding log method from our console object
+    console.log = text =>
+    {
+        const element = document.createElement(domTag);
+        const txt = document.createTextNode(text);
+
+        //logger.textContent = "";
+
+        element.appendChild(txt);
+        logger.appendChild(element);
+    }
 }
 
 function computerPlay() {
@@ -75,23 +93,9 @@ function game(times){
     let gameHistory = [];
     let winner = "";
 
-    // Overriding console object
-    let console = {};
-
-    // Getting div to insert logs
-    let logger = document.getElementById("container");
-
-    // Adding log method from our console object
-    console.log = text =>
-    {
-        let element = document.createElement("div");
-        let txt = document.createTextNode(text);
-
-        //logger.textContent = "";
-
-        element.appendChild(txt);
-        logger.appendChild(element);
-    }
+    //consoleLogToDOM("container", "div");
+    console.log = function(message) {$('#container').append('<p>' + message + '</p>');};
+    console.error = console.debug = console.info =  console.log
 
     for(var i=0; i < times; i++){
         const playerSelection = playerPlay()
@@ -113,13 +117,6 @@ function game(times){
     else {
         winner = "the computer wins";
     }
-
-    //console.log(gameHistory);
-    //console.log("-----------------------------");
-    //console.log("ties         : " + ties );
-    //console.log("player   wins: " + playerWins );
-    //console.log("computer wins: " + computerWins );
-    //console.log("result       : " + winner);
 
     
     //console.log("-----------------------------");
