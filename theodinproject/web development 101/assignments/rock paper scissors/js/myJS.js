@@ -1,3 +1,8 @@
+
+
+//---------------------------------------------------------------------------------------
+
+
 function totalItemsInArray(item, arr) {
     var count = 0;
     for(var i = 0; i < arr.length; ++i){
@@ -70,6 +75,24 @@ function game(times){
     let gameHistory = [];
     let winner = "";
 
+    // Overriding console object
+    let console = {};
+
+    // Getting div to insert logs
+    let logger = document.getElementById("container");
+
+    // Adding log method from our console object
+    console.log = text =>
+    {
+        let element = document.createElement("div");
+        let txt = document.createTextNode(text);
+
+        //logger.textContent = "";
+
+        element.appendChild(txt);
+        logger.appendChild(element);
+    }
+
     for(var i=0; i < times; i++){
         const playerSelection = playerPlay()
         const computerSelection = computerPlay()
@@ -98,21 +121,6 @@ function game(times){
     //console.log("computer wins: " + computerWins );
     //console.log("result       : " + winner);
 
-    // Overriding console object
-    let console = {};
-
-    // Getting div to insert logs
-    let logger = document.getElementById("container");
-    
-    // Adding log method from our console object
-    console.log = text =>
-    {
-        let element = document.createElement("div");
-        let txt = document.createTextNode(text);
-    
-        element.appendChild(txt);
-        logger.appendChild(element);
-    }
     
     //console.log("-----------------------------");
     console.log("ties         : " + ties );
@@ -126,10 +134,3 @@ function game(times){
 // play the game        
 //game(5);
 
-//---------------------------------------------------------------------------------------
-
-//const container = document.querySelector('#container');
-//    const div1 = document.createElement('div');
-//    div1.classList.add('content1');
-//    div1.textContent = "hey i’m red!";
-//    container.appendChild(div1);
