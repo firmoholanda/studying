@@ -1,5 +1,3 @@
-//---------------------------------------------------------------------------------------
-
 
 function totalItemsInArray(item, arr) {
     var count = 0;
@@ -44,19 +42,10 @@ function computerPlay() {
 
 }
 
-function playerPlay() {
-    var correct = false;
-    do {
-        //var result = prompt("please enter: rock, paper or scissors.").toLowerCase();
-        var result = "rock";
-        if ( (result == "rock") || (result == "paper") || (result == "scissors") ) {
-            return result;
-        }
-        else {
-            console.log("invalid imput!")
-        }
-    } while(!correct);
+function playerPlay(result) {
+    return result;
 }
+
 
 function playRound(playerSelection, computerSelection) {
 
@@ -89,20 +78,16 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-function game(times){
+function game(selected, times){
     let gameHistory = [];
     let winner = "";
 
-    //consoleLogToDOM("container", "div");
-    console.log = function(message) {$('#container').append('<p>' + message + '</p>');};
-    console.error = console.debug = console.info =  console.log
-
-    for(var i=0; i < times; i++){
-        const playerSelection = playerPlay()
+    //for(var i=0; i < times; i++){
+        const playerSelection = playerPlay(selected)
         const computerSelection = computerPlay()
         result = playRound(playerSelection, computerSelection);
         gameHistory.push(result)
-    }
+    //}
     
     const ties = totalItemsInArray("t", gameHistory);
     const playerWins = totalItemsInArray("p", gameHistory);
@@ -118,12 +103,24 @@ function game(times){
         winner = "the computer wins";
     }
 
+    //clear div container
+    document.getElementById("container").innerHTML =   "";
     
+    document.getElementById("container").innerHTML +=   "<br>you: " + playerSelection +
+                                                        "<br>computer: " + computerSelection;
+
+
+    //write to div container
+    document.getElementById("container").innerHTML +=   "<br>ties         : " + ties            +
+                                                        "<br>player   wins: " + playerWins      +
+                                                        "<br>computer wins: " + computerWins    +
+                                                        "<br>result       : " + winner;
+
     //console.log("-----------------------------");
-    console.log("ties         : " + ties );
-    console.log("player   wins: " + playerWins );
-    console.log("computer wins: " + computerWins );
-    console.log("result       : " + winner);
+    //console.log("ties         : " + ties );
+    //console.log("player   wins: " + playerWins );
+    //console.log("computer wins: " + computerWins );
+    //console.log("result       : " + winner);
 
 }
 //---------------------------------------------------------------------------------------

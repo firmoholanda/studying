@@ -7,6 +7,13 @@ img {
     padding: 30px 30px;
 }
 
-div {
-    padding: 10px 10px;
+div#buttons {
+    margin: 0 auto;
+}
+
+div#container {
+    padding: 20px 20px;
+    margin: 0 auto;
+    text-align: left;
+    width: 200px
 }
