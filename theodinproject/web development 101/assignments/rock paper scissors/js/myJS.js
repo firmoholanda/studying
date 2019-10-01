@@ -1,19 +1,28 @@
 
-
-function showHideElementDOM(classID) {
-    var x = document.getElementById(classID);
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-}
-
-function showOptionsHideStartButton() {
-    showHideElementDOM('buttons');
+function showHideElementDOM(type, classID) {
+    //tipe: show, hide, togle
+    var myElement = document.getElementById(classID);
     
-
+    switch (type) {
+        case "show":
+            console.log("show");
+            myElement.style.display = 'block';
+            return 0;
+        case "hide":
+            console.log("hide");
+            myElement.style.display = 'none';
+            return 0;
+        case "togle":
+            console.log("togle");
+            if (myElement.style.display === 'none') {
+                myElement.style.display = 'block';
+            } else {
+                myElement.style.display = 'none';
+            }
+            return 0;
+    }    
 }
+//---------------------------------------------------------------------------------------
 
 function totalItemsInArray(item, arr) {
     var count = 0;
@@ -23,6 +32,7 @@ function totalItemsInArray(item, arr) {
     }
     return count;
 }
+//---------------------------------------------------------------------------------------
 
 function computerPlay() {
     var result = Math.floor(Math.random() * 3);;
@@ -37,11 +47,12 @@ function computerPlay() {
     }
 
 }
+//---------------------------------------------------------------------------------------
 
 function playerPlay(result) {
     return result;
 }
-
+//---------------------------------------------------------------------------------------
 
 function playRound(playerSelection, computerSelection) {
 
@@ -73,17 +84,16 @@ function playRound(playerSelection, computerSelection) {
     }
 
 }
+//---------------------------------------------------------------------------------------
 
-function game(selected, times){
+function currentGame(selected){
     let gameHistory = [];
     let winner = "";
-
-    //for(var i=0; i < times; i++){
-        const playerSelection = playerPlay(selected)
-        const computerSelection = computerPlay()
-        result = playRound(playerSelection, computerSelection);
-        gameHistory.push(result)
-    //}
+    
+    const playerSelection = playerPlay(selected)
+    const computerSelection = computerPlay()
+    result = playRound(playerSelection, computerSelection);
+    gameHistory.push(result)
     
     const ties = totalItemsInArray("t", gameHistory);
     const playerWins = totalItemsInArray("p", gameHistory);
@@ -99,15 +109,13 @@ function game(selected, times){
         winner = "the computer wins";
     }
 
+
     //clear div container
     document.getElementById("container").innerHTML =   "";
-    
-    document.getElementById("container").innerHTML +=   "<br>you: " + playerSelection +
-                                                        "<br>computer: " + computerSelection;
-
-
-    //write to div container
-    document.getElementById("container").innerHTML +=   "<br>ties         : " + ties            +
+    //write to div container    
+    document.getElementById("container").innerHTML +=   "<br>you: " + playerSelection           +
+                                                        "<br>computer: " + computerSelection    +
+                                                        "<br><br>ties     : " + ties            +
                                                         "<br>player   wins: " + playerWins      +
                                                         "<br>computer wins: " + computerWins    +
                                                         "<br>result       : " + winner;
@@ -115,6 +123,17 @@ function game(selected, times){
 }
 //---------------------------------------------------------------------------------------
 
-// play the game        
-//game(5);
+function startGame() {
+    //hide start game button
+    showHideElementDOM("hide", "buttonsStart");
+    //show user options
+    showHideElementDOM("show", "buttons");
 
+    for(var i = 1; i <= 5; ++i){
+        //clear div currentGame
+        document.getElementById("currentGame").innerHTML =   "";
+        //write to div currentGame
+        document.getElementById("currentGame").innerHTML +=   "current game: " + i;
+    }
+
+}
