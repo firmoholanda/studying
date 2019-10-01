@@ -12,11 +12,15 @@
     <h1>lets play rock paper scissors!</h1>
     
     <img src="img/rpc.jpg">
+    
+    <div id="buttonsStart">
+        <input type="button" value="start game" onclick="showHideElementDOM('buttons')"/>
+    </div>
 
-    <div id="buttons">
-         <input id="startButton" type="button" value="rock" onclick="game('rock', 1)"/>
-         <input id="startButton" type="button" value="paper" onclick="game('paper', 1)"/>
-         <input id="startButton" type="button" value="scissors" onclick="game('scissors', 1)"/>
+    <div id="buttons" style="display: none;">
+         <input type="button" value="rock" onclick="game('rock', 1)"/>
+         <input type="button" value="paper" onclick="game('paper', 1)"/>
+         <input type="button" value="scissors" onclick="game('scissors', 1)"/>
     </div>
 
     <!-- div container for js -->

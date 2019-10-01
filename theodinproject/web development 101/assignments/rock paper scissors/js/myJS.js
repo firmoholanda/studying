@@ -1,4 +1,20 @@
 
+
+function showHideElementDOM(classID) {
+    var x = document.getElementById(classID);
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+}
+
+function showOptionsHideStartButton() {
+    showHideElementDOM('buttons');
+    
+
+}
+
 function totalItemsInArray(item, arr) {
     var count = 0;
     for(var i = 0; i < arr.length; ++i){
@@ -6,26 +22,6 @@ function totalItemsInArray(item, arr) {
             count++;
     }
     return count;
-}
-
-function consoleLogToDOM(classID, domTag) {
-    // Overriding console object
-    const console = {};
-
-    // Getting div to insert logs
-    const logger = document.getElementById(classID);
-
-    // Adding log method from our console object
-    console.log = text =>
-    {
-        const element = document.createElement(domTag);
-        const txt = document.createTextNode(text);
-
-        //logger.textContent = "";
-
-        element.appendChild(txt);
-        logger.appendChild(element);
-    }
 }
 
 function computerPlay() {
@@ -115,12 +111,6 @@ function game(selected, times){
                                                         "<br>player   wins: " + playerWins      +
                                                         "<br>computer wins: " + computerWins    +
                                                         "<br>result       : " + winner;
-
-    //console.log("-----------------------------");
-    //console.log("ties         : " + ties );
-    //console.log("player   wins: " + playerWins );
-    //console.log("computer wins: " + computerWins );
-    //console.log("result       : " + winner);
 
 }
 //---------------------------------------------------------------------------------------

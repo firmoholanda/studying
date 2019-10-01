@@ -9,6 +9,7 @@ img {
 
 div#buttons {
     margin: 0 auto;
+    display: none;
 }
 
 div#container {
