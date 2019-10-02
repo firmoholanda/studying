@@ -4,6 +4,8 @@ var gameHistory = [];
 var winner = "";
 var playerSelection = "";
 var computerSelection = "";
+var playerWins = 0;
+var computerWins = 0;
 
 //---------------------------------------------------------------------------------------
 
@@ -96,50 +98,58 @@ function playRound(playerSelection, computerSelection) {
 //---------------------------------------------------------------------------------------
 
 function startGame() {
-    //hide start game button
-    //showHideElementDOM("hide", "buttonsStart");
-    //show user options
-    //showHideElementDOM("show", "buttons");
 
     if (start) {
-        //clear div currentGame
-        //document.getElementById("currentGame").innerHTML =   "";
-        //write to div currentGame
-        //document.getElementById("currentGame").innerHTML +=   "current game: " + i;
         
-        var tiesDiv = document.getElementById('ties');
-        tiesDiv.innerHTML = totalItemsInArray("t", gameHistory);
+        if (gameHistory.length >= 5) {
+            showHideElementDOM("hide", "buttons");
 
-        var pScoreDiv = document.getElementById('pScore');
-        pScoreDiv.innerHTML = totalItemsInArray("p", gameHistory);
+            if (playerWins == computerWins){
+                winner = "its a tie";
+            }
+            else if (playerWins > computerWins){
+                winner = "the player wins";
+            }
+            else {
+                winner = "the computer wins";
+            }
 
-        var cScoreDiv = document.getElementById('cScore');
-        cScoreDiv.innerHTML = totalItemsInArray("c", gameHistory);
+            alert(winner);
 
-        computerSelection = computerPlay()
+            return 0;  //end game
+        }
+        else{
 
-        result = playRound(playerSelection, computerSelection);
-        gameHistory.push(result)
+            computerSelection = computerPlay();
+
+            result = playRound(playerSelection, computerSelection);
+            gameHistory.push(result);
+
+            playerWins += totalItemsInArray("p", gameHistory);
+            computerWins += totalItemsInArray("c", gameHistory);
+            
+            //display totalGames
+            var totalGamesDiv = document.getElementById('totalGames');
+            totalGamesDiv.innerHTML = gameHistory.length;
+
+            //display gameHistory
+            var totalGamesDiv = document.getElementById('gameHistory');
+            totalGamesDiv.innerHTML = gameHistory;
+
+            //display ties
+            var tiesDiv = document.getElementById('ties');
+            tiesDiv.innerHTML = totalItemsInArray("t", gameHistory);
+            
+            //display player score
+            var pScoreDiv = document.getElementById('pScore');
+            pScoreDiv.innerHTML = playerWins;
+
+            //display computer score
+            var cScoreDiv = document.getElementById('cScore');
+            cScoreDiv.innerHTML = computerWins;
+
+        }
     
     }
         
 }
-
-/*
-    const ties = totalItemsInArray("t", gameHistory);
-    const playerWins = totalItemsInArray("p", gameHistory);
-    const computerWins = totalItemsInArray("c", gameHistory);
-
-     //clear div container
-     document.getElementById("container").innerHTML =   "";
-     //write to div container    
-     document.getElementById("container").innerHTML +=   "<br>you: " + playerSelection           +
-                                                         "<br>computer: " + computerSelection    +
-                                                         "<br><br>ties     : " + ties            +
-                                                         "<br>player   wins: " + playerWins      +
-                                                         "<br>computer wins: " + computerWins    +
-                                                         "<br>result       : " + winner;
-
-}
-
-*/
