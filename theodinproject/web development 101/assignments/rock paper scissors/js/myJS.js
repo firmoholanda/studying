@@ -1,4 +1,12 @@
 
+var start = confirm("would you like to play?");
+var gameHistory = [];
+var winner = "";
+var playerSelection = "";
+var computerSelection = "";
+
+//---------------------------------------------------------------------------------------
+
 function showHideElementDOM(type, classID) {
     //tipe: show, hide, togle
     var myElement = document.getElementById(classID);
@@ -50,7 +58,8 @@ function computerPlay() {
 //---------------------------------------------------------------------------------------
 
 function playerPlay(result) {
-    return result;
+    playerSelection = result;
+    startGame();
 }
 //---------------------------------------------------------------------------------------
 
@@ -86,54 +95,51 @@ function playRound(playerSelection, computerSelection) {
 }
 //---------------------------------------------------------------------------------------
 
-function currentGame(selected){
-    let gameHistory = [];
-    let winner = "";
+function startGame() {
+    //hide start game button
+    //showHideElementDOM("hide", "buttonsStart");
+    //show user options
+    //showHideElementDOM("show", "buttons");
+
+    if (start) {
+        //clear div currentGame
+        //document.getElementById("currentGame").innerHTML =   "";
+        //write to div currentGame
+        //document.getElementById("currentGame").innerHTML +=   "current game: " + i;
+        
+        var tiesDiv = document.getElementById('ties');
+        tiesDiv.innerHTML = totalItemsInArray("t", gameHistory);
+
+        var pScoreDiv = document.getElementById('pScore');
+        pScoreDiv.innerHTML = totalItemsInArray("p", gameHistory);
+
+        var cScoreDiv = document.getElementById('cScore');
+        cScoreDiv.innerHTML = totalItemsInArray("c", gameHistory);
+
+        computerSelection = computerPlay()
+
+        result = playRound(playerSelection, computerSelection);
+        gameHistory.push(result)
     
-    const playerSelection = playerPlay(selected)
-    const computerSelection = computerPlay()
-    result = playRound(playerSelection, computerSelection);
-    gameHistory.push(result)
-    
+    }
+        
+}
+
+/*
     const ties = totalItemsInArray("t", gameHistory);
     const playerWins = totalItemsInArray("p", gameHistory);
     const computerWins = totalItemsInArray("c", gameHistory);
 
-    if (playerWins == computerWins){
-        winner = "its a tie";
-    }
-    else if (playerWins > computerWins){
-        winner = "the player wins";
-    }
-    else {
-        winner = "the computer wins";
-    }
-
-
-    //clear div container
-    document.getElementById("container").innerHTML =   "";
-    //write to div container    
-    document.getElementById("container").innerHTML +=   "<br>you: " + playerSelection           +
-                                                        "<br>computer: " + computerSelection    +
-                                                        "<br><br>ties     : " + ties            +
-                                                        "<br>player   wins: " + playerWins      +
-                                                        "<br>computer wins: " + computerWins    +
-                                                        "<br>result       : " + winner;
+     //clear div container
+     document.getElementById("container").innerHTML =   "";
+     //write to div container    
+     document.getElementById("container").innerHTML +=   "<br>you: " + playerSelection           +
+                                                         "<br>computer: " + computerSelection    +
+                                                         "<br><br>ties     : " + ties            +
+                                                         "<br>player   wins: " + playerWins      +
+                                                         "<br>computer wins: " + computerWins    +
+                                                         "<br>result       : " + winner;
 
 }
-//---------------------------------------------------------------------------------------
 
-function startGame() {
-    //hide start game button
-    showHideElementDOM("hide", "buttonsStart");
-    //show user options
-    showHideElementDOM("show", "buttons");
-
-    for(var i = 1; i <= 5; ++i){
-        //clear div currentGame
-        document.getElementById("currentGame").innerHTML =   "";
-        //write to div currentGame
-        document.getElementById("currentGame").innerHTML +=   "current game: " + i;
-    }
-
-}
+*/

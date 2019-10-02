@@ -13,17 +13,24 @@
     
     <img src="img/rpc.jpg">
     
+    <!--
     <div id="buttonsStart" style="display: block;">
         <input type="button" value="start game" onclick="startGame()"/>
     </div>
+-->
 
-    <div id="buttons" style="display: none;">
+    <div id="buttons">
         <div><p>please choose one option:</p></div>
         <div id="currentGame"></div>
-        <input type="button" value="rock" onclick="currentGame('rock')"/>
-        <input type="button" value="paper" onclick="currentGame('paper')"/>
-        <input type="button" value="scissors" onclick="currentGame('scissors')"/>
+        <input type="button" value="rock" onclick="playerPlay('rock')"/>
+        <input type="button" value="paper" onclick="playerPlay('paper')"/>
+        <input type="button" value="scissors" onclick="playerPlay('scissors')"/>
     </div>
+
+    <div id="ties"></div>
+    <div id="pScore"></div>
+    <div id="cScore"></div>
+    
 
     <!-- div container for js -->
     <div id="container"></div>
