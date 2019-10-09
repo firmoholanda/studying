@@ -1,18 +1,8 @@
 body {
     text-align: -webkit-center;
     font-family: arial,sans-serif;
-}
-
-#header {
     text-align: center;
-    padding: 30px 30px;
 }
-
-/*
-#clearButton {	
-    padding: 30px 30px;
-}
-*/
 
 .container {
 	border: 5px solid black;
@@ -30,4 +20,12 @@ body {
   margin: 0px;
   padding: 0px;  
   box-sizing: content-box;	
+}
+
+#header {
+    padding: 30px 30px;
+}
+
+#button {
+    padding: 30px 30px;
 }

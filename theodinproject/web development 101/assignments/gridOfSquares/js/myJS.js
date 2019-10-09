@@ -24,7 +24,14 @@ function addDiv(numberOfDivsToCreate) {
 
 // change grid square color to red
 function changeColor() {
-    this.style.backgroundColor = '#ff9999'; 
+  //generate ramdom collor  
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+    this.style.backgroundColor = color; 
+    //this.style.backgroundColor = '#ff9999'; 
 }
 
 // clear grid + prompt for new grid size
@@ -37,7 +44,7 @@ function clear() {
         }
         addDiv(reqGridSize); // create new grid 
     } else {
-        alert ('Choose a number between 1-100'); 
+        alert ("choose a number between 1-100"); 
         clear();
     }
 }
