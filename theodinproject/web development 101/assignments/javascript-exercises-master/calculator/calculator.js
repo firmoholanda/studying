@@ -1,24 +1,32 @@
-function add () {
-	
+function add (a, b) {
+	return a+b;
 }
 
-function subtract () {
-	
+function subtract (a, b) {
+	return a-b;
 }
 
-function sum () {
-	
+function sum (arr) {
+	if (arr.length == 0 ) {
+		return 0;
+	} else {
+		return arr.reduce((a, b) => a + b);
+	}
 }
 
-function multiply () {
-	
+function multiply (arr) {
+	return arr.reduce(Math.imul);
 }
 
-function power() {
-	
+function power(a, b) {
+	return Math.pow(a,b);
 }
 
-function factorial() {
+function factorial(num) {
+	if (num === 0)
+      { return 1; }
+    else
+      { return num * factorial( num - 1 ); }
 	
 }
 
@@ -30,3 +38,11 @@ module.exports = {
     power,
 	factorial
 }
+
+//console.log(add(0,0));
+//console.log( sum([1,3,5,7,9]) );
+//console.log( multiply([1,2]) );
+//console.log( power([4,3]) );
+
+//console.log( factorial(0) );
+console.log( sum([]) );

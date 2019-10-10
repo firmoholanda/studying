@@ -30,8 +30,8 @@ function changeColor() {
   for (var i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
-    this.style.backgroundColor = color; 
-    //this.style.backgroundColor = '#ff9999'; 
+    //this.style.backgroundColor = color; 
+    this.style.backgroundColor = '#ff9999'; 
 }
 
 // clear grid + prompt for new grid size
