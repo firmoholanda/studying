@@ -1,67 +1,35 @@
+html {
+    position: relative;
+    z-index: 1;
+    min-width: 1024px;
+    height: 100%;
+    background: #fff;
+}
+
 body {
-    text-align: -webkit-center;
-    font-family: arial,sans-serif;
+    font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    background-color: transparent;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
 }
 
-.logo {
-    margin-top: 200;
+h1 {
+    color: white;
+    -webkit-font-smoothing: antialiased;
 }
 
-.imputText {
-    margin: 5%;
-    border-radius: 25px;
-    line-height: 34px;
-    display: block;
-    -webkit-appearance: none;
-}
-
-.buttons {
-    margin: 3;
-}
-
-.lowerText {
-    margin-right: 0;
-}
-
-/* navBar */
 #navBar {
-    padding: 10px;
-    text-align: right;
-    display: block;
+    background-color: rgba(255, 179, 187, 1);
 }
 
-#navBar a {
-    padding: 10px 10px;
-    text-decoration: none;
+#billboard {
+    background-color: rgba(255, 223, 185, 1);
 }
 
-#navBar a:hover {
-    text-decoration: underline;
+#promos {
+    background-color: rgba(255, 254, 187, 1);
 }
 
-#navBar img {
-    border-radius: 80%;
-}
-
-/* footer */
 #footer {
-    display: block;
-    background-color: #f2f2f2;
-    line-height: 40px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    border-top: 1px solid #e4e4e4;
-    border-width: 1px;
-}
-
-.footerLeft {
-    float: left;
-    padding-left: 27px;
-}
-
-.footerRight {
-    float: right;
-    padding-right: 27px;
+    background-color: rgba(186, 255, 201, 1);
 }
