@@ -13,9 +13,13 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1 {
+h1, h2, div {
     color: white;
     -webkit-font-smoothing: antialiased;
+}
+
+article {
+    display: block;
 }
 
 #navBar {
@@ -23,6 +27,14 @@ h1 {
 }
 
 #billboard {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 50px 0;
+    background:url("../img/your_verse_hero.jpg") 50% 100% no-repeat;
+    background-size: 1440px 1315px;
+
     background-color: rgba(255, 223, 185, 1);
 }
 
@@ -30,6 +42,21 @@ h1 {
     background-color: rgba(255, 254, 187, 1);
 }
 
+/* footer */
 #footer {
+    display: block;
+    border-top: 1px solid #e4e4e4;
+    border-width: 1px;
+
     background-color: rgba(186, 255, 201, 1);
+}
+
+.footerLeft {
+    float: left;
+    padding-left: 27px;
+}
+
+.footerRight {
+    float: right;
+    padding-right: 27px;
 }
