@@ -1,10 +1,3 @@
-html {
-    position: relative;
-    z-index: 1;
-    min-width: 1024px;
-    height: 100%;
-    background: #fff;
-}
 
 body {
     font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
@@ -18,19 +11,29 @@ h1, h2, div {
     -webkit-font-smoothing: antialiased;
 }
 
-article {
+article aside {
     display: block;
 }
 
+/* navbar -------------------------------------------------------------------------------*/
 #navBar {
+    list-style-type: none;
+    text-align: center; 
+
     background-color: rgba(255, 179, 187, 1);
 }
+  
+#navBar li {
+    display: inline-block;
+    font-size: 17px;
+    padding: 17px;
+}
 
+/* billboard ----------------------------------------------------------------------------*/
 #billboard {
-    display: block;
+    width: 1440px;
     margin-left: auto;
     margin-right: auto;
-
     padding: 50px 0;
     background:url("../img/your_verse_hero.jpg") 50% 100% no-repeat;
     background-size: 1440px 1315px;
@@ -38,13 +41,24 @@ article {
     background-color: rgba(255, 223, 185, 1);
 }
 
+/* promos -------------------------------------------------------------------------------*/
 #promos {
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(255, 254, 187, 1);
 }
 
-/* footer */
+#promos li {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    list-style-type: none;
+}
+
+/* footer -------------------------------------------------------------------------------*/
 #footer {
-    display: block;
     border-top: 1px solid #e4e4e4;
     border-width: 1px;
 
@@ -60,3 +74,9 @@ article {
     float: right;
     padding-right: 27px;
 }
+
+/*
+* {
+    border: 1px solid red !important;
+ }
+ */
