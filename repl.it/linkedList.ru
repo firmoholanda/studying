@@ -40,7 +40,7 @@ class LinkedList
         index.times do
             current=current.next_node
         end
-        return current
+        return current.value
     end
 end
 
