@@ -1,0 +1,176 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>google</title>
+
+    <!-- load my css -->
+    <link class="center" href="css/mycss.css" rel="stylesheet">
+
+</head>
+<body>
+    
+    <!-- navigation bar -->
+    <nav class="navbar">
+        <a href="#Guide"><button class="hamburger-button"><i class="fas fa-bars fa-2x"></i></button></a>
+        <a href="#Home"><button class="youtube-button"><img class="youtube-icon" src="./Icons/youtube-logo.png" alt="Youtube"></button></a>
+        <div class="search-container">
+            <form class="search-form">
+                <div class="search-field-div">
+                    <input class="search-field" type="search" placeholder="Search">
+                </div>
+                <div class="search-button-div">
+                    <button class="search-button"><i class="search-icon fas fa-search fa-lg"></i></button>
+                </div>
+            </form>
+        </div>
+        <a href="#Video-create"><button class="create-button"><img class="create-icon" src="./Icons/Create icon.png" alt="Create a video or post"></button></a>
+        <a href="#Youtube-apps"><button class="apps-button"><img class="apps-icon" src="./Icons/Apps icon.png" alt="YouTube apps"></button></a>
+        <a href="#Settings"><button class="settings-button"><i class="fas fa-ellipsis-v fa-2x"></i></button></a>
+        <a href="#Signin"><button class="signin-button"><i class="fas fa-user-circle fa-lg"></i>SIGN IN</button></a>
+    </nav>
+
+    <!-- iframe container -->
+    <div class="iframe-container">
+        <!-- main video -->
+        <div class="iframe-mainVideo">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/f9ip1iSAptQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- title, views like/dislike buttons -->
+        <div class="title-container">
+            <div class="iframe-title">
+                <h2 class="iframe-title">What is Microverse?</h2>
+                <p class="iframe-numberViews">770 views•Sep 19, 2019</p>
+            </div>
+            <div class="iframe-likeDislikeButton">
+                <button class="iframe-button-like" type="button"><i class="fas fa-thumbs-up"></i></button>
+                <button class="iframe-button-dislike" type="button"><i class="fas fa-thumbs-down"></i></button>
+                <button class="iframe-button-share" type="button"><i class="fas fa-share">SHARE</i></button>
+                <button class="iframe-button-watchLater" type="button"><i class="fas fa-clock">SAVE</i></button>
+                <button class="iframe-button-moreAcitons" type="button"><i class="fas fa-ellipsis-h"></i></button>
+            </div>
+        </div>
+        <!-- description -->
+        <div class="description-container">
+            <div class="iframe-description">
+                <p>Microverse is a global, distributed school for software developers that doesn't charge students anything until they get hired.</p>
+            </div>
+            <!-- subiscribe button -->
+            <div class="iframe-subscribeButton">
+                <button type="button">SUBSCRIBE</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- play list -->
+    <div id="play-list" data-hires="true">
+        <ul>
+            <li class="pl-video-container">
+                <div class="thumbnail-container">
+                    <img class="pl-thumbnail" src="https://img.youtube.com/vi/1V3zRR37590/default.jpg">
+                </div>
+                <div class="pl-text-container">
+                    <h4 class="pl-title">The Evolution Of The SpaceX Starship | Answers With Joe</h4>
+                    <p class="pl-channel">Joe Scott</p>
+                    <p class="pl-views">33,660 views</p>
+                </div>
+            </li>
+            <li class="pl-video-container">
+                <div class="thumbnail-container">
+                    <img class="pl-thumbnail" src="https://img.youtube.com/vi/eNcR2m5gvok/default.jpg">
+                </div>
+                <div class="pl-text-container">    
+                    <h4 class="pl-title">Fixing BROKEN Traffic Using "Lane Mathematics" in Cities Skylines</h4>
+                    <p class="pl-channel">Biffa Plays Indie Games</p>
+                    <p class="pl-views">1,247,942 views</p>
+                </div>
+            </li>
+            <li class="pl-video-container">
+                <div>
+                    <img class="pl-thumbnail" src="https://img.youtube.com/vi/h97fXhDN5qE/default.jpg">
+                </div>
+                <div class="pl-text-container">
+                    <h4 class="pl-title">Elon Musk's Basic Economics</h4>
+                    <p class="pl-channel">Wendover Productions</p>
+                    <p class="pl-views">4,087,736 views</p>
+                </div>
+            </li>
+            <li class="pl-video-container">
+                <div>
+                    <img class="pl-thumbnail" src="https://img.youtube.com/vi/RRWggYusSds/default.jpg">
+                </div>
+                <div class="pl-text-container">
+                    <h4 class="pl-title">Why Time is One of Humanity's Greatest Inventions</h4>
+                    <p class="pl-channel">Wendover Productions</p>
+                    <p class="pl-views">1,241,703 views</p>
+                </div>
+            </li>
+            <li class="pl-video-container">
+                <div>
+                    <img class="pl-thumbnail" src="https://img.youtube.com/vi/giQ8xEWjnBs/default.jpg">
+                </div>
+                <div class="pl-text-container">
+                    <h4 class="pl-title">Why SpaceX is Making Starlink</h4>
+                    <p class="pl-channel">Real Engineering</p>
+                    <p class="pl-views">2,526,494 views</p>
+                </div>
+            </li>
+            <li class="pl-video-container">
+                <div>
+                    <img class="pl-thumbnail" src="https://img.youtube.com/vi/kubERteR0Nw/default.jpg">
+                </div>
+                <div class="pl-text-container">
+                    <h4 class="pl-title">12 Most Amazing Abandoned Technology And Vehicles</h4>
+                    <p class="pl-channel">Amazing Stock</p>
+                    <p class="pl-views">972,928 views</p>
+                </div>
+            </li>
+            <li class="pl-video-container">
+                <div>
+                    <img class="pl-thumbnail" src="https://img.youtube.com/vi/hOFRbjjjwCE/default.jpg">
+                </div>
+                <div class="pl-text-container">
+                    <h4 class="pl-title">These Are the Events That Will Happen Before 2050</h4>
+                    <p class="pl-channel">RealLifeLore</p>
+                    <p class="pl-views">19,284,328 views</p>
+                </div>
+            </li>
+            <li class="pl-video-container">
+                <div>
+                    <img class="pl-thumbnail" src="https://img.youtube.com/vi/QUd1XColj-s/default.jpg">
+                </div>
+                <div class="pl-text-container">
+                    <h4 class="pl-title">What if Antarctica MELTED?</h4>
+                    <p class="pl-channel">Atlas Pro</p>
+                    <p class="pl-views">1,599,840 views</p>
+                </div>
+            </li>
+            <li class="pl-video-container">
+                <div>
+                    <img class="pl-thumbnail" src="https://img.youtube.com/vi/YGFtFFrsQ7c/default.jpg">
+                </div>
+                <div class="pl-text-container">
+                    <h4 class="pl-title">Real Reason Why China Wants To Expand</h4>
+                    <p class="pl-channel">The Infographics Show</p>
+                    <p class="pl-views">710,438 views</p>
+                </div>
+            </li>
+            <li class="pl-video-container">
+                <div>
+                    <img class="pl-thumbnail" src="https://img.youtube.com/vi/X0TpRGXKdog/default.jpg">
+                </div>
+                <div class="pl-text-container">
+                    <h4 class="pl-title">What Past Predictions of the Future Got Right</h4>
+                    <p class="pl-channel">Second Thought</p>
+                    <p class="pl-views">1,597,371 views</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- load fontawesome icons -->
+    <script src="https://kit.fontawesome.com/ededf92f28.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
