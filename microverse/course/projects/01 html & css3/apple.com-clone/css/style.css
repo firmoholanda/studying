@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  background-color: transparent;
+  color: #333;
+}
+
+h1, h2 {
+  color: #fff;
+}
+
+article li {
+  display: block;
+}
+
+/* navbar -------------------------------------------------------------------------------*/
+.navbar {
+  height: 36px;
+  width: 980px;
+  margin: 0 auto;
+  background: linear-gradient(#999, #707070 50%, #5e5e5e 50%, #797979);
+  border: 1px solid #606060;
+  border-radius: 4px;
+}
+
+.navbar ul, .search {
+  height: 100%;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.navbar li {
+  float: left;
+  width: 102px;
+  height: 100%;
+  border-right: 1px solid #606060;
+}
+
+.navbar li:hover {
+  background: #666;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.navbar a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 -1px #404040, 0 1px #606060;
+  font-size: 13px;
+  width: 100%;
+  text-align: center;
+  padding-top: 9px;
+}
+
+.apple {
+  position: relative;
+  top: -2px;
+}
+
+.search {
+  float: right;
+  padding-top: 8px;
+  padding-right: 20px;
+}
+
+.search input {
+  width: 108px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  border: 1px solid #606060;
+  background-image: url('../img/search.svg');
+  background-position: 3px 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-left: 10px;
+  padding: 4px 18px 1px 22px;
+  color: #fff;
+  outline: none;
+  transition-duration: 0.5s;
+}
+
+.search input:focus {
+  width: 124px;
+  background: url('../img/search02.svg') 3px 3px no-repeat, white;
+  transition-duration: 0.5s;
+}
+
+/* billboard ----------------------------------------------------------------------------*/
+.billboard {
+  background: url('../img/hero.jpg') 50% 100% no-repeat;
+  background-size: 1440px 1315px;
+  height: 605px;
+  min-height: 538px;
+  padding-top: 65px;
+}
+
+/* header ----------------------------------------------------------------------------*/
+.header {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.subheadline  {
+  margin-top: -26px;
+}
+
+.cta {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.cta a {
+  display: inline-block;
+  height: 32px;
+  overflow: hidden;
+}
+
+.cta img:hover {
+  position: relative;
+  top: -32px;
+}
+
+/* promos -------------------------------------------------------------------------------*/
+.promos {
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.promos li {
+  position: relative;
+  float: left;
+  width: calc(25% - 2px);
+  height: 200px;
+  overflow: hidden;
+}
+
+.promos li:nth-child(2),   /* selecting the 2 middle promo images */
+.promos li:nth-child(3) {
+  margin: 0 2px;
+}
+
+.promos a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+}
+
+.promos img {
+  position: absolute;
+  left: 50%;
+  margin-left: -182px;
+}
+
+/* footer -------------------------------------------------------------------------------*/
+.footer {
+  width: 980px;
+  margin: 20px auto;
+  font-size: 10px;
+  color: #6e6e6e;
+}
+
+.footer a {
+  color: #08c;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer li {
+  display: inline;
+}
+
+.footer-top {
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+.footer-top p {
+  float: left;
+  padding-top: 4px;
+}
+
+.footer-top ul {
+  float: right;
+}
+
+.footer li {
+  padding-right: 6px;
+  padding-left: 4px;
+  border-right: 1px solid #ccc;
+}
+
+.footer-top .last, .footer-bottom img {
+  padding-right: 0;
+  border-right: none;
+}
+
+.footer-bottom ul, .footer-bottom p {
+  display: inline;
+}
