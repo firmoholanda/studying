@@ -1,0 +1,89 @@
+WHAT FONTS TO USE AND WHERE TO USE THEM
+
+    font-family: 'NYTCheltenham', Georgia, 'Times New Roman', Times, Serif 
+    font-weight: 400;
+    font-style: normal;
+
+        - 'Read More From Science' article titles
+        - Create an account section title
+        - Article title navbar
+
+    
+    
+    font-family: 'NYTCheltenham', Georgia, 'Times New Roman', Times, Serif
+    font-weight:500;
+    font-style: normal;
+
+    
+    
+    font-family: 'NYTCheltenham', Georgia, 'Times New Roman', Times, Serif
+    font-weight: 700; 
+    font-style: italic;
+        
+        - Title
+
+    
+    
+    font-family: 'NYTFranklin', Georgia, 'Times New Roman', Times, Serif
+    font-weight: 300; 
+    font-style: normal;
+        
+        - Article end section text
+        - Read more about science Article author and date
+        - Create an account section 'Already have an account'
+        - Bottom nav 'Go to home page'
+        - Footer
+
+    
+    
+    font-family:'NYTFranklin', Georgia, 'Times New Roman', Times, Serif
+    font-weight: 500;
+    font-style: normal;
+
+    
+    
+    font-family: 'NYTFranklin', Georgia, 'Times New Roman', Times, Serif
+    font-weight: 600
+    font-style: normal;
+        
+        - Log In button
+        - Subscribe (navbar)
+        - Read comments button
+        - Read more from science title
+        - Create a free account button
+
+    
+    
+    font-family: 'NYTFranklin', Georgia, 'Times New Roman', Times, Serif
+    font-weight: 700; 
+    font-style: normal;
+        
+        - Author name
+        - Navbar News Current News Category (Space & Cosmos)
+        - Create an account section 'Log in'
+        - Bottom Nav subtitles
+
+    
+    
+    font-family: 'NYTImperial', Georgia, 'Times New Roman', Times, Serif
+    font-weight: 400;
+    font-style: normal;
+
+        - Main article text
+        - Figcaption/Image text
+        - Read more from science article info
+
+
+    
+    
+    font-family: 'NYTImperial', Georgia, 'Times New Roman', Times, Serif
+    font-weight: 700; 
+    font-style: normal;
+        
+        - Subtitles
+
+    
+    
+    font-family: 'NYTImperial', Georgia, 'Times New Roman', Times, Serif
+    font-weight: 600;
+    font-style: normal;

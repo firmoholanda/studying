@@ -1,0 +1,6 @@
+linters:
+  stylelint:
+
+files:
+  ignore:
+    - 'css/normalize.css'
