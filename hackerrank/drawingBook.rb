@@ -3,14 +3,10 @@ def pageCount(n, p)
   tRight = p / 2
   tLeft = turns - tRight
 
-  if tRight < tLeft
-    return tRight
-  else 
-    return tLeft
-  end
+  tRight < tLeft ? tRight : tLeft
 
 end
 
 #n = number of pages
 #p = page to go
-puts pageCount(5, 4)
+puts pageCount(15, 4)
