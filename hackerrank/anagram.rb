@@ -4,6 +4,10 @@
 require 'json'
 require 'stringio'
 
+def isAnagram(str1, str2)
+  return str1.chars.sort.join == str2.chars.sort.join
+end
+
 # Complete the anagram function below.
 def anagram(s)
   
@@ -18,16 +22,22 @@ def anagram(s)
     return 0
   else
     srtAnagram = ""
-    str1.each do |i|
-      puts i
-      #srtAnagram += str2[i]
-    end
+    #str1.split('').each_with_index do |item1, i1|
+    #  str2.split('').each_with_index do |item2, i2|
+    #    srtAnagram = str2[i1] + str1[]
+    #    if isAnagram(srtAnagram, str2)
+    #      puts i
+    #    end
+    #  end
+    #end
  
-    return srtAnagram
+    #return srtAnagram
+    return str1 + " " + str2
   end
 
 end
 
-s = "aaabbb"
+s = "xaxbbbxx"
 
 puts anagram(s)
+#puts isAnagram("xaxb", "bbxx")
