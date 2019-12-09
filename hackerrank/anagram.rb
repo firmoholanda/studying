@@ -18,13 +18,11 @@ def anagram(s)
     return 0
   else
     srtAnagram = ""
-    for i in 0..(str1.length-1) do
-      #for j in 0..(str1.length-1) do
-        srtAnagram += str2[i]
-        # = str2[i] + str1[1..((str2.length)-1)]
-        
-      #end
+    str1.each do |i|
+      puts i
+      #srtAnagram += str2[i]
     end
+ 
     return srtAnagram
   end
 

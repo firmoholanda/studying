@@ -4,7 +4,6 @@ def pageCount(n, p)
   tLeft = turns - tRight
 
   tRight < tLeft ? tRight : tLeft
-
 end
 
 #n = number of pages
