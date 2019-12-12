@@ -19,6 +19,7 @@ def fibEven(n)
 end
 
 puts fibEven(100)
+
 #puts i
-  #puts fib(i)
-  #puts my_arr
+#puts fib(i)
+#puts my_arr
