@@ -66,21 +66,25 @@ class UserInterface
     board.win?(player.team) ? (puts "\ncongratulations, #{player.name}!") : (puts "\nit's a tie!")
   end
 
-  #def play_new_game?
-  #  until
-  #    puts "\ndo you want to play a new game? (y or n)"
-  #    new_game = gets.chomp
-  #  end
-  #end
+  def play_new_game?(game_on)
+    #until
+      puts "\nplay a new game? (y or n)"
+      new_game = gets.chomp
+      if new_game == 'y' 
+        game_on = true
+      else
+        game_on =false
+      end
+    #end
+  end
 
 end
 
 # start the game ---------------------------------------------------------------------- #
 
-#game = Game.new
-#game.play
+game = Game.new
+game.play
 
 
-user_interface = UserInterface.new
-
-user_interface.instructions
+#user_interface = UserInterface.new
+#user_interface.instructions

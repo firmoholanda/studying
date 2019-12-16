@@ -52,10 +52,11 @@ end
 class Game
   attr_reader :board, :user_interface, :players
 
-  def initialize(board = Board.new, user_interface = UserInterface.new, players = [Player.new, Player.new])
+  def initialize(board = Board.new, user_interface = UserInterface.new, players = [Player.new, Player.new], game_on = true)
     @board = board
     @user_interface = user_interface
     @players = players
+    @game_on = game_on
   end
 
   def create_players
@@ -91,18 +92,17 @@ class Game
     board.tie? || board.win?(input)
   end
 
-  #def new_game?
-  #  user_interface.play_new_game?
-  #end
 
   def play
     intro
-    until game_over?(players[0].team)
-      players.reverse!
-      make_turn
-      user_interface.display(board.board)
-    end
-    user_interface.declare_win(players[0], board)
-    #new_game?
+    #while @game_on
+      until game_over?(players[0].team)
+        players.reverse!
+        make_turn
+        user_interface.display(board.board)
+      end
+      user_interface.declare_win(players[0], board)
+      #user_interface.play_new_game?
+    #end
   end
 end
