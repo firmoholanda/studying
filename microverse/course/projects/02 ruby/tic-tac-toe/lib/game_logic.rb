@@ -52,6 +52,7 @@ end
 class Game
   attr_reader :board, :user_interface, :players
 
+  private
   def initialize(board = Board.new, user_interface = UserInterface.new, players = [Player.new, Player.new], game_on = true)
     @board = board
     @user_interface = user_interface
@@ -92,7 +93,10 @@ class Game
     board.tie? || board.win?(input)
   end
 
+  def play_new_game?
+  end
 
+  public
   def play
     intro
     #while @game_on
@@ -105,4 +109,5 @@ class Game
       #user_interface.play_new_game?
     #end
   end
+
 end
