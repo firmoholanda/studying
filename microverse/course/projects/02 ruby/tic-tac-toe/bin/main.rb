@@ -85,6 +85,7 @@ end
 game = Game.new
 game.play
 
+#puts game.class
 
 #user_interface = UserInterface.new
 #user_interface.instructions
