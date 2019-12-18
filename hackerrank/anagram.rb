@@ -24,12 +24,42 @@ def anagram(s)
     return 0
   else
     total_change = 0
-    (0...str1.length).each { |c| total_change +=1 unless str1[c] == str2[c] }
-    return total_change
+    (0...str1.length).each do |c|
+      if str1[c] == str2[c]
+        str2[c] = ""
+      else
+        total_change +=1
+      end
+    end
+    
   end
+  
+  puts str1
+  puts str2
+  return total_change
 
 end
 
-s = "mnop"
-
+s = "xtnipeqhxvafqaggqoanvwkmthtfirwhmjrbphlmeluvoa"
+#s = "ubulzt"
 puts anagram(s)
+
+
+=begin 
+
+drngbjuuhmwqwxrinxccsqxkpwygwcdbtriwaesjsobrntzaqbe
+-1
+
+ubulzt
+3
+
+vxxzsqjqsnibgydzlyynqcrayvwjurfsqfrivayopgrxewwruvemzy
+13
+
+xtnipeqhxvafqaggqoanvwkmthtfirwhmjrbphlmeluvoa
+13
+
+gqdvlchavotcykafyjzbbgmnlajiqlnwctrnvznspiwquxxsiwuldizqkkaawpyyisnftdzklwagv
+-1 
+
+=end
