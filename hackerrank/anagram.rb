@@ -16,27 +16,18 @@ def anagram(s)
   end
 
   # sort strings alphabetically
-  str1 = str1.chars.sort.join
-  str2 = str2.chars.sort.join
+  str1 = str1.chars.sort
+  str2 = str2.chars.sort
 
   # if strings are the same size return 0
   if str1 == str2
     return 0
   else
-    total_change = 0
-    (0...str1.length).each do |c|
-      if str1[c] == str2[c]
-        str2[c] = ""
-      else
-        total_change +=1
-      end
-    end
-    
+   puts (str1 - str2).join
   end
   
-  puts str1
-  puts str2
-  return total_change
+  puts str1.join
+  puts str2.join
 
 end
 
@@ -45,7 +36,7 @@ s = "xtnipeqhxvafqaggqoanvwkmthtfirwhmjrbphlmeluvoa"
 puts anagram(s)
 
 
-=begin 
+=begin
 
 drngbjuuhmwqwxrinxccsqxkpwygwcdbtriwaesjsobrntzaqbe
 -1
