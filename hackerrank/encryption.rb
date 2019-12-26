@@ -16,22 +16,22 @@ def encryption(s)
       new_str.push(s[i])
       i += 1
     end
-    new_str.push("\n")
+    new_str.push(" ")
   end
 
-  
-  j=0
-  new_str = []
-  (0...col).each do
-      new_str.push(s[j])
-      j += 1
-    (0...row).each do 
+  new_str = new_str.join.split
 
+  c= 0
+  enc_str = []
+
+  col.times do |c|
+    row.times do |r|
+      enc_str.push(new_str[r].chars[c])
     end
-    new_str.push("\n")
+    enc_str.push(" ")
   end
 
-  return new_str.join
+  return enc_str.join
 
 end
 
