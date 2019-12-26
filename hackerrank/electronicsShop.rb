@@ -2,27 +2,18 @@
 #!/bin/ruby
 
 def getMoneySpent(keyboards, drives, b)
-  herBudget = b
-  
-  if (keyboards.min + drives.min) > herBudget
+   
+  if (keyboards.min + drives.min) > b
     return -1
   else
-    if keyboards.max > drives.max
-      drives.each do |dItem|
-        if (dItem + keyboards.max) < herBudget
-          return dItem + keyboards.max
-        end
-      end
-    else
-      keyboards.each do |kbItem|
-        if (kbItem + drives.max) < herBudget
-          return kbItem + drives.max
-        end
-      end
-    end
+    my_arr = keyboards.product(drives).map(&:sum)
+    my_arr.delete_if {|i| i > b }
+    return my_arr.max
   end
 
 end
+
+# ------------------------------------------------------------------------------------- #
 
 b = 10
 keyboards = [3, 1] 
