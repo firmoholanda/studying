@@ -7,12 +7,12 @@ def encryption(s)
 
   if (row * col) < s.length
     row += 1
-  end 
+  end
 
   i=0
   new_str = []
-  (0...row).each do
-    (0...col).each do 
+  row.times do
+    col.times do
       new_str.push(s[i])
       i += 1
     end
@@ -21,9 +21,8 @@ def encryption(s)
 
   new_str = new_str.join.split
 
-  c= 0
-  enc_str = []
 
+  enc_str = []
   col.times do |c|
     row.times do |r|
       enc_str.push(new_str[r].chars[c])
@@ -35,4 +34,4 @@ def encryption(s)
 
 end
 
-puts encryption("feedthedog")
+puts encryption("haveaniceday")
