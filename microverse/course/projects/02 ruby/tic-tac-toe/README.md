@@ -4,6 +4,30 @@ this project is part of a series of projects to be completed by students of [Mic
 
 Microverse version of Tic-Tac-Toe game
 
+## 🔨 instructions
+
+Welcome to the Tic-Tac-Toe game. The game where you just need 1 minute to play.
+
+Usage:
+- To run the game make sure to give execute permission to the main.rb 
+``` 
+chmod +x bin/main.rb 
+```
+- After that you can start the game by running 
+``` 
+ruby ./bin/main.rb
+```
+
+The main rules are the following:
+
+- This just for two players (not one, not three)
+- Player #1 type his name, and then player #2 do the same
+- The teams are randomly selected (you can be either X or O, who knows!)
+- First thing first. Player one begins selecting the position on board (from 1 to 9)
+- Player #2 makes his move just the same way
+- You just keep filling the board until some player achieves 3 in a row ('XXX' or 'OOO')
+- The winner is selected and congratulated
+
 
 
 ## 🔗 link to assignment
@@ -27,8 +51,15 @@ this project can be found in https://github.com/firmoholanda/ruby-bubble-sort
 
 ### ✨ [code picture]
 
-<a href="https://github.com/firmoholanda/ruby-bubble-sort/blob/buble-sort/img/.png" target="_blank">
-    <img alt="page animation" src="https://github.com/firmoholanda/ruby-bubble-sort/blob/buble-sort/img/.png"/>
+print screen
+<a href="https://github.com/ricardovaltierra/tic-tac-toe/blob/development/img/screen01.png" target="_blank">
+    <img alt="page animation" src="https://github.com/ricardovaltierra/tic-tac-toe/blob/development/img/screen01.png"/>
+</a>
+
+
+uml
+<a href="https://github.com/ricardovaltierra/tic-tac-toe/blob/development/img/uml01.png" target="_blank">
+    <img alt="page animation" src="https://github.com/ricardovaltierra/tic-tac-toe/blob/development/img/uml01.png"/>
 </a>
 
 

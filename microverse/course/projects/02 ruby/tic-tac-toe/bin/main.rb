@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require '../lib/game_logic.rb'
+require_relative '../lib/game_logic.rb'
 
 # UserInterface --------------------------------------------------------------------------- #
 class UserInterface
@@ -23,8 +23,8 @@ class UserInterface
     players.each_with_index do |player, i|
       puts "\n\nplease enter the name of player #{i+1}:"
       name = gets.chomp.downcase
-      while name == ""
-        puts "invalid input. please enter a valid name:"
+      while (name == "" || !(name.match(/[a-z]/)))
+        puts "invalid input. please enter a valid name: (the name must include letters)"
         name = gets.chomp.downcase
       end
       names << name
@@ -42,7 +42,7 @@ class UserInterface
     puts "\n\n#{players[0].name} has been randomly assigned to #{players[0].team}."
     puts "therefore, #{players[1].name} has been assigned to #{players[1].team}."
   end
-
+  
   def first_turn(player)
     puts "\nThe computer has randomly decided that #{player.name} will go first.\n\n"
   end
@@ -66,26 +66,8 @@ class UserInterface
     board.win?(player.team) ? (puts "\ncongratulations, #{player.name}!") : (puts "\nit's a tie!")
   end
 
-  def play_new_game?(game_on)
-    #until
-      puts "\nplay a new game? (y or n)"
-      new_game = gets.chomp
-      if new_game == 'y' 
-        game_on = true
-      else
-        game_on =false
-      end
-    #end
+  def display_moves(board)
+    board.moves.each { |i| puts "game move history: #{i}"}
   end
 
 end
-
-# start the game ---------------------------------------------------------------------- #
-
-game = Game.new
-game.play
-
-#puts game.class
-
-#user_interface = UserInterface.new
-#user_interface.instructions

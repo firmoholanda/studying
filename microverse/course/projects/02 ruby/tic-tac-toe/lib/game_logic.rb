@@ -14,9 +14,11 @@ end
 # board ------------------------------------------------------------------------------- #
 class Board
   attr_accessor :board
+  attr_reader :moves
 
-  def initialize(board = Array.new(9, "-"))
+  def initialize(board = Array.new(9, "-"), moves = Array.new)
     @board = board
+    @moves = moves
   end
 
   def move_valid?(input)
@@ -25,6 +27,7 @@ class Board
 
   def take_turn(turn, value)
     board[turn - 1] = value
+    moves.push(value)
   end
 
   def win_positions
@@ -53,11 +56,10 @@ class Game
   attr_reader :board, :user_interface, :players
 
   private
-  def initialize(board = Board.new, user_interface = UserInterface.new, players = [Player.new, Player.new], game_on = true)
+  def initialize(board = Board.new, user_interface = UserInterface.new, players = [Player.new, Player.new])
     @board = board
     @user_interface = user_interface
     @players = players
-    @game_on = game_on
   end
 
   def create_players
@@ -88,26 +90,22 @@ class Game
     set_piece
     select_first_player
   end
-
+  
   def game_over?(input)
     board.tie? || board.win?(input)
   end
 
-  def play_new_game?
-  end
-
+  
   public
+
   def play
     intro
-    #while @game_on
-      until game_over?(players[0].team)
-        players.reverse!
-        make_turn
-        user_interface.display(board.board)
-      end
-      user_interface.declare_win(players[0], board)
-      #user_interface.play_new_game?
-    #end
+    until game_over?(players[0].team)
+      players.reverse!
+      make_turn
+      user_interface.display(board.board)
+    end
+    user_interface.declare_win(players[0], board)
   end
-
+  
 end
