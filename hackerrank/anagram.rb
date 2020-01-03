@@ -14,35 +14,23 @@ def anagram(s)
   else
     return -1
   end
-
-  # sort strings alphabetically
-  str1 = str1.chars.sort
-  str2 = str2.chars.sort
-
+  
   count = 0
   # if strings are the same size return 0
   if str1 == str2
     return 0
   else
-    hash = {}
-    str1.each_with_index do |ch, index|
-      hash["#{ch}_#{index}"] = str2.include?(ch)
+    for i in 0..str1.length - 1 do
+      str2.sub!(str1[i], "") if str2.include?(str1[i])
     end
-   #puts (str1 - str2).join.length
   end
   
-  #puts str1.join
-  #puts str2.join
-  #puts count
-
-  #return hash.values.find_all {|value| !value}.count
-  #p hash
-  return hash.values.find_all {|value| !value}.count
+  return str2.length
 
 end
 # ------------------------------------------------------------------------------------- #
 
-puts anagram("xtnipeqhxvafqaggqoanvwkmthtfirwhmjrbphlmeluvoa")
+puts anagram("asdfjoieufoa")
 
 
 =begin
