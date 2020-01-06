@@ -7,6 +7,7 @@ def beautifulTriplets(d, arr)
   count = 0
   arr.each do |i|
     if i <= max_start_triple
+      #p [i, i+d, i+d*2]
       if ( ([i, i+d, i+d*2] - arr).empty? ) then count +=1 end
     end
   end
