@@ -2,85 +2,35 @@
 
 def timeInWords(h, m)
 
-case h
-when 1
-  hour = "one"
-when 2
-  hour = "two"
-when 3
-  hour = "three"
-when 4
-  hour = "four"
-when 5
-  hour = "five"
-when 6
-  hour = "six"
-when 7
-  hour = "seven"
-when 8
-  hour = "eight"
-when 9
-  hour = "nine"
-when 10
-  hour = "ten"
-when 11
-  hour = "eleven"
-when 12
-  hour = "twelve"
-else
-  puts "invalid hour"
-end
+  nums_arr = [ "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", 
+            "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", 
+            "seventeen", "eighteen", "nineteen", "twenty", "twenty one", "twenty two", 
+            "twenty three", "twenty four", "twenty five", "twenty six", "twenty seven", 
+            "twenty eight", "twenty nine"
+          ]
 
-case m
-when 0
-  minute = "o' clock"
-when 1
-  minute = "one minute past"
-when 2
-  minute = "two minutes past"
-when 3
-  minute = "three minutes past"
-when 4
-  minute = "four minutes past"
-when 5
-  minute = "five minutes past"
-when 6
-  minute = "six minutes past"
-when 7
-  minute = "seven minutes past"
-when 8
-  minute = "eight minutes past"
-when 9
-  minute = "nine minutes past"
-when 10
-  minute = "ten minutes past"
-when 11
-  minute = "eleven minutes past"
-when 12
-  minute = "twelve minutes past"
-when 13
-  minute = "thirteen minutes past"
-when 14
-  minute = "fourteen minutes past"
-when 15
-  minute = "quarter past"
-when 16
-  minute = "sixteen minutes past"
-when 17
-  minute = "seventeen minutes past"
-when 18
-  minute = "eighteen minutes past"
-when 19
-  minute = "nineteen minutes past"
-when 20
-  minute = "twenty minutes past"
-else
-  puts "invalid minute"
-end
-
-puts minute + " " +  hour 
+  case m
+    when 0
+      puts nums_arr[h] + " o' clock"
+    when 1
+      puts "one minute past " + nums_arr[h]
+    when 59
+      puts "one minute to " + nums_arr[(h % 12) + 1]
+    when 15
+      puts "quarter past " + nums_arr[h]
+    when 30
+      puts "half past " + nums_arr[h]
+    when 45
+      puts "quarter to " + nums_arr[(h % 12) + 1]
+    when 0..30
+      puts nums_arr[m] + " minutes past " + nums_arr[h]
+    when 31..59
+      puts nums_arr[60 - m] + " minutes to " + nums_arr[(h % 12) + 1]
+    else
+      puts "invalid hour"
+  end
 
 end
 # ------------------------------------------------------------------------------------- #
 
-timeInWords(5, 13)
+timeInWords(5, 37)
