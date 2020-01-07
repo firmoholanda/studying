@@ -2,12 +2,12 @@
 
 def timeInWords(h, m)
 
-  nums_arr = [ "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", 
-            "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", 
-            "seventeen", "eighteen", "nineteen", "twenty", "twenty one", "twenty two", 
-            "twenty three", "twenty four", "twenty five", "twenty six", "twenty seven", 
-            "twenty eight", "twenty nine"
-          ]
+  nums_arr = [  "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", 
+                "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", 
+                "seventeen", "eighteen", "nineteen", "twenty", "twenty one", "twenty two", 
+                "twenty three", "twenty four", "twenty five", "twenty six", "twenty seven", 
+                "twenty eight", "twenty nine"
+              ]
 
   case m
     when 0
@@ -31,6 +31,7 @@ def timeInWords(h, m)
   end
 
 end
+
 # ------------------------------------------------------------------------------------- #
 
-timeInWords(5, 37)
+timeInWords(5, 33)
