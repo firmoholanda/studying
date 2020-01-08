@@ -1,19 +1,15 @@
 #https://www.hackerrank.com/challenges/palindrome-index/problem
 
-def isPalindrome?(s)
-  s.reverse == s ? true : false
-end
-
 def palindromeIndex(s)
   
-  if isPalindrome?(s)
+  if (s.reverse == s)
     return -1
   else
     my_char = s.chars
     (0...my_char.length).each do |i|
       my_char.delete_at i
       my_str = my_char.join
-      if isPalindrome?(my_str) then (return i) end
+      if (my_str.reverse == my_str) then (return i) end
       my_char = s.chars
     end
   end
@@ -21,4 +17,8 @@ def palindromeIndex(s)
 end
 # ------------------------------------------------------------------------------------- #
 
-puts palindromeIndex("baa")
+
+puts palindromeIndex("aaakjhkhkj")
+
+
+#8330
