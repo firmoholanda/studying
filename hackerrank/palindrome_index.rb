@@ -9,14 +9,16 @@ def palindromeIndex(s)
   if isPalindrome?(s)
     return -1
   else
-    s.each_char do |c|
-      s.slice
+    my_char = s.chars
+    (0...my_char.length).each do |i|
+      my_char.delete_at i
+      my_str = my_char.join
+      if isPalindrome?(my_str) then (return i) end
+      my_char = s.chars
     end
   end
-
-  puts s.reverse
 
 end
 # ------------------------------------------------------------------------------------- #
 
-puts palindromeIndex("aaab")
+puts palindromeIndex("baa")
