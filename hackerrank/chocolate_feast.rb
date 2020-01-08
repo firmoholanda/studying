@@ -3,16 +3,17 @@
 def chocolateFeast(n, c, m)
 
   arr = []
-  total_eaten = total_warp = n / c
+  eaten = wrappers = n / c
+  arr.push(wrappers)
 
-  while total_warp >= m do
-    total_eaten += (total_warp / m)
-    total_warp -= (total_warp / m) * (m-1)
-    arr.push(total_warp)
+  while wrappers >= m do
+    eaten += (wrappers / m)
+    wrappers -= (wrappers / m) * (m-1)
+    arr.push(wrappers)
   end
 
   p arr
-  return total_eaten
+  return eaten
 
 end
 # ------------------------------------------------------------------------------------- #
@@ -21,9 +22,9 @@ end
 #puts chocolateFeast(12, 4, 4)
 #puts chocolateFeast(6, 2, 2)
 #puts chocolateFeast(15, 3, 2)
-puts chocolateFeast(50, 2, 2)
+#puts chocolateFeast(50, 2, 4)
 
-#puts chocolateFeast(4586, 14, 98)
+puts chocolateFeast(4586, 14, 98)
 #330
 
 #puts chocolateFeast(43203, 60, 5)
