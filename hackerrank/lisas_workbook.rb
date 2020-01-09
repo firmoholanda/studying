@@ -2,33 +2,37 @@
 
 def workbook(n, k, arr)
 
-  pages = 0
-  cur_page = 0
   page = []
+  cur_page = 0
+  pages_in_chap = 0
 
-  arr.each do |i|
-    pages += (i / k)
-    if (i.to_f / k) - (i / k) > 0 then pages += 1 end
+  arr.each do |numb_of_probs|
+    pages_in_chap += (numb_of_probs / k)
+    if (numb_of_probs.to_f / k) - (numb_of_probs / k) > 0 then pages_in_chap += 1 end
     
-    #p pages
+    #p pages_in_chap
     cur_prob_list = []
-    pages.times do |p|
-      i.times do |prob|
+    pages_in_chap.times do |p|
+      numb_of_probs.times do |prob|
         cur_prob_list.push(prob+1)
-        page[cur_page] = [cur_prob_list]
-        #if prob+1 > k
+        
+        page[cur_page] = cur_prob_list
 
-        #end
+        if prob+1 > k
+          cur_page += 1    
+        end
+
       end
+      
       #p cur_prob_list
-      cur_page += 1
+      
       cur_prob_list = []
     end
-    pages = 0
+    pages_in_chap = 0
 
   end
 
-  #p page[0]
+  p page
 
 end
 # ------------------------------------------------------------------------------------- #
