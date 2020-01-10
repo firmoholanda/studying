@@ -4,23 +4,21 @@ def fairRations(loaves)
 
   count = 0
 
-  if loaves.length <= 2
-    return "NO"
-  else
-    until loaves.all? { |l| l.even? }
-      loaves.reverse_each.with_index do |l, i|
-        p loaves
-        if l.odd?
-          loaves[loaves.length-i] += 1
-          loaves[loaves.length-i-1] += 1
-          count +=2
-        end
+  until loaves.all? { |l| l.even? }
+    (0...loaves.length).reverse_each do |i|
+      if loaves[i].odd?
+        loaves[i] += 1
+        loaves[i-1] += 1
+        count +=2
       end
     end
-    return count
+    #p loaves
+    if count > 2000 then (return "NO") end
   end
+  
+  return count
 
 end
 # ------------------------------------------------------------------------------------- #
 
-puts fairRations([2, 3, 4, 5, 6])
+puts fairRations([4, 5, 6, 7])
