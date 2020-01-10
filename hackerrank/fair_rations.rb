@@ -5,7 +5,7 @@ def fairRations(loaves)
   count = 0
 
   until loaves.all? { |l| l.even? }
-    (0...loaves.length).reverse_each do |i|
+    (0...loaves.length).reverse_each do |i|     #loop from the back
       if loaves[i].odd?
         loaves[i] += 1
         loaves[i-1] += 1
