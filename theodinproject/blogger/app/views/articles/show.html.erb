@@ -2,6 +2,7 @@
 <p><%= @article.body %></p>
 
 <br>
+
 <%= render partial: 'comments/form' %>
 <%= link_to "<< back", articles_path %>
 <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
