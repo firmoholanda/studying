@@ -2,24 +2,33 @@
 
 def happyLadybugs(b)
 
-  char_in_b = Hash.new(0)
-  char_in_b = b.each_char.reduce(char_in_b) { |h, c| h[c] += 1; h}
-
-  #char_in_b.delete("_")
-
-  p char_in_b
-
-  #p b.chars.sort.join
-
-  char_in_b.each do |key, value|
-    puts key
-    puts value
+  # if have space, sort
+  if b.chars.any?("_")   
+    arr = b.chars.sort
+    arr.delete("_")
+  else
+    arr = b.chars
   end
 
-  #char_in_b.values.all? { |i| i >= 2 } ? (puts "YES") : (puts "NO")
+  while (arr.length > 1) && (arr[0] == arr[1])
+    if arr.count(arr[0]) > 1
+      adjacent_equal = true
+      arr.shift(arr.count(arr[0]))
+    end
+  end
+
+  if (arr.length == 1) || (arr[0] != arr[1]) then (adjacent_equal = false) end
+
+  adjacent_equal ? (return "YES") : (return "NO")
 
 end
 # ------------------------------------------------------------------------------------- #
 
-#happyLadybugs("RBY_YBR")
-happyLadybugs("AABCBC")
+p happyLadybugs("RBY_YBR")
+#happyLadybugs("X_Y__X")
+#happyLadybugs("B_BRBR")
+
+#happyLadybugs("YYR_B_BR")
+
+#happyLadybugs("__")
+#happyLadybugs("AABCBC")
