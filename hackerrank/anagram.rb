@@ -16,7 +16,7 @@ def anagram(s)
   end
   
   count = 0
-  # if strings are the same size return 0
+  # if strings are the same return 0
   if str1 == str2
     return 0
   else
