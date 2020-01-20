@@ -1,19 +1,23 @@
 #https://www.hackerrank.com/challenges/palindrome-index/problem
 
+def is_palindrome?(str)
+  str == str.reverse
+end
+
 def palindromeIndex(s)
 
-  if s.reverse == s
+  left = 0
+  right = s.length - 1
+
+  while left < right and s[left] == s[right] do 
+    left += 1
+    right -= 1
+  end
+
+  if left >= right
     return -1
   else
-    ((s.length+1)/2).times do |i|
-      if s[i] != s[s.length-i-1]
-        if (s[0..i]+s[i+1..s.length]).reverse == s[0..i]+s[i+1..s.length]
-          return i
-        else
-          return s.length-i-1
-        end
-      end
-    end
+    return is_palindrome?(s[left...right]) ? right : left
   end
 
 end
