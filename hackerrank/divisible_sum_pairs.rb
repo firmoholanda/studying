@@ -1,10 +1,11 @@
 #https://www.hackerrank.com/contests/microverse-coding-challenges/challenges/game-of-thrones
 
-def divisibleSumPairs(n, k, ar)
+def divisibleSumPairs(k, ar)
 
-  arr.inject(Hash.new(0)) { |h,v| h[v] += 1; h }.values.max
+  comb = ar.combination(2).to_a
+  return comb.map { |i| (i.sum % k) }.count(0)
 
 end
 # ------------------------------------------------------------------------------------- #
 
-divisibleSumPairs(n, k, ar)
+divisibleSumPairs(3, [1, 3, 2, 6, 1, 2])
