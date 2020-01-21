@@ -3,22 +3,19 @@
 
 def insertionSort1(arr)
 
-  i = arr.size-1
-  val = arr[i]
-
-  while val < arr[i-1]
-    arr[i] = arr[i-1]
-    p arr
-    i -= 1
+  (arr.size-1).downto(1) do |i|
+    last_val = arr[i]
+    j = i
+    while (j > 0) && (arr[j-1] > last_val)
+      arr[j] = arr[j-1]
+      j -= 1
+      puts arr.join(" ")
+    end
+    arr[j] = last_val
+  end
+  puts arr.join(" ")
   
 end
 # ------------------------------------------------------------------------------------- #
 
 insertionSort1([1, 2, 4, 5, 3])
-
-    #j = i
-      #while((j>0) && (arr[j-1] > arr[j]))
-      #    arr[j], arr[j-1] = arr[j-1], arr[j]
-      #    j -= 1
-      #    p arr 
-      #end
