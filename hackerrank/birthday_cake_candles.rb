@@ -2,9 +2,9 @@
 
 def birthdayCakeCandles(arr)
 
-  arr.inject(Hash.new(0)) { |h,v| h[v] += 1; h }.values.max
+  arr.inject(Hash.new(0)) { |h, v| h[v] += 1; h }.values.max
 
 end
 # ------------------------------------------------------------------------------------- #
 
-birthdayCakeCandles([3, 2, 1, 3])
+p birthdayCakeCandles([3, 2, 1, 3])
