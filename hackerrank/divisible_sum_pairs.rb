@@ -8,4 +8,4 @@ def divisibleSumPairs(k, ar)
 end
 # ------------------------------------------------------------------------------------- #
 
-divisibleSumPairs(3, [1, 3, 2, 6, 1, 2])
+p divisibleSumPairs(3, [1, 3, 2, 6, 1, 2])
