@@ -14,6 +14,7 @@ def beautifulTriplets(d, arr)
   return count
 
 end
+# ------------------------------------------------------------------------------------- #
 
 puts beautifulTriplets(3, [1, 6, 7, 7, 8, 10, 12, 13, 14, 19])
 
