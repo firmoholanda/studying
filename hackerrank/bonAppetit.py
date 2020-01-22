@@ -19,9 +19,11 @@ def bonAppetit(bill, k, b):
     bActual /= 2                                #divide by 2
         
     if ( (bCharged - bActual) != 0 ):
-        return print(int(bCharged - bActual)
+        return print(int(bCharged - bActual))
     else:
         return print("Bon Appetit")
+
+# ------------------------------------------------------------------------------------- #        
 
 if __name__ == '__main__':
 

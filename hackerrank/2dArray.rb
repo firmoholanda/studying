@@ -28,7 +28,7 @@ def hourglassSum(arr)
     return sumArray.max
 
 end
-
+# ------------------------------------------------------------------------------------- #
 
 arr = [ [1, 1, 1, 0, 0, 0], 
         [0, 1, 0, 0, 0, 0],
@@ -39,6 +39,7 @@ arr = [ [1, 1, 1, 0, 0, 0],
       ]
 
 result = hourglassSum arr
+
 
 puts result
 
