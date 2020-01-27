@@ -1,5 +1,5 @@
 #https://www.hackerrank.com/contests/microverse-coding-challenges/challenges/game-of-thrones
-
+# https://en.wikipedia.org/wiki/Insertion_sort
 
 def insertionSort2(arr)
 
@@ -17,4 +17,5 @@ def insertionSort2(arr)
 end
 # ------------------------------------------------------------------------------------- #
 
-insertionSort2([1, 4, 3, 5, 6, 2])
+insertionSort2([3, 4, 7, 5, 6, 2, 1])
+#insertionSort2([1, 4, 3, 5, 6, 2])
