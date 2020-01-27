@@ -12,6 +12,7 @@ import sys
 def bonAppetit(bill, k, b):
     bActual = 0
     bCharged = b
+    
     for i, item in enumerate(bill):
         if (i != k):
            bActual += item
