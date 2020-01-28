@@ -28,9 +28,4 @@ def bonAppetit(bill, k, b):
 
 if __name__ == '__main__':
 
-    n = 4
-    k = 1
-    bill = [3, 10, 2, 9]
-    b = 12
-
-    bonAppetit(bill, k, b)
+    bonAppetit([3, 10, 2, 9], 1, 12)
