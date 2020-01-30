@@ -1,20 +1,16 @@
 #https://www.hackerrank.com/challenges/staircase/problem
-#!/bin/ruby
 
-require 'json'
-require 'stringio'
-
-# Complete the staircase function below.
 def staircase(n)
 
-    for i in 1..n
-        puts ("#" * i).rjust(n)
-    end
+  # old code
+  #for i in 1..n
+  #  puts ("#" * i).rjust(n)
+  #end
+
+  # refactored code
+  (1..n).each { |i| puts ("#" * i).rjust(n) }
 
 end
+# ------------------------------------------------------------------------------------- #
 
-
-n = 6
-
-result = staircase n
-
+ staircase(6)
