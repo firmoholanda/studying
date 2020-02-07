@@ -1,7 +1,6 @@
 # https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 # https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
 
-
 class TreeNode
   attr_accessor :val, :left, :right
   def initialize(val)
