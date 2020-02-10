@@ -52,7 +52,7 @@ def level_order(root)
 
 end
 # ------------------------------------------------------------------------------------- #
- 
+
 my_tree = TreeNode.new(3)
 my_tree.left = TreeNode.new(9)
 my_tree.right = TreeNode.new(20)
