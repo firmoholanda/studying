@@ -10,8 +10,8 @@ class TreeNode
   end
 
 end
-
 # ------------------------------------------------------------------------------------- #
+
 def height(node)
   
   if node == nil
@@ -40,12 +40,15 @@ end
 
 def level_order(root)
 
-  #return_arr = []
+  return_arr = []
   height = height(root)
 
   (1..height+1).each do |i|
     p print_given_level(root, i)
+    #return_arr << print_given_level(root, i)
   end
+
+  puts return_arr
 
 end
 # ------------------------------------------------------------------------------------- #
@@ -56,6 +59,6 @@ my_tree.right = TreeNode.new(20)
 my_tree.right.left = TreeNode.new(15)
 my_tree.right.right = TreeNode.new(7)
 
-level_order(my_tree)
-
 #p height(my_tree)
+
+level_order(my_tree)
