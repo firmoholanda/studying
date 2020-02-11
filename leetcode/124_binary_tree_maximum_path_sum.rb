@@ -1,5 +1,5 @@
-# https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-# https://www.geeksforgeeks.org/level-order-tree-traversal/
+# https://leetcode.com/problems/binary-tree-maximum-path-sum/
+# https://www.geeksforgeeks.org/find-maximum-path-sum-two-leaves-binary-tree/
 
 class TreeNode
   attr_accessor :val, :left, :right
@@ -12,43 +12,23 @@ class TreeNode
 end
 # ------------------------------------------------------------------------------------- #
 
-def height(node)
+def max_path_sum(root, res)
+
+  # case tree is empty
+  return 0 if (root == nil)
   
-  if node == nil
-    return 0
-  else
-    left_height = height(node.left)
-    right_height = height(node.right)
+  # case tree has no leaf
+  return root.val if ( (root.left == nil) && (root.right == nil) )
+
+  # find max sum in left and righ subtree
+  left_sum = max_path_sum(root.left, res)
+  right_sum = max_path_sum(root.right, res)
+
+  # if both left and right children exist
+  if (root.left != nil) && (root.right != nil)
+    res[0] = (res[0], left_sum + right_sum + root.data).max
+    return (left_sum, right_sum) + root.data
   end
-
-  left_height > right_height ? (return left_height+1) : (return right_height+1)
-
-end
-
-def print_given_level(root, level)
-  
-  if root == nil then return end
-  
-  if level == 1
-    puts root.val
-  elsif level > 1
-    print_given_level(root.left , level-1) 
-    print_given_level(root.right , level-1) 
-  end
-
-end
-
-def max_path_sum(root)
-
-  return_arr = []
-  height = height(root)
-
-  (1..height+1).each do |i|
-    p print_given_level(root, i)
-    #return_arr << print_given_level(root, i)
-  end
-
-  puts return_arr
 
 end
 # ------------------------------------------------------------------------------------- #
@@ -59,6 +39,4 @@ my_tree.right = TreeNode.new(20)
 my_tree.right.left = TreeNode.new(15)
 my_tree.right.right = TreeNode.new(7)
 
-#p height(my_tree)
-
-level_order(my_tree)
+p max_path_sum(my_tree, [-2147483648])
