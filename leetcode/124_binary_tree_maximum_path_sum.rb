@@ -26,8 +26,9 @@ def max_path_sum(root, res)
 
   # if both left and right children exist
   if (root.left != nil) && (root.right != nil)
-    res[0] = (res[0], left_sum + right_sum + root.data).max
-    return (left_sum, right_sum) + root.data
+    if 
+    res[0] = [res[0], (left_sum + right_sum + root.val)].max
+    return [left_sum, right_sum].max + root.val
   end
 
 end
@@ -39,4 +40,6 @@ my_tree.right = TreeNode.new(20)
 my_tree.right.left = TreeNode.new(15)
 my_tree.right.right = TreeNode.new(7)
 
-p max_path_sum(my_tree, [-2147483648])
+res = []
+
+max_path_sum(my_tree, res)
