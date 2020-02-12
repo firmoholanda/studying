@@ -11,8 +11,9 @@ class TreeNode
 
 end
 # ------------------------------------------------------------------------------------- #
+FIXNUM_MIN = -(2**(0.size * 8 -2))
 
-def max_path_sum(root, res)
+def max_path_sum_util(root, res)
 
   # case tree is empty
   return 0 if (root == nil)
@@ -21,15 +22,26 @@ def max_path_sum(root, res)
   return root.val if ( (root.left == nil) && (root.right == nil) )
 
   # find max sum in left and righ subtree
-  left_sum = max_path_sum(root.left, res)
-  right_sum = max_path_sum(root.right, res)
+  left_sum = max_path_sum_util(root.left, res)
+  right_sum = max_path_sum_util(root.right, res)
 
   # if both left and right children exist
   if (root.left != nil) && (root.right != nil)
-    if 
     res[0] = [res[0], (left_sum + right_sum + root.val)].max
     return [left_sum, right_sum].max + root.val
   end
+
+  # if any of the two children is empty, return one side sum
+  (root.left == nil) ? (return right_sum + root.val) : (return left_sum + root.val)
+
+end
+
+def max_path_sum(root)
+
+  res = [FIXNUM_MIN]
+  max_path_sum_util(root, res)
+
+  return res[0]
 
 end
 # ------------------------------------------------------------------------------------- #
@@ -40,6 +52,6 @@ my_tree.right = TreeNode.new(20)
 my_tree.right.left = TreeNode.new(15)
 my_tree.right.right = TreeNode.new(7)
 
-res = []
+#my_tree = TreeNode.new(0)
 
-max_path_sum(my_tree, res)
+p max_path_sum(my_tree)
