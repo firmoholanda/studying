@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/burst-balloons/
+
+# dynamic programming
 # https://www.youtube.com/watch?v=vYquumk4nWw
 
 # @param {Integer[]} nums
