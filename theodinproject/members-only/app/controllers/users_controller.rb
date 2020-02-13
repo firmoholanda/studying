@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :user_logged_in?, except: %i[new create]
 
   # GET /users
   # GET /users.json
