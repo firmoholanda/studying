@@ -26,12 +26,12 @@
                   <li><%= link_to "Settings", '#' %></li>
                   <li class="divider"></li>
                   <li>
-                    <%= link_to "Log out", logout_path, method: :delete %>
+                    <%= link_to "log out", logout_path, method: :delete %>
                   </li>
                 </ul>
               </li>
             <% else %>
-              <li><%= link_to "Log in", login_path %></li>
+              <li><%= link_to "log in", login_path %></li>
             <% end %>
           </ul>
         </nav>
@@ -42,6 +42,9 @@
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
       <%= yield %>
+      <%= logged_in? %>
+      <br>
+      <%= current_user %>
       <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
