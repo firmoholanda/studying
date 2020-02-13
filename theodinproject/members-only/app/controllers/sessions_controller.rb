@@ -15,6 +15,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    flash.now[:danger] = 'logging out...'
+    log_out
+    redirect_to root_url
   end
 
 end
