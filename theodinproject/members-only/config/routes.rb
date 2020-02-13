@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
+  
   root 'static_pages#home'
 
   # static_pages
   get 'static_pages/home'
   get 'static_pages/help'
-
-  #root 'posts#index'
 
   # user routes
   resources :users
@@ -23,8 +22,7 @@ Rails.application.routes.draw do
   delete  '/logout',  to: 'sessions#destroy'
 
   # post routes
+  resources :posts
   #resources :posts, only: [:new, :create, :destroy]
-
-  
   
 end

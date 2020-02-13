@@ -7,11 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 99.times do |n|
+  
+  # create users
   name  = Faker::Name.name
-  email = "example-#{n+1}@members-only.com"
-  password = "password"
-  User.create!(name:  name,
-               email: email,
-               password:              password,
-               password_confirmation: password)
+  email = Faker::Internet.email
+  password = "passwd"
+  User.create!(name:  name, email: email, password: password, password_confirmation: password)
+
+  # create posts
+  Post.create!(title: Faker::Book.title, body: Faker::Lorem.paragraph)
+
 end

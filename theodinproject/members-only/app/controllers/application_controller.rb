@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
       return if logged_in?
 
       flash[:danger] = 'you must be logged in to perform that action'
-      store_location
+      #store_location
       redirect_to :login
     end
   
