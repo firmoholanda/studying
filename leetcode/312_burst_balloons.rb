@@ -31,6 +31,7 @@ def max_coins(nums)
     right += 1
   end
 
+  p dp
   return dp[1][nums.size - 2]
     
 end
