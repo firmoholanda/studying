@@ -4,24 +4,18 @@
 # @return {Integer}
 
 def climb_stairs(n)
-  divisible = n/2
-  rest = n%2
-  
-  #p divisible
-  #p rest
-  #p divisible + rest
 
-  my_arr = []
-  (divisible + rest + 1).upto(n) do |i|
-    my_arr << i
+  fibo_arr = [0, 1]
+  n.times do
+    # add to arr last 2 values
+    fibo_arr << (fibo_arr[-1] + fibo_arr[-2])
   end
 
-  p my_arr
+  p fibo_arr
+  fibo_arr.last
 
 end
 # ------------------------------------------------------------------------------------- #
 
-#climb_stairs(3)  # 3
-#climb_stairs(6)  # 11
-
-climb_stairs(6)  # 15
+p climb_stairs(3)
+p climb_stairs(7)
