@@ -1,0 +1,12 @@
+<li>
+  <span><%= user.name %></span>
+  <span class="timestamp">
+    Member for <%= time_ago_in_words(user.created_at) %>
+  </span>
+
+  <%= label_tag :user_id, class: "invite_checkbox inline" do %>
+    <%= hidden_field_tag "user_ids[#{user.id}]", "0" %>
+    <%= check_box_tag "user_ids[#{user.id}]" %>
+    <span>Invite this user</span>
+  <% end %>
+</li>
