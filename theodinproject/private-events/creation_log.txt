@@ -10,3 +10,11 @@ rails generate controller StaticPages home help
 
 
 rails generate controller Sessions new
+
+
+rails generate model Events name:string description:text event_date:datetime
+
+add_foreign_key :events, :users, column: :host_id
+
+
+rails generate model Invites reply:string
