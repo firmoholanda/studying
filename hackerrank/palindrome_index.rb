@@ -9,7 +9,7 @@ def palindromeIndex(s)
   left = 0
   right = s.length - 1
 
-  while left < right and s[left] == s[right] do 
+  while left < right && s[left] == s[right] do
     left += 1
     right -= 1
   end
@@ -23,6 +23,14 @@ def palindromeIndex(s)
 end
 # ------------------------------------------------------------------------------------- #
 
-puts palindromeIndex("baa")
+puts palindromeIndex("aaab")
+
+b a a 
+
+s[left] = a
+s[right] = a
+
+left  = 1
+right = 2
 
 #8330
