@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:index, :show, :destroy]
     
   def index
     @users = User.paginate(page: params[:page])
@@ -28,6 +29,6 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password)
+      params.require(:email).permit(:name, :email, :password)
     end
 end
