@@ -9,13 +9,12 @@ def anagram(s)
   
   # if strings are not the same size return -1
   if s.length.even?
-    str1 = s.slice(0..(s.length/2 - 1))
+    str1 = s.slice(0..(s.length / 2 - 1))
     str2 = s.slice((s.length / 2)..s.length)
   else
     return -1
   end
   
-  count = 0
   # if strings are the same return 0
   if str1 == str2
     return 0
