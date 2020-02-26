@@ -1,0 +1,13 @@
+<% provide(:title, "invites") %>
+<div class="row">
+  <%= render "shared/user_sidebar" %>
+  <div class="col-md-8">
+    <h3>invites (<%= @invites.count %>)</h3>
+    <ul class="invites">
+      <% if @invites.none? %>
+        <li>currently invited to no events.</li>
+      <% end %>
+      <%= render @invites %>
+    </ul>
+  </div>
+</div>
