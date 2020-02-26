@@ -4,7 +4,7 @@
     <section class="invite_info">
       <h1>invites(<%= @event.invites.count %>)</h1>
       <% if current_user == @event.host %>
-        <%= link_to "Invite users", new_event_invite_path(@event) %>
+        <%= link_to "invite users", new_event_invite_path(@event) %>
       <% end %>
     </section>
     <section>

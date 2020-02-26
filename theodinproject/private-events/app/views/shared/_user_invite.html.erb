@@ -1,7 +1,7 @@
 <li>
-  <span><%= user.name %></span>
+  <h3><%= user.name %></h3>
   <span class="timestamp">
-    Member for <%= time_ago_in_words(user.created_at) %>
+    member for <%= time_ago_in_words(user.created_at) %>
   </span>
 
   <%= label_tag :user_id, class: "invite_checkbox inline" do %>
