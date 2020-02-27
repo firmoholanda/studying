@@ -5,6 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "home", root_path %></li>
         <% if logged_in? %>
+          <li><%= link_to "events", events_path %></li>
           <li><%= link_to "invites", user_invites_path(current_user) %></li>
           <li><%= link_to "users", users_path %></li>
           <li class="dropdown">
@@ -12,8 +13,7 @@
               account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "profile", user_path(current_user) %></li>
-              <li><%= link_to "invites", user_invites_path(current_user) %></li>
+              <li><%= link_to "profile", user_path(current_user) %></li>              
               <li class="divider"></li>
               <li><%= link_to "log out", logout_path, method: :delete %></li>
             </ul>

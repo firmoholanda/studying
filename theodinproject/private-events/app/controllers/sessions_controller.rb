@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
     if @user
       log_in @user
       params[:session][:remember_me] == "1" ? remember(@user) : forget(@user)
-      redirect_back_or @user
+      #redirect_back_or @user
+      redirect_to events_path
     else
       flash.now[:danger] = "invalid email, please make sure you are registered."
       render :new

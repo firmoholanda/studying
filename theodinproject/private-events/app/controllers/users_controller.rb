@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "welcome to the private-events app!"
       log_in @user
-      redirect_to @user
+      redirect_to events_path
     else
       render :new
     end
@@ -29,6 +29,6 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:email).permit(:name, :email, :password)
+      params.require(:user).permit(:name, :email)
     end
 end

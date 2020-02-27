@@ -1,7 +1,12 @@
 
 class EventsController < ApplicationController
-  before_action :logged_in_user, only: [:show, :new, :create, :destroy]
+  before_action :logged_in_user
   before_action :host_user, only: [:destroy]
+
+  def index
+    @prev_events = Event.past
+    @upcoming_events = Event.upcoming
+  end
 
   def show
     unless (@event = Event.find_by(id: params[:id]))

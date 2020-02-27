@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th width="20%" scope="col">host</th>
+      <th width="5%" scope="col">date</th>
+      <th width="15%" scope="col">when?</th>
+      <th width="70%" scope="col">description</th>
+      <th width="5%" scope="col">details</th>
+      <th width="5%" scope="col">attending?</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% events.each do |event| %>
+    <tr>
+      <td><%= event.host.name %></td>
+      <td><%= event.event_date.strftime("%d/%m/%Y") %></td>
+      <td><%= time_ago_in_words(event.event_date) %></td>
+      <td><%= event.description %></td>
+      <td><%= link_to "show", event %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
