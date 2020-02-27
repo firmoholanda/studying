@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # events
   post '/events/:event_id/invites/new' => 'invites#create'
-  resources :events, only: [:show, :new, :create, :destroy] do
+  resources :events, only: [:index, :show, :new, :create, :destroy] do
     resources :invites, only: :new
   end
 
@@ -23,6 +23,5 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-
   
 end

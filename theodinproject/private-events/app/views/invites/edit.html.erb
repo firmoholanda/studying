@@ -31,6 +31,11 @@
           <span>no</span>
         <% end %>
 
+        <%= f.label :reply, class: "radio-inline" do %>
+          <%= f.radio_button :reply, "none", class: "radio-inline" %>
+          <span>undecided</span>
+        <% end %>
+
         <%= f.submit "submit", class: "btn btn-primary reply_submit" %>
       <% end %>
     </span>

@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :events_as_guest, through: :invites, source: :event
 
   default_scope -> { order(created_at: :desc) }
-  before_save { self.email.downcase! }
+  #before_save { self.email.downcase! }
   validates :name, length: { maximum: 50 }
   
 end
