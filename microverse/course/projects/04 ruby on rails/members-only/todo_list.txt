@@ -1,0 +1,7 @@
+feature-04-gravatar - firmo
+feature-05-filling-content edit home and help page - fernando
+
+deploy - firmo
+
+work on css
+title padding

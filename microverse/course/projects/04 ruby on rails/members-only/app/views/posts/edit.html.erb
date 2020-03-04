@@ -1,0 +1,7 @@
+<%= provide(:title, "Edit a post") %>
+<h1>editing Post</h1>
+
+<%= render 'form', post: @post %>
+
+<%= link_to 'Show', @post %> |
+<%= link_to 'Back', posts_path %>
