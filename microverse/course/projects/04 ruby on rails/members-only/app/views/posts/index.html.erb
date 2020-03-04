@@ -1,0 +1,21 @@
+<%provide(:title, "Posts")%>
+<p id="notice"><%= notice %></p>
+
+
+<h1 class = "post-heading">posts</h1>
+
+<% if @posts.any? %>
+  <%= will_paginate %>
+  <div class="posts">
+    <% @posts.each do |post| %>
+      <%= render 'post', post: post %>
+    <% end %>
+  </div>
+  <%= will_paginate %>
+<% else %>
+  <p>no posts to show</p>
+<% end %>
+
+<% if logged_in? %>
+  <p class='new-post'><%= link_to 'Create new post', new_post_path, class: 'btn btn-primary btn-sm' %></p>
+<% end %>

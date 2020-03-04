@@ -1,0 +1,12 @@
+<article class="post card">
+  <div class="card-body">
+    <h4><%= post.title %></h4>
+    <p><%= post.body %></p>
+  </div>
+  <div class="card-bottom">
+    <p><small class='post-details'>posted <b><%= "by #{post.user.name} " if logged_in? %></b> on <%= post.created_at.strftime('%Y/%m/%d at %I:%M%p') %></small></p>
+    <% if post.user == current_user %>
+      <small><%= link_to "delete post", post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></small>
+    <% end %>
+  </div>
+</article>
