@@ -12,6 +12,18 @@ add to friendship model
   belongs_to :active_friend, class_name: :User
   belongs_to :passive_friend, class_name: :User
 
+add to user model
+  has_many :friendships, foreign_key: :active_friend_id
+
+  def friend_with?(user)
+    if friendships.find_by(reciever_id: user.id, status: true)
+      return true
+    end
+  end
+
+  rails generate controller Friendships new create index destroy
+
+  edit friendships_helper
 
 
 # ----------------------------------------------------------------------#

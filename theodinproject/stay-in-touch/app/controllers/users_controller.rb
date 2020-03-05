@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: %i[show index]
 
   def index
     @users = User.all
+    @friendships = current_user.friendships
+    @inverse_friendships = current_user.inverse_friendships
   end
 
   def show
