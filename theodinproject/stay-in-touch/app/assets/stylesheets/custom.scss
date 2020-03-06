@@ -1,6 +1,7 @@
-@import "bootstrap"; 
-@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+
 
 $primary-color-dark: #667292;
 $primary-color: #8d9db6;
@@ -8,75 +9,65 @@ $primary-color-light: #bccad6;
 $primary-color-text: #212121;
 $divider-color: #bdbdbd;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
 }
+
+/* universal */
 
 body {
-  background: #fff;
-  position: relative;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  padding-top: 60px;
 }
 
-h1,
-h2,
-h3 {
-  font-weight: 700;
+section {
+  overflow: auto;
 }
 
-ul {
-  list-style-type: none;
+textarea {
+  resize: vertical;
 }
 
-a {
-  text-decoration: none;
-  color: $primary-color-text;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 16px 48px;
-  background-color: $primary-color-dark;
-  color: $primary-color-light;
-
-  .menu {
-    width: 70%;
-    justify-content: space-between;
-
-    .menu-item {
-      float: left;
-      margin: 0 15px;
-
-      .active {
-        a {
-          color: #fff;
-        }
-      }
-    }
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
   }
 }
 
-.nav a {
-  color: $primary-color-light;
-  text-transform: uppercase;
-  font-weight: 900;
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
 }
 
-.nav a:hover {
-  color: #fff;
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px;
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
 }
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* notice and alerts */
 
 .notice,
 .alert {
@@ -102,9 +93,82 @@ a {
   color: red;
 }
 
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  letter-spacing: 1px;
+  padding-top: 16px;
+  font-weight: bold;
+}
+
+/* users index */
+
+.users-list {
+  list-style: none;
+  margin: 0;
+  li {
+
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  span {
+    display: block;
+    line-height: 1;
+  }
+  a {
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+
+.users-section {
+  width: 100%;
+  margin: 10px;
+
+  .users-list li {
+    margin-bottom: 16px;
+    text-transform: capitalize;
+    font-size: 1.2em;
+  }
+
+  .profile-link {
+    font-size: 0.8em;
+    margin: 0 0 8px 0;
+    color: $primary-color-dark;
+  }
+}
+
+.user-section {
+  width: 100%;
+  margin-left: 16px;
+
+  h2 {
+    text-transform: capitalize;
+  }
+
+  .timeline {
+    width: 100%;
+    h3 {
+      width: 100%;
+    }
+    justify-content: start;
+  }
+}
+
+/* forms */
+
 form {
-  width: 80%;
-  margin: 8px 0;
+  width: 50%;
+  margin: 8px auto;
+  
 
   .field {
     width: 100%;
@@ -164,11 +228,7 @@ form {
   }
 }
 
-.title {
-  text-align: center;
-  margin-bottom: 16px;
-  text-transform: capitalize;
-}
+/* posts */
 
 .new_post,
 .new_comment{
@@ -203,10 +263,12 @@ form {
   }
 
   .btn-secondary {
-    width: 30%;
-    margin-left: 70%;
+    width: 15%;
+    margin-left: 85%;
   }
 }
+
+/* timeline */
 
 .timeline {
   width: 100%;
@@ -228,6 +290,9 @@ form {
     margin: 16px 0;
     display: flex;
     flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+    padding: 10px;
   }
 
   .post-attribution {
@@ -237,6 +302,7 @@ form {
       margin: 0 0 8px 0;
       color: $primary-color-dark;
       text-transform: capitalize;
+      font-size: large;
     }
   }
 
@@ -250,7 +316,7 @@ form {
       margin: 0 4px;
     }
     .post-date {
-      font-size: 0.6em;
+      font-size: 0.8em;
     }
   }
 
@@ -271,6 +337,7 @@ form {
       border-radius: 3px;
       margin-bottom: 2px;
       padding: 10px;
+      font-size: medium;
 
       p {
         font-size: .8em;
@@ -279,68 +346,147 @@ form {
       span {
         position: absolute;
         right: 3px;
-        font-size: 0.6em;
+        font-size: 0.8em;
       }
     }
   }
 }
 
-.users-section {
-  width: 100%;
-  margin: 10px;
 
-  .users-list li {
-    margin-bottom: 16px;
-    text-transform: capitalize;
-    font-size: 1.2em;
-  }
+/* butons */
 
-  .profile-link {
-    font-size: 0.8em;
-    margin: 0 0 8px 0;
-    color: $primary-color-dark;
-  }
+.add_friend {
+  width: 10%;
+  float: right;
+  align-content: center;
 }
 
-.user-section {
-  width: 100%;
-  margin-left: 16px;
 
-  h2 {
-    text-transform: capitalize;
-  }
+/* footer */
 
-  .timeline {
-    width: 100%;
-    h3 {
-      width: 100%;
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
     }
-    justify-content: start;
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
   }
 }
 
-@media only screen and (min-width: 480px) {
-  form {
-    width: 60%;
-  }
 
-  .new_post,
-  .timeline,
-  .users-section,
-  .user-section {
-    width: 70%;
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
   }
 }
 
-@media (min-width: 780px) {
-  form {
-    width: 40%;
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
   }
+}
 
-  .new_post,
-  .timeline,
-  .users-section,
-  .user-section {
-    width: 50%;
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
   }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+/* sign-in */
+.sign-in {
+  text-align: center;
+}
+
+
+/* posts */
+
+.post-list {
+  margin: 10px 15px;
+}
+
+.post-heading {
+  margin: 30px 15px 10px;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.btn-primary {
+  color: #fff;
+}
+
+.card-body {
+  border: 1px solid #ccc;
+  border-radius: 13px;
+
+  padding: 10px;
+}
+
+.card-bottom {
+  padding-left: 30px;
+  margin-bottom: 2rem;
 }

@@ -26,6 +26,10 @@ add to user model
   edit friendships_helper
 
 create db seed
-add gem 'faker', '1.7.3' to gemfile
+
+add to gemfile
+  gem 'faker', '1.7.3' 
+  gem 'webpacker', '~> 4.0'
 
 
+rails generate controller StaticPages home about contact

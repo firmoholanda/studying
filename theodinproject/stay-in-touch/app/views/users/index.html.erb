@@ -5,16 +5,16 @@
     <% @users.each do |user| %>
       <li>
           <%= gravatar_for user %>
-          <%= user.name %>
+          <h3><%= user.name %></h3>
           <% unless user == current_user %>
             <% if pending?(user) %>
-              <p class="friend">Friend request sent</p>
+              <p class="friend">friend request sent</p>
             <% elsif recieved?(user) %>
               <%= link_to 'Accept request', friendship_path(user), method: :put, class: 'btn btn-primary' %> 
             <% elsif current_user.friend_with?(user) %>
-              <p class="friend">Friends</p> 
+              <p class="friend">friends</p> 
             <% else %> 
-              <%= link_to 'Add Friend', "#{root_path}friends/create/#{user.id}", method: :post, class: 'btn btn-primary add_friend' %>
+              <%= link_to 'add friend', "#{root_path}friends/create/#{user.id}", method: :post, class: 'btn btn-primary add_friend' %>
             <% end %>   
           <% end %>
       </li>
