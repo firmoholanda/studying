@@ -1,23 +1,24 @@
 <section class="users-section">
+  <h1>list of all users in the app</h1>
+  <%= will_paginate %>
   <ul class="users-list">
     <% @users.each do |user| %>
       <li>
-        name: <%= user.name %>
-        <span class="profile-link">
-          <%= link_to 'see profile',  user_path(user), class: 'profile-link' %>
-        </span>
-        <% unless user == current_user %>
-          <% if pending?(user) %>
-            <p class="friend">Friend request sent</p>
-          <% elsif recieved?(user) %>
-            <%= link_to 'accept request', friendship_path(user), method: :put, class: 'btn btn-primary' %> 
-          <% elsif current_user.friend_with?(user) %>
-            <p class="friend">Friends</p> 
-          <% else %> 
-             <%= link_to 'add friend', "#{root_path}friends/create/#{user.id}", method: :post, class: 'btn btn-primary add_friend' %>
-          <% end %>   
-        <% end %>
+          <%= gravatar_for user %>
+          <%= user.name %>
+          <% unless user == current_user %>
+            <% if pending?(user) %>
+              <p class="friend">Friend request sent</p>
+            <% elsif recieved?(user) %>
+              <%= link_to 'Accept request', friendship_path(user), method: :put, class: 'btn btn-primary' %> 
+            <% elsif current_user.friend_with?(user) %>
+              <p class="friend">Friends</p> 
+            <% else %> 
+              <%= link_to 'Add Friend', "#{root_path}friends/create/#{user.id}", method: :post, class: 'btn btn-primary add_friend' %>
+            <% end %>   
+          <% end %>
       </li>
-    <% end %>
+    <% end %>    
   </ul>
+  <%= will_paginate %>
 </section>
