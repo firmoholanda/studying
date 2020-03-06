@@ -10,11 +10,11 @@ class FriendshipsController < ApplicationController
     friendship = current_user.friendships.create(passive_friend_id: user.id, approved: false)
 
     if friendship.save
-      flash[:success] = "friend request was sent."
+      redirect_to request.referrer, notice: "friend request was sent."
     else
-      flash[:danger] = "friend request failed."
+      redirect_to :back, alert: "friend request failed."
     end
-    redirect_to request.referrer
+    
   end
 
   def index
@@ -23,8 +23,8 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-    sender = User.find(params[:id])
-    friendship = current_user.inverse_friendships.find_by(passive_friend_id: sender.id)
+    active_friend = User.find(params[:id])
+    friendship = current_user.inverse_friendships.find_by(active_friend_id: active_friend.id)
     friendship.update(approved: 'true')
     friendship.save
     redirect_to request.referrer

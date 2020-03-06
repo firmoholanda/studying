@@ -3,7 +3,7 @@ create stay-in-touch erd and add to doc
 change css color
 
 # ----------------------------------------------------------------------#
-milestone 5, friendships v1
+milestone 5, friendships v1 and milestone 6, friendships v2
 rails g model friendship approved:boolean
 
 edit migration file
@@ -25,6 +25,7 @@ add to user model
 
   edit friendships_helper
 
+create db seed
+add gem 'faker', '1.7.3' to gemfile
 
-# ----------------------------------------------------------------------#
-milestone 6, friendships v2
+
