@@ -1,0 +1,13 @@
+<h4>upcoming events</h4>
+<% if events.upcoming.any? %>
+  <%= render "events_table", events: events.upcoming %>
+<% else %>
+  <p>no events</p>
+<% end %>
+
+<h4>past events</h4>
+<% if events.past.any? %>
+  <%= render "events_table", events: events.past %>
+<% else %>
+  <p>no events</p>
+<% end %>

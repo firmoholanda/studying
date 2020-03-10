@@ -1,0 +1,12 @@
+<% provide(:title, "invite users") %>
+<h1>invite users</h1>
+
+<%= form_tag new_event_invite_path(@event) do %>
+  <ul class="users">
+    <% @users.each do |user| %>
+      <%= render partial: "shared/user_invite", locals: { user: user } %>
+    <% end %>
+  </ul>
+
+  <%= submit_tag "send invites", class: "btn btn-primary" %>
+<% end %>

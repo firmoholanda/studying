@@ -1,0 +1,33 @@
+one:
+  name: event_one
+  description: The first event.
+  event_date: <%= Time.zone.now %>
+  host: one
+
+two:
+  name: event_two
+  description: The second event.
+  event_date: <%= Time.zone.now %>
+  host: two
+
+past_event_date:
+  name: past_event_date
+  description: The one that was made in the past.
+  event_date: <%= 1.day.ago %>
+  updated_at: <%= 1.day.ago %>
+  host: two
+
+greatest_event_date:
+  name: greatest_event_date
+  description: The one with the greatest event date.
+  event_date: <%= Time.zone.now + 3600 %>
+  host: two
+
+<% 30.times do |n| %>
+event_<%= n %>:
+  name: event_<%= n %>
+  description: <%= Faker::Lorem.paragraph %>
+  event_date: <%= 42.days.ago %>
+  updated_at: <%= 42.days.ago %>
+  host: one
+<% end %>

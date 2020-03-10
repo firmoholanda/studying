@@ -1,0 +1,22 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <%= render "shared/user_sidebar" %>
+  <div class="col-md-4">
+    <h3>hosted events (<%= @events_as_host.count %>)</h3>
+    <ol class="events">
+      <% if @events_as_host.none? %>
+        <li>currently hosting no events.</li>
+      <% end %>
+      <%= render "user_events", events: @events_as_host %>
+    </ol>
+  </div>
+  <div class="col-md-4">
+    <h3>attending events (<%= @attending_events.count %>)</h3>
+    <ol class="events">
+      <% if @attending_events.none? %>
+        <li>currently attending no events.</li>
+      <% end %>
+      <%= render "user_events", events: @attending_events %>
+    </ol>
+  </div>
+</div>

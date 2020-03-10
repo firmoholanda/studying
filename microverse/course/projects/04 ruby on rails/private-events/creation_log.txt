@@ -1,0 +1,30 @@
+rails new private-events
+
+rails generate model User name:string email:string
+add_index :users, :email, unique: true
+rails db:migrate
+
+rails generate controller Users
+
+rails generate controller StaticPages home help
+
+
+rails generate controller Sessions new
+
+rails generate model Event name:string description:text event_date:datetime
+
+
+add_foreign_key :events, :users, column: :host_id
+
+
+rails generate model Invite reply:string
+
+
+# testing
+
+add gem "rspec-rails" to gemfile
+bundle install
+rails generate rspec:install
+
+rake db:migrate && rake db:test:prepare
+rake spec
