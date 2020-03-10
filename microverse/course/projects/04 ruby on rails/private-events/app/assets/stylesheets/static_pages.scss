@@ -1,0 +1,19 @@
+
+
+.about_title {
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.about_text {
+    font-size: 17px;
+    a {
+        color: #000;
+        text-decoration: underline;
+        &:hover {
+            color: royalblue;
+            text-decoration-color: skyblue;
+        }
+    }
+}
+

@@ -1,0 +1,18 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th width="5%" scope="col">date</th>
+      <th width="15%" scope="col">when?</th>
+      <th width="15%" scope="col">name</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% events.each do |event| %>
+      <tr>
+        <td><%= event.event_date.strftime("%d/%m/%Y") %></td>
+        <td><%= time_ago_in_words(event.event_date) %></td>
+        <td><%= link_to event.name, event %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

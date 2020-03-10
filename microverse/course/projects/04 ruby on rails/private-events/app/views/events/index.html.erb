@@ -1,0 +1,9 @@
+<section class="upcoming-events">
+  <h1>upcoming events</h1>
+  <%= render partial: "table", locals: { events: @upcoming_events, allow_change: true, class_event: 'green_col' } %>
+</section>
+<br>
+<section class="past-events">
+  <h1>past events</h1>
+  <%= render partial: "table", locals: { events: @prev_events, allow_change: false, class_event: 'red_col' } %>
+</section>

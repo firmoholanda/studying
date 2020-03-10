@@ -1,0 +1,43 @@
+<% provide(:title, "change reply") %>
+<div class="row event_show">
+  <div class="col-md-8 col-md-offset-2" >
+    <h1><%= @event.name %></h1>
+    <h2 class="host">
+      Hosted by: 
+      <%= link_to @event.host.name, @event.host %>
+    </h2>
+    <p class="description"><%= @event.description %></p>
+    <span class="event_date">
+      <%= formatted_date(@event.event_date, "begins on ") %>
+    </span>
+    <span class="timestamp">
+      Created <%= time_ago_in_words(@event.created_at) %> ago.
+    </span>
+    <span class="current_reply">Current reply: <%= @invite.reply %></span>
+    <span class="reply_form">
+      <%= form_for(:invite, url: user_invite_path(@user, @invite),
+                            method: :patch) do |f| %>
+        Change reply to: 
+
+        <%= f.hidden_field :reply, value: @invite.reply %>
+
+        <%= f.label :reply, class: "radio-inline" do %>
+          <%= f.radio_button :reply, "yes", class: "radio-inline" %>
+          <span>yes</span>
+        <% end %>
+
+        <%= f.label :reply, class: "radio-inline" do %>
+          <%= f.radio_button :reply, "no", class: "radio-inline" %>
+          <span>no</span>
+        <% end %>
+
+        <%= f.label :reply, class: "radio-inline" do %>
+          <%= f.radio_button :reply, "none", class: "radio-inline" %>
+          <span>undecided</span>
+        <% end %>
+
+        <%= f.submit "submit", class: "btn btn-primary reply_submit" %>
+      <% end %>
+    </span>
+  </div>
+</div>

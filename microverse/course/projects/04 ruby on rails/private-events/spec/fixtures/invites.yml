@@ -1,0 +1,33 @@
+one:
+  reply: "yes"
+  user: one
+  event: two
+
+two:
+  reply: "yes"
+  user: two
+  event: one
+
+three:
+  reply: "no"
+  user: one
+  event: two
+
+four:
+  reply: "no"
+  user: two
+  event: one
+
+<% 5.times do |n| %>
+invite_event_two_<%= n %>:
+  reply: none
+  user: one
+  event: two
+<% end %>
+
+<% 10.times do |n| %>
+invite_event_one_<%= n %>:
+  reply: none
+  user: two
+  event: one
+<% end %>

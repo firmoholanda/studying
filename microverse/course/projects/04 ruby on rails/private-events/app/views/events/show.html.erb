@@ -1,0 +1,78 @@
+<% provide(:title, @event.name) %>
+<div class="row event_show">
+  <aside class="col-md-2">
+    <section class="invite_info">
+      <h1>invites(<%= @event.invites.count %>)</h1>
+      <% if current_user == @event.host %>
+        <%= link_to "invite users", new_event_invite_path(@event) %>
+      <% end %>
+    </section>
+    <section>
+      <h3>yes (<%= @event.guests.where('invites.reply' => 'yes').count %>)</h3>
+      <ul>
+        <% @event.guests.where('invites.reply' => 'yes').each do |guest| %>
+          <span class="invite_border"></span>
+          <li><%= link_to guest.name, user_path(guest) %></li>
+          <% if current_user == @event.host %>
+            <li>
+              <%= link_to "uninvite",
+                  invite_path(guest.invites.find_by(event_id: @event.id)),
+                  method: :delete %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </section>
+    <section>
+      <h3>no (<%= @event.guests.where('invites.reply' => 'no').count %>)</h3>
+      <ul>
+        <% @event.guests.where('invites.reply' => 'no').each do |guest| %>
+          <span class="invite_border"></span>
+          <li><%= link_to guest.name, user_path(guest) %></li>
+          <% if current_user == @event.host %>
+            <li>
+              <%= link_to "uninvite",
+                  invite_path(guest.invites.find_by(event_id: @event.id)),
+                  method: :delete %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </section>
+    <section>
+      <h3>
+        undecided (<%= @event.guests.where('invites.reply' => 'none').count %>)
+      </h3>
+      <ul>
+        <% @event.guests.where('invites.reply' => 'none').each do |guest| %>
+          <span class="invite_border"></span>
+          <li><%= link_to guest.name, user_path(guest) %></li>
+          <% if current_user == @event.host %>
+            <li>
+              <%= link_to "uninvite",
+                  invite_path(guest.invites.find_by(event_id: @event.id)),
+                  method: :delete %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </section>
+  </aside>
+  <div class="col-md-6 col-md-offset-1" >
+    <h1><%= @event.name %></h1>
+    <h2 class="host">
+      hosted by: 
+      <%= link_to @event.host.name, @event.host %>
+    </h2>
+    <p class="description"><%= @event.description %></p>
+    <span class="event_date">
+      <%= formatted_date(@event.event_date, "Begins on ") %>
+    </span>
+    <span class="timestamp">
+      created <%= time_ago_in_words(@event.created_at) %> ago.
+      <% if current_user == @event.host %>
+        <%= link_to "delete", @event, method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
+    </span>
+  </div>
+</div>

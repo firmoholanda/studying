@@ -1,0 +1,11 @@
+<% unless user == current_user %>
+  <% if pending?(user) %>
+    <span class="label label-warning">friend request sent</span>
+  <% elsif recieved?(user) %>
+    <%= link_to "accept request", friendship_path(user), method: :put, class: "label label-success" %> 
+  <% elsif current_user.friend_with?(user) %>
+    <span class="label label-info">friends</span>
+  <% else %> 
+    <%= link_to "add friend", "#{root_path}friends/create/#{user.id}", method: :post, class: "label label-primary" %>
+  <% end %>   
+<% end %>

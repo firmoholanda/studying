@@ -1,0 +1,12 @@
+<li id="event-<%= event.id %>">
+  <span class="event_link"><%= link_to event.name, event %></span>
+  <span class="event_date">
+    <%= formatted_date(event.event_date, "begins on ") %>
+  </span>
+  <span class="timestamp">
+    created <%= time_ago_in_words(event.created_at) %> ago
+    <% if current_user == event.host %>
+      <%= link_to "delete", event, method: :delete, data: { confirm: "are you sure?" } %>
+    <% end %>
+  </span>
+</li>

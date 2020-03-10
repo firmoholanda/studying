@@ -1,0 +1,6 @@
+<li>
+  <h4><%= link_to user.name, user_path(user) %></h4>
+  <span class="timestamp">
+    member for <%= time_ago_in_words(user.created_at) %>
+  </span>
+</li>

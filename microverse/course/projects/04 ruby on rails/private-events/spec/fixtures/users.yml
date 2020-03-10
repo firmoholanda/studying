@@ -1,0 +1,27 @@
+one:
+  name: Ex_one
+  email: ex_one@example.com
+  password_digest: <%= User.digest("password") %>
+
+two:
+  name: Ex_two
+  email: ex_two@example.com
+  password_digest: <%= User.digest("password") %>
+
+three:
+  name: Ex_three
+  email: ex_three@example.com
+  password_digest: <%= User.digest("password") %>
+
+most_recent:
+  name: Most_recent
+  email: most_recent@example.com
+  password_digest: <%= User.digest("password") %>
+  created_at: <%= Time.now + 3600 %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest("password") %>
+<% end %>
