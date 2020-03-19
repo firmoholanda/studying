@@ -29,10 +29,15 @@ def count_bits(num)
 end
 # ------------------------------------------------------------------------------------- #
 
-p count_bits(2)
+#p count_bits(2)
 # [0,1,1]
 
-p count_bits(5)
+#p count_bits(5)
 # [0,1,1,2,1,2]
 
 #p int_to_binary(5)
+
+0.upto(30) do |i|
+  p i
+  p count_bits(i)
+end

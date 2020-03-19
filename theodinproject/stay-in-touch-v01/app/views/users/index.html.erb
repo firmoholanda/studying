@@ -6,8 +6,6 @@
       <li>
           <%= gravatar_for user %>
           <h3><%= user.name %></h3>
-          <h4><%= current_user.friend?(user) %></h4>
-          <h4><%= user.friendships.size %></h4>
           <% unless user == current_user %>
             <% if pending?(user) %>
               <p class="friend">friend request sent</p>

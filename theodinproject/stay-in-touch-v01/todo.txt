@@ -1,7 +1,8 @@
 feature-01-data-architecture
 
-feature-02-friendships
-feature-03-deploy
-feature-04-final-touches
+feature-02-friendships-v01
+feature-03-friendships-v02
+feature-04-deploy
+feature-05-final-touches
 
 release
