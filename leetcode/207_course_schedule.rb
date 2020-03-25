@@ -1,5 +1,7 @@
 # https://leetcode.com/problems/course-schedule/
 
+# adjacency lists
+
 # @param {Integer} num_courses
 # @param {Integer[][]} prerequisites
 # @return {Boolean}
