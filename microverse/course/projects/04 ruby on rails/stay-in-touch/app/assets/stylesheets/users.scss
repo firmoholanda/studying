@@ -1,0 +1,9 @@
+.users-list>li {
+    display: flex;
+    .img_gravatar {
+        margin-right: 10px;
+    }
+    h3 {
+        margin-top: 5px;
+    }
+}

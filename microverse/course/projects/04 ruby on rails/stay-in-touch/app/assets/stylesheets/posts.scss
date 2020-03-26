@@ -1,0 +1,12 @@
+    .post-liking {
+        a {
+            border: 1px solid lightblue;
+            border-radius: 2px;
+            background-color: lightblue;
+            color: #000;
+            &:hover {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }

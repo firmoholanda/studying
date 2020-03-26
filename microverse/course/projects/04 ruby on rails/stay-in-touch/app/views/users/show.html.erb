@@ -1,0 +1,14 @@
+<section class="user-section">
+  <h2><%= "name: #{@user.name}" %></h2>
+  <% if @user == current_user %>
+    <%= link_to 'edit Profile', edit_user_registration_path, class: 'btn btn-primary add_friend' %>
+  <% else %>
+    <%= link_to 'add Friend', "#{root_path}friends/create/#{@user.id}", method: :post, class: 'btn btn-primary add_friend' %>
+  <% end %>
+  <article class="timeline">
+    <h3>recent posts:</h3>
+    <ul class="posts">
+      <%= render @posts %>
+    </ul>
+  </article>
+</section>
