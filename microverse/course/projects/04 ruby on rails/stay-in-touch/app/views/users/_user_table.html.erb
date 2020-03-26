@@ -1,0 +1,18 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">image</th>
+      <th scope="col">name</th>
+      <th scope="col">action</th>    
+    </tr>
+  </thead>
+  <tbody>
+  <% users.each do |user| %>
+      <tr>
+        <td><%= gravatar_for user %></td>
+        <td><h4><%= link_to user.name, user %></h4></td>
+        <td><%= render "user_action", user: user %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,7 @@
+<section class="users-section">
+  <h1 class="text-center">list of all users in the app</h1>
+  <br>
+  <div class="text-center"> <%= will_paginate %> </div>
+  <%= render partial: "user_table", locals: { users: @users, allow_change: true} %>
+  <div class="text-center"> <%= will_paginate %> </div>
+</section>
