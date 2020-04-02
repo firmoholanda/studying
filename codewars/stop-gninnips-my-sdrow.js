@@ -13,7 +13,8 @@ function spinWords(str) {
     }
   }
 
-  console.log(answer.join(" "));
+  //console.log(answer.join(" "));
+  
  
 }
 // ------------------------------------------------------------------------------------- #
