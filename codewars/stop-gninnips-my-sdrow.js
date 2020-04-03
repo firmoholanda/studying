@@ -15,7 +15,6 @@ function spinWords(str) {
 
   //console.log(answer.join(" "));
   
- 
 }
 // ------------------------------------------------------------------------------------- #
 spinWords("Welcome")
