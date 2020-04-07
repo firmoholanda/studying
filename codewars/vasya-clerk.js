@@ -5,9 +5,9 @@ function tickets(peopleInLine) {
 
   peopleInLine.forEach(function (item) {
     let cash = [];
-    cash.push(peopleInLine.filter((x) => x == 25).length);
-    cash.push(peopleInLine.filter((x) => x == 50).length);
-    cash.push(peopleInLine.filter((x) => x == 100).length);
+    cash.push(peopleInLine.filter((x) => x == 25).length)
+    cash.push(peopleInLine.filter((x) => x == 50).length)
+    cash.push(peopleInLine.filter((x) => x == 100).length)
     //console.log(cash)
 
     if (item == 50)  { cash[0] -=1 }
