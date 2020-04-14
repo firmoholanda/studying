@@ -4,20 +4,17 @@ function high(x) {
 
   let wordCharCode = []
   let wordCharCodeSum = []
-  let strWords = x.split(" ")
+  let wordsInStr = x.split(" ")
 
-  strWords.forEach(function (i) {
+  wordsInStr.forEach(function (i) {
     wordCharCode = i.split("").map(c => c.charCodeAt(0) - 96)
     wordCharCodeSum.push(wordCharCode.reduce((a, b) => a + b))
   })
 
-  return strWords[wordCharCodeSum.indexOf(Math.max(...wordCharCodeSum))]
+  return wordsInStr[wordCharCodeSum.indexOf(Math.max(...wordCharCodeSum))]
 
 }
 // ------------------------------------------------------------------------------------- #
 
 high('man i need a taxi up to ubud')
 //'taxi'
-
-
-//console.log(i)
