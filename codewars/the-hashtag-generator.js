@@ -8,11 +8,9 @@ function generateHashtag(str) {
     hashTag += (i.charAt(0).toUpperCase() + i.slice(1))
   })
 
-  if (hashTag.length == 1)  {return false}
-  if (hashTag.length > 140) {return false}
-
+  if ((hashTag.length == 1) || (hashTag.length > 140)) {return false}
   return hashTag
- 
+
 }
 // ------------------------------------------------------------------------------------- #
 
