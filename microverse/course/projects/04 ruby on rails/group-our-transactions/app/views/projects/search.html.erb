@@ -1,0 +1,26 @@
+<% provide(:title, "project search") %>
+<% provide(:navbar_page_title, "project search") %>
+
+<%= form_tag(search_path, :method => "get", class: 'search') do %>
+  <br>
+  
+  <div class="input-group">
+    <%= search_field_tag :search, params[:search], placeholder: "search", class: "form-control" %>
+    <div class="input-group-btn">  
+      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+    </div>  
+  </div>
+
+  <br>
+
+  <section class="projects">
+    <%= render partial: "search_table", locals: { projects: @results, allow_change: false} %>
+  </section>
+
+<% end %>
+
+  <br>
+
+<div class="bttn">
+  <%= button_to 'back', current_user, method: :get, class: 'btn btn-secondary' %>
+<div>

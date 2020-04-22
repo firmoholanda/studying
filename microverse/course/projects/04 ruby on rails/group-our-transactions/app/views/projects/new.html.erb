@@ -1,0 +1,5 @@
+<% provide(:title, "new project") %>
+
+<%= render 'projects_form', project: @project %>
+
+<%= button_to 'back', request.referrer, method: :get, class: 'btn btn-secondary' %>

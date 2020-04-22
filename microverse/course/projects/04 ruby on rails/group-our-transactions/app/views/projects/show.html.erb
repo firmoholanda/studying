@@ -1,0 +1,17 @@
+<% provide(:title, @project.name) %>
+<% provide(:navbar_page_title, "edit project") %>
+
+<div class="row">
+  <section class="project_info">
+    <h1> <%= @project.name %> </h1>
+  </section>
+  
+  <br>
+          
+  <div class="bttn">
+    <%= button_to 'edit', edit_project_path(@project), method: :get, class: 'btn btn-primary' %>
+    <%= button_to 'delete', @project, method: :delete, class: 'btn btn-primary', data: { confirm: 'are you sure?' } %>  
+    <%= button_to 'back', request.referrer, method: :get, class: 'btn btn-secondary' %>
+  </div>
+  
+</div>

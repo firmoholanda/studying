@@ -1,0 +1,24 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">icon</th>
+      <th scope="col">name</th>
+      <th scope="col">time</th>
+      <th scope="col">date</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% projects.each do |project| %>
+      <tr>
+        <td>
+          <% project.groups.each do |group| %>
+            <%= icon(group.icon, class: "fa-lg") %>
+          <% end %>
+        </td>
+        <td><%= link_to "#{project.name}", project %></td>
+        <td><%= project.hours %> hs</td>
+        <td><%= project.created_at.strftime("%b %d, %Y").downcase %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

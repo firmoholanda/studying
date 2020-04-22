@@ -1,0 +1,30 @@
+project todo list
+
+master
+development
+
+feature-01-login
+feature-02-grouping
+feature-03-styling
+feature-04-additional-feature
+feature-05-testing
+feature-06-refactoring
+
+
+db
+
+user
+project
+group
+projects_groups
+
+project form select layout
+
+
+upload specs test on the controller
+check app deployment
+ask to new review
+
+
+# review #3
+- changed validation on projects hours field, now app will not accept strings as hours

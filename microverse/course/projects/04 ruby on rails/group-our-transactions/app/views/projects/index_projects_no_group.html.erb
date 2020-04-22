@@ -1,0 +1,13 @@
+<% provide(:title, "ungrouped projects") %>
+<% provide(:navbar_page_title, "all my external projects") %>
+
+<h1>total hours: <%= @projects_no_group.sum(:hours) %> hs</h1>
+
+<section class="projects">
+  <%= render partial: "projects_table", locals: { projects: @projects_no_group, allow_change: true} %>
+</section>
+
+<div class="bttn">
+  <%= button_to 'add new project', new_project_path, method: :get, class: 'btn btn-primary' %>
+  <%= button_to 'back', current_user, method: :get, class: 'btn btn-secondary' %>
+<div>

@@ -1,0 +1,15 @@
+<% provide(:title, "groups") %>
+<% provide(:navbar_page_title, "all my groups") %>
+
+<h1>total groups: <%= @groups.size %> </h1>
+
+<section class="groups">
+  <%= render partial: "index_groups_table", locals: { groups: @groups, allow_change: true} %>
+</section>
+
+<br>
+
+<div class="bttn">
+  <%= button_to 'add new group', new_group_path, method: :get, class: 'btn btn-primary add-new-group' %>
+  <%= button_to 'back', current_user, method: :get, class: 'btn btn-secondary' %>
+<div>
