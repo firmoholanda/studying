@@ -1,0 +1,8 @@
+<% provide(:title, "edit project") %>
+<% provide(:navbar_page_title, @project.name) %>
+
+<%= render 'projects_form', project: @project %>
+
+<div class="bttn">
+  <%= button_to 'back', request.referrer, method: :get, class: 'btn btn-secondary' %>
+</div>

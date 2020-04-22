@@ -1,0 +1,8 @@
+<% provide(:title, "new group") %>
+<% provide(:navbar_page_title, "create new group") %>
+
+<%= render 'groups_form', group: @group %>
+
+<div class="bttn">
+  <%= button_to 'back', groups_path, method: :get, class: 'btn btn-secondary' %>
+</div>

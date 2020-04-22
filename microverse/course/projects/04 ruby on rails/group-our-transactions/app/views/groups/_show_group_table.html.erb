@@ -1,0 +1,22 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">icon</th>
+      <th scope="col">project</th>
+      <th scope="col">time</th>
+      <th scope="col">creation</th>
+      <th scope="col">autor</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% projects.each do |project| %>
+      <tr>
+        <td><%= icon(@group.icon, class: "fa-lg") %></td>
+        <td><%= link_to "#{project.name}", project %></td>
+        <td><%= project.hours %> hs</td>
+        <td><%= project.created_at.strftime("%b %d, %Y").downcase %></td>
+        <td><%= User.find_by(id: project.author_id).name %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
