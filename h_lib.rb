@@ -4,6 +4,8 @@
 # creates a historygram into a hash
 #my_hash = a.inject(Hash.new(0)) { |total, e| total[e] += 1 ; total}
 
+#numbers_hash = Hash[(0...trip_durations.size).zip(trip_durations)]
+
 # partition on array
 #p (1..6).partition { |v| v.even? }  #=> [[2, 4, 6], [1, 3, 5]]
 

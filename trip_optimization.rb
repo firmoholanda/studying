@@ -2,7 +2,7 @@
   
 # Instruction:
 """ 
-You have a [X]-hour layovr in paris and want to book some Trips.
+You have a [X]-hour layover in paris and want to book some Trips.
 You prefer to book as few Trips as possible to enjoy the last [X]
 hours with minimum context switch. How will you arrange your time?
 Assuming that there is no time cost for transportation between Trips.
@@ -21,42 +21,28 @@ Output:
   
 =end
 
+# ------------------------------------------------------------------------------------- #
 
 def minPurchases(trip_durations, total_hours)
-  min_purchases = -1
-
-  #p trip_durations.permutation.to_a.uniq
-
-  #trip_durations.size.downto(2) do |i|
-  #  p trip_durations.combination(i).to_a
-  #end
-
-  #trip_durations.permutation.to_a.size.times do |i|
-    #p i
-  #end
-
-  #p trip_durations.combination(3).to_a
- 
-
-  arr = []
+  
+  trips = []
   my_td = trip_durations
+
   i = total_hours
-  while i >= 0 do
-    if (i - my_td.max) < 0
-      my_td.pop
-      arr << my_td.max      
-    else
-      arr << my_td.max
-      i -= my_td.max
-    end
+  while i > 0
+    if (i - my_td.max) < 0 then my_td.delete(my_td.max) end
+    trips << i - my_td.max
+    i -= my_td.max
   end
-  #min_purchases = arr.size
-  #p total_hours - trip_durations.max
-    
-  return min_purchases
+
+  p trips
+  p trips.size
+  
 end
 # ------------------------------------------------------------------------------------- #
 
-p minPurchases([1, 3, 6], 15)
+#minPurchases([1, 3, 6], 15)
 #3
 #6+6+3
+
+minPurchases([2, 3, 6], 1)
