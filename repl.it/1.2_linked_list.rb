@@ -42,7 +42,7 @@ class LinkedList
     end
     return current.value
   end
-  
+  6
 end
 
 #--------------------------------------------------------------------
