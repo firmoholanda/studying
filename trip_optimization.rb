@@ -45,4 +45,4 @@ end
 #3
 #6+6+3
 
-minPurchases([2, 3, 6], 1)
+minPurchases([1, 3, 6], 8)
