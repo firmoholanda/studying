@@ -1,4 +1,3 @@
-
 # require '../h_lib'
 
 # creates a historygram into a hash
