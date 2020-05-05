@@ -110,6 +110,17 @@ function populateBooks() {
   myLibrary.push(new Book("book02", "author02", 22, "false"));
   myLibrary.push(new Book("book03", "author03", 33, "false"));
 }
-populateBooks();
+//populateBooks();
 
-render(myLibrary);
+//render(myLibrary);
+
+
+// Render books in DOM layer
+if (window.localStorage.length == 0) {
+  populateBooks();
+  window.localStorage.setItem('myLib', JSON.stringify(myLibrary));
+} else {
+  myLibrary = JSON.parse(window.localStorage.getItem('myLib'));
+}
+
+render(JSON.parse(window.localStorage.getItem('myLib')));
