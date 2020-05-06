@@ -9,6 +9,12 @@ function Book(title, author, pages, status = false) {
   this.status = status;
 }
 
+// save to local storage and render lib
+function saveLocalAndRender() {
+  localStorage.setItem("myLib", JSON.stringify(myLibrary));
+  render(myLibrary);
+}
+
 // add book to lib
 function addBookToLibrary() {
   let addTitle = document.getElementById("new-title").value;
@@ -22,13 +28,13 @@ function addBookToLibrary() {
 
   let newBook = new Book(addTitle, addAuthor, addPages, addStatus);
   myLibrary.push(newBook);
-  localStorage.setItem("myLib", JSON.stringify(myLibrary));
-  render(myLibrary);
+  saveLocalAndRender();
 }
 
+// render boolks on lib table
 function render(books) {
-
   let table = document.getElementById("lib-table");
+
   while (index < books.length) {
     let row = table.insertRow();
 
@@ -46,7 +52,7 @@ function render(books) {
     let pagesColumn = row.insertCell(3);
     pagesColumn.innerHTML = books[index].pages;
 
-    // status
+    // status btn
     let readColumn = row.insertCell(4);
     if (books[index].status == "false") {
       let statusBtn = document.createElement("button");
@@ -62,7 +68,7 @@ function render(books) {
           table.removeChild(tableRows[index - 1]);
           index--;
         };
-        render(myLibrary);
+        saveLocalAndRender();
       });
     } else {
       let statusBtn = document.createElement("button");
@@ -78,7 +84,7 @@ function render(books) {
           table.removeChild(tableRows[index - 1]);
           index--;
         };
-        render(myLibrary);
+        saveLocalAndRender();
       });
     }
 
@@ -98,8 +104,7 @@ function render(books) {
         table.removeChild(tableRows[index - 1]);
         index--;
       };
-      localStorage.setItem("myLib", JSON.stringify(myLibrary));
-      render(myLibrary);
+      saveLocalAndRender();
     });
     index++;
   }
@@ -116,10 +121,8 @@ function populateBooks() {
 if (localStorage.getItem("myLib") === null) {
   populateBooks();
   localStorage.setItem("myLib", JSON.stringify(myLibrary));
-  console.log("populated")
 } else {
   myLibrary = JSON.parse(localStorage.getItem("myLib"));
-  console.log("loaded")
 }
 
 // render books
