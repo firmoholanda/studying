@@ -22,6 +22,7 @@ function addBookToLibrary() {
 
   let newBook = new Book(addTitle, addAuthor, addPages, addStatus);
   myLibrary.push(newBook);
+  localStorage.setItem("myLib", JSON.stringify(myLibrary));
   render(myLibrary);
 }
 
@@ -97,9 +98,9 @@ function render(books) {
         table.removeChild(tableRows[index - 1]);
         index--;
       };
+      localStorage.setItem("myLib", JSON.stringify(myLibrary));
       render(myLibrary);
     });
-
     index++;
   }
 }
@@ -110,17 +111,16 @@ function populateBooks() {
   myLibrary.push(new Book("book02", "author02", 22, "false"));
   myLibrary.push(new Book("book03", "author03", 33, "false"));
 }
-//populateBooks();
 
-//render(myLibrary);
-
-
-// Render books in DOM layer
-if (window.localStorage.length == 0) {
+// store lib in localstorage
+if (localStorage.getItem("myLib") === null) {
   populateBooks();
-  window.localStorage.setItem('myLib', JSON.stringify(myLibrary));
+  localStorage.setItem("myLib", JSON.stringify(myLibrary));
+  console.log("populated")
 } else {
-  myLibrary = JSON.parse(window.localStorage.getItem('myLib'));
+  myLibrary = JSON.parse(localStorage.getItem("myLib"));
+  console.log("loaded")
 }
 
-render(JSON.parse(window.localStorage.getItem('myLib')));
+// render books
+render(myLibrary);

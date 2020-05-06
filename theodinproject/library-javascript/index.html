@@ -7,9 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>my lib</title>
   <!-- load bootstrap v4.3.1 css -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- load fonts -->
-  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
   <!-- load my css -->
   <link href="css/style.css" rel="stylesheet">
 </head>
@@ -20,14 +18,18 @@
   <div class="jumbotron">
     <h1 class="display-4">my lib</h1>
     <p class="lead">this is a simple js library app</p>
+          <!-- button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            add book
+          </button>
     <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-      <!-- button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        add book
-      </button>
-    </p>
+    <div class="text-center mt-3">
+      <p>
+        this javascript app that allows user to add, track the reading status, and remove books from a virtual library.
+        you can click on the "add book" to add a new book. set status "reading" if currently reading the book and "finished" if
+        the book was read. you can also delete the book by clicking on "remove". have fun!
+      </p>
+    </div>
   </div>
   
   <div class="row justify-content-center align-items-center py-5">
@@ -62,17 +64,13 @@
                     <div class="col">
                       <div class="form-check">
                         <input class="form-check-input" type="radio" name="new-read" id="read" value="true" checked>
-                        <label class="form-check-label" for="read">
-                          finished
-                        </label>
+                        <label class="form-check-label" for="read">finished</label>
                       </div>
                     </div>
                     <div class="col">
                       <div class="form-check">
                         <input class="form-check-input" type="radio" name="new-read" id="not-read" value="false">
-                        <label class="form-check-label" for="not-read">
-                          reading
-                        </label>
+                        <label class="form-check-label" for="not-read">reading</label>
                       </div>
                     </div>
                     <div class="col">
