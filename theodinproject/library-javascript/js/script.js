@@ -27,6 +27,7 @@ function addBookToLibrary() {
 
 // render boolks on lib table
 function render(books) {
+
   let table = document.getElementById("lib-table");
 
   while (index < books.length) {
@@ -47,39 +48,11 @@ function render(books) {
     pagesColumn.innerHTML = books[index].pages;
 
     // status btn
-    let readColumn = row.insertCell(4);
-    if (books[index].status == "false") {
-      let statusBtn = document.createElement("button");
-      readColumn.appendChild(statusBtn);
-      statusBtn.setAttribute("class", "btn btn-outline-info");
-      statusBtn.setAttribute("id", `${index}`);
-      statusBtn.innerHTML = "reading";
-
-      statusBtn.addEventListener("click", function () {
-        books[this.id].status = "true";
-        let tableRows = table.getElementsByTagName('tr');
-        while (index > 0) {
-          table.removeChild(tableRows[index - 1]);
-          index--;
-        };
-        saveLocalAndRender();
-      });
+    let btnColumn = row.insertCell(4);
+    if (books[index].status === false) {
+      createBtn(btnColumn, "btn btn-outline-info", "reading", true);
     } else {
-      let statusBtn = document.createElement("button");
-      readColumn.appendChild(statusBtn);
-      statusBtn.setAttribute("class", "btn btn-outline-success");
-      statusBtn.setAttribute("id", `${index}`);
-      statusBtn.innerHTML = "finished";
-
-      statusBtn.addEventListener("click", function () {
-        books[this.id].status = "false";
-        let tableRows = table.getElementsByTagName('tr');
-        while (index > 0) {
-          table.removeChild(tableRows[index - 1]);
-          index--;
-        };
-        saveLocalAndRender();
-      });
+      createBtn(btnColumn, "btn btn-outline-success", "finished", false);
     }
 
     // remove btn
@@ -101,20 +74,39 @@ function render(books) {
       saveLocalAndRender();
     });
     index++;
-  }
-}
 
-// populateBooks
-function populateBooks() {
-  myLibrary.push(new Book("book01", "author01", 11, "true"));
-  myLibrary.push(new Book("book02", "author02", 22, "false"));
-  myLibrary.push(new Book("book03", "author03", 33, "false"));
+    function createBtn(btnColumn, btnClass, btnText, btnStatus) {
+      let statusBtn = document.createElement("button");
+      btnColumn.appendChild(statusBtn);
+      statusBtn.setAttribute("class", btnClass);
+      statusBtn.setAttribute("id", `${index}`);
+      statusBtn.innerHTML = btnText;
+
+      statusBtn.addEventListener("click", function () {
+        books[this.id].status = btnStatus;
+        let tableRows = table.getElementsByTagName('tr');
+        while (index > 0) {
+          table.removeChild(tableRows[index - 1]);
+          index--;
+        };
+        saveLocalAndRender();
+      });
+    }
+
+  }
 }
 
 // save to local storage and render lib
 function saveLocalAndRender() {
   localStorage.setItem("myLib", JSON.stringify(myLibrary));
   render(myLibrary);
+}
+
+// populateBooks
+function populateBooks() {
+  myLibrary.push(new Book("book01", "author01", 11, true));
+  myLibrary.push(new Book("book02", "author02", 22, false));
+  myLibrary.push(new Book("book03", "author03", 33, false));
 }
 
 // store lib in localstorage
