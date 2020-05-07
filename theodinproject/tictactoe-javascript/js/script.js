@@ -4,6 +4,9 @@ const UI = function () {
   const gameOverPopupText = document.querySelector(".winner-text");
   const infoText = document.querySelector(".info");
 
+  const player01Name = document.getElementById("player01").value;
+  const player02Name = document.getElementById("player02").value;
+
   // Empties cell contexts and hooks click listeners
   const initCells = () => {
     [...cells].forEach(cell => {
@@ -45,7 +48,8 @@ const UI = function () {
   //  setTimeout(() => (cell.style.animation = ""), 1200);
   //};
 
-  return { initCells, updateCurrentPlayer, blinkCell, endGame };
+  //return { initCells, updateCurrentPlayer, blinkCell, endGame };
+  return { initCells, updateCurrentPlayer, endGame };
 };
 
 const ui = UI();
@@ -69,6 +73,7 @@ let currentPlayer = "";
 function startGame() {
   currentCells = Array.from(Array(9).keys());
   currentPlayer = "X";
+  //currentPlayer = player01Name;
   ui.updateCurrentPlayer(currentPlayer);
   ui.initCells();
 }
