@@ -16,18 +16,16 @@
   
   <!-- jumbotron -->
   <div class="jumbotron">
-    <h1 class="display-4">my lib</h1>
-    <p class="lead">this is a simple js library app</p>
-          <!-- button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            add book
+    <h1 class="display-4">tic-tac-toe javascript</h1>
+    <p class="lead">this is a simple js tic-tac-toe app</p>
+          <!-- button trigger collapse -->
+          <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#gameForm">
+            new game
           </button>
     <hr class="my-4">
     <div class="text-center mt-3">
       <p>
-        this javascript app that allows user to add, track the reading status, and remove books from a virtual library.
-        you can click on the "add book" to add a new book. set status "reading" if currently reading the book and "finished" if
-        the book was read. you can also delete the book by clicking on "remove". have fun!
+        tic-tac-toe game you can play in your browser!
       </p>
     </div>
   </div>
@@ -35,71 +33,62 @@
   <div class="row justify-content-center align-items-center py-5">
     <div class="col-md-10 col-sm-10 text-center">
       
-      <!-- modal form -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">add new book to lib</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+      <!-- form -->
+      <div class="collapse" id="gameForm">
+        <form>
+          <div class="form-group row">
+            <div class="col">
+              <input id="new-title" required="true" type="text" class="form-control" placeholder="title" required>
             </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group row">
-                  <div class="col">
-                    <input id="new-title" required="true" type="text" class="form-control" placeholder="title" required>
-                  </div>
-                  <div class="col">
-                    <input id="new-author" required="true" type="text" class="form-control" placeholder="author" required>
-                  </div>
-                  <div class="col">
-                    <input id="new-pages" required="true" type="number" min="0" step="1" class="form-control" placeholder="pages" required>
-                  </div>
-                </div>
-                <fieldset class="form-group">
-                  <div class="row justify-content-between pt-3">
-                    <div class="col">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="new-read" id="read" value="true" checked>
-                        <label class="form-check-label" for="read">finished</label>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="new-read" id="not-read" value="false">
-                        <label class="form-check-label" for="not-read">reading</label>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <input type="button" class="btn btn-secondary" onclick="addBookToLibrary()" value="add book" data-dismiss="modal">
-                    </div>
-                  </div>
-                </fieldset>
-              </form>
+            <div class="col">
+              <input id="new-author" required="true" type="text" class="form-control" placeholder="author" required>
+            </div>
+            <div class="col">
+              <input id="new-pages" required="true" type="number" min="0" step="1" class="form-control" placeholder="pages"
+                required>
             </div>
           </div>
-        </div>
+          <fieldset class="form-group">
+            <div class="row justify-content-between pt-3">
+              <div class="col">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="new-read" id="read" value="true" checked>
+                  <label class="form-check-label" for="read">finished</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="new-read" id="not-read" value="false">
+                  <label class="form-check-label" for="not-read">reading</label>
+                </div>
+              </div>
+              <div class="col">
+                <input type="button" class="btn btn-secondary" onclick="addBookToLibrary()" value="add book"
+                  data-dismiss="modal">
+              </div>
+            </div>
+          </fieldset>
+        </form>
       </div>
 
-      <!-- library table -->
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">title:</th>
-            <th scope="col">author:</th>
-            <th scope="col">pages:</th>
-            <th scope="col">status:</th>
-            <th scope="col">remove:</th>
-          </tr>
-        </thead>
-        <tbody id="lib-table">
-          <!-- js fill -->
-        </tbody>
-      </table>
+      <!-- board -->
+      <table class="game-board">
+        <tr>
+          <td class="cell" data-id="0">X</td>
+          <td class="cell" data-id="1">O</td>
+          <td class="cell" data-id="2">X</td>
+        </tr>
+        <tr>
+          <td class="cell" data-id="3">O</td>
+          <td class="cell" data-id="4">X</td>
+          <td class="cell" data-id="5">O</td>
+        </tr>
+        <tr>
+          <td class="cell" data-id="6">X</td>
+          <td class="cell" data-id="7">O</td>
+          <td class="cell" data-id="8">X</td>
+        </tr>
+      </table>  
       
     </div>
   </div>
