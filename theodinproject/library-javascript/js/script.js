@@ -73,6 +73,7 @@ function render(books) {
       };
       saveLocalAndRender();
     });
+    
     index++;
 
     function createStatusBtn(btnColumn, btnClass, btnText, btnStatus) {
