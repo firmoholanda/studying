@@ -1,6 +1,6 @@
-# 📃 js-library
+# 📃 tic-tac-toe javascript
 
-js-library
+tic-tac-toe javascript
 
 
 
@@ -23,7 +23,7 @@ this project can be found in https://github.com/firmoholanda/firmoholanda.github
 ### ✨ [live version](https://firmoholanda.github.io)
 
 <a href="https://firmoholanda.github.io/" target="_blank">
-    <img alt="app image" src="https://github.com/firmoholanda/firmoholanda.github.io/blob/development/img/app-img.png"/>
+    <img alt="app image" src=""/>
 </a>
 
 
