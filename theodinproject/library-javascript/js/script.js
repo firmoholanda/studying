@@ -9,12 +9,6 @@ function Book(title, author, pages, status = false) {
   this.status = status;
 }
 
-// save to local storage and render lib
-function saveLocalAndRender() {
-  localStorage.setItem("myLib", JSON.stringify(myLibrary));
-  render(myLibrary);
-}
-
 // add book to lib
 function addBookToLibrary() {
   let addTitle = document.getElementById("new-title").value;
@@ -115,6 +109,12 @@ function populateBooks() {
   myLibrary.push(new Book("book01", "author01", 11, "true"));
   myLibrary.push(new Book("book02", "author02", 22, "false"));
   myLibrary.push(new Book("book03", "author03", 33, "false"));
+}
+
+// save to local storage and render lib
+function saveLocalAndRender() {
+  localStorage.setItem("myLib", JSON.stringify(myLibrary));
+  render(myLibrary);
 }
 
 // store lib in localstorage
