@@ -2,7 +2,6 @@ const UI = function () {
   const cells = document.querySelectorAll(".cell");
   const gameOverPopup = document.querySelector(".result");
   const gameOverPopupText = document.querySelector(".winner-text");
-  const btnClosePopup = document.querySelector(".close");
   const infoText = document.querySelector(".info");
 
   // Empties cell contexts and hooks click listeners
@@ -19,7 +18,7 @@ const UI = function () {
   };
 
   const endGame = () => {
-    setInfoText("GAME OVER!");
+    setInfoText("game over!");
     deinitCells();
     showGameOverPopup();
   };
@@ -31,27 +30,21 @@ const UI = function () {
 
   // Updates info text with current player info
   const updateCurrentPlayer = player => {
-    setInfoText(`${player} will make a move`);
+    setInfoText(`${player} 's move`);
   };
 
   // Makes game over popup visible
   const showGameOverPopup = () => {
-    gameOverPopupText.textContent = `${currentPlayer} WINS!`;
+    gameOverPopupText.textContent = `${currentPlayer} wins!`;
     gameOverPopup.style.display = "block";
   };
 
-  // Makes game over popup hidden
-  const hideGameOverPopup = () => {
-    gameOverPopup.style.display = "none";
-  };
-
   // Makes given cell blink to indicate invalid move
-  const blinkCell = cell => {
-    cell.style.animation = "blink .6s 2";
-    setTimeout(() => (cell.style.animation = ""), 1200);
-  };
+  //const blinkCell = cell => {
+  //  cell.style.animation = "blink .6s 2";
+  //  setTimeout(() => (cell.style.animation = ""), 1200);
+  //};
 
-  btnClosePopup.onclick = hideGameOverPopup;
   return { initCells, updateCurrentPlayer, blinkCell, endGame };
 };
 

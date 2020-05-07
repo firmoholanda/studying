@@ -15,15 +15,15 @@
 <body>
   
   <!-- jumbotron -->
-  <div class="jumbotron">
+  <div class="jumbotron m-3 p-3">
     <h1 class="display-4">tic-tac-toe javascript</h1>
     <p class="lead">this is a simple js tic-tac-toe app</p>
           <!-- button trigger collapse -->
-          <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#gameForm">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             new game
           </button>
     <hr class="my-4">
-    <div class="text-center mt-3">
+    <div class="text-center">
       <p>
         tic-tac-toe game you can play in your browser!
       </p>
@@ -33,42 +33,38 @@
   <div class="row justify-content-center align-items-center py-5">
     <div class="col-md-10 col-sm-10 text-center">
       
-      <!-- form -->
-      <div class="collapse" id="gameForm">
-        <form>
-          <div class="form-group row">
-            <div class="col">
-              <input id="new-title" required="true" type="text" class="form-control" placeholder="title" required>
+      <!-- modal form -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">tic-tac-toe game</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div class="col">
-              <input id="new-author" required="true" type="text" class="form-control" placeholder="author" required>
-            </div>
-            <div class="col">
-              <input id="new-pages" required="true" type="number" min="0" step="1" class="form-control" placeholder="pages"
-                required>
+            <div class="modal-body">
+              <form>
+                <div class="form-group row">
+                  <div class="col">
+                    <input id="player01" required="true" type="text" class="form-control" placeholder="player01" required>
+                  </div>
+                  <div class="col">
+                    <input id="player02" required="true" type="text" class="form-control" placeholder="player02" required>
+                  </div>
+                </div>
+                <fieldset class="form-group">
+                  <div class="row justify-content-between pt-3">
+                    <div class="col">
+                      <input type="button" class="btn btn-secondary" onclick="startGame()" value="start" data-dismiss="modal">
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
             </div>
           </div>
-          <fieldset class="form-group">
-            <div class="row justify-content-between pt-3">
-              <div class="col">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="new-read" id="read" value="true" checked>
-                  <label class="form-check-label" for="read">finished</label>
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="new-read" id="not-read" value="false">
-                  <label class="form-check-label" for="not-read">reading</label>
-                </div>
-              </div>
-              <div class="col">
-                <input type="button" class="btn btn-secondary" onclick="addBookToLibrary()" value="add book"
-                  data-dismiss="modal">
-              </div>
-            </div>
-          </fieldset>
-        </form>
+        </div>
       </div>
 
       <!-- board -->
@@ -88,14 +84,22 @@
           <td class="cell" data-id="7">O</td>
           <td class="cell" data-id="8">X</td>
         </tr>
-      </table>  
+      </table>
+
+      <br><br><br>
+      <div class="result">
+        <div class="text"></div>
+        <div class="winner-text"></div>
+      </div>
+
+      <h3 class="info"></h3>
       
     </div>
   </div>
 
   <!-- footer -->
-  <hr class="my-4">
-  <footer class="footer">
+  <footer class="footer m-3">
+    <hr>
     <small>
       my lib created by:
       <a href="https://github.com/firmoholanda">firmo holanda</a>
