@@ -50,9 +50,9 @@ function render(books) {
     // status btn
     let btnColumn = row.insertCell(4);
     if (books[index].status === false) {
-      createBtn(btnColumn, "btn btn-outline-info", "reading", true);
+      createStatusBtn(btnColumn, "btn btn-outline-info", "reading", true);
     } else {
-      createBtn(btnColumn, "btn btn-outline-success", "finished", false);
+      createStatusBtn(btnColumn, "btn btn-outline-success", "finished", false);
     }
 
     // remove btn
@@ -75,7 +75,7 @@ function render(books) {
     });
     index++;
 
-    function createBtn(btnColumn, btnClass, btnText, btnStatus) {
+    function createStatusBtn(btnColumn, btnClass, btnText, btnStatus) {
       let statusBtn = document.createElement("button");
       btnColumn.appendChild(statusBtn);
       statusBtn.setAttribute("class", btnClass);
@@ -106,7 +106,7 @@ function saveLocalAndRender() {
 function populateBooks() {
   myLibrary.push(new Book("book01", "author01", 11, true));
   myLibrary.push(new Book("book02", "author02", 22, false));
-  myLibrary.push(new Book("book03", "author03", 33, false));
+  myLibrary.push(new Book("book03", "author03", 33, true));
 }
 
 // store lib in localstorage
