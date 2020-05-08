@@ -1,5 +1,4 @@
 const Board = function () {
-  const cells = document.querySelectorAll(".cell");
   const gameOverText = document.querySelector(".winner-text");
   const infoText = document.querySelector(".info");
 
@@ -16,7 +15,7 @@ const Board = function () {
     [...cells].forEach(cell => cell.removeEventListener("click", handleClick));
   };
 
-  // Updates info text with given text
+  // update info text
   const setInfoText = text => {
     infoText.textContent = text;
   };
@@ -31,23 +30,19 @@ const Board = function () {
     gameOverText.textContent = `${currentPlayerName} wins!`;
   };
 
-  // Makes given cell blink to indicate invalid move
-  const blinkCell = cell => {
-    cell.style.animation = "blink .5s 2";
-    setTimeout(() => (cell.style.animation = ""), 1000);
-  };
-
+  // end game and remove all eventes on board cells
   function endGame() {
     setInfoText("game over!");
     showGameOverText();
     deinitCells();
   };
 
-  return { initCells, updateCurrentPlayer, blinkCell, endGame };
+  return { initCells, updateCurrentPlayer, endGame };
   
 };
 
 const board = Board();
+const cells = document.querySelectorAll(".cell");
 const winningCombinations = [
   [0, 1, 2],
   [3, 4, 5],
@@ -101,15 +96,21 @@ function togglePlayer() {
 }
 
 function checkWin() {
+  console.log(checkDraw());
   for (let i = 0; i < winningCombinations.length; i++) {
     let pattern = winningCombinations[i];
     let [a, b, c] = pattern;
     if (
       currentCells[a] === currentCells[b] &&
       currentCells[b] === currentCells[c]
-    ) {
-      return true;
-    }
+      ) {
+        return true;
+      }
   }
   return false;
+}
+
+function checkDraw() {
+  //console.log(currentCells)
+  currentCells.every(function (element) { return typeof element !== 'number'; })
 }
