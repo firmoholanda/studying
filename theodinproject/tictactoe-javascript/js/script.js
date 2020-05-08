@@ -1,13 +1,9 @@
-const UI = function () {
+const Board = function () {
   const cells = document.querySelectorAll(".cell");
-  const gameOverPopup = document.querySelector(".result");
-  const gameOverPopupText = document.querySelector(".winner-text");
+  const gameOverText = document.querySelector(".winner-text");
   const infoText = document.querySelector(".info");
 
-  const player01Name = document.getElementById("player01").value;
-  const player02Name = document.getElementById("player02").value;
-
-  // Empties cell contexts and hooks click listeners
+  // add click event listeners
   const initCells = () => {
     [...cells].forEach(cell => {
       cell.textContent = "";
@@ -15,15 +11,9 @@ const UI = function () {
     });
   };
 
-  // Removes click listeners of cells
+  // removes click event listeners
   const deinitCells = () => {
     [...cells].forEach(cell => cell.removeEventListener("click", handleClick));
-  };
-
-  const endGame = () => {
-    setInfoText("game over!");
-    deinitCells();
-    showGameOverPopup();
   };
 
   // Updates info text with given text
@@ -31,51 +21,60 @@ const UI = function () {
     infoText.textContent = text;
   };
 
-  // Updates info text with current player info
+  // update current player info text
   const updateCurrentPlayer = player => {
     setInfoText(`${player} 's move`);
   };
 
-  // Makes game over popup visible
-  const showGameOverPopup = () => {
-    gameOverPopupText.textContent = `${currentPlayer} wins!`;
-    gameOverPopup.style.display = "block";
+  // set game over text
+  const showGameOverText = () => {
+    gameOverText.textContent = `${currentPlayerName} wins!`;
   };
 
   // Makes given cell blink to indicate invalid move
-  //const blinkCell = cell => {
-  //  cell.style.animation = "blink .6s 2";
-  //  setTimeout(() => (cell.style.animation = ""), 1200);
-  //};
+  const blinkCell = cell => {
+    cell.style.animation = "blink .5s 2";
+    setTimeout(() => (cell.style.animation = ""), 1000);
+  };
 
-  //return { initCells, updateCurrentPlayer, blinkCell, endGame };
-  return { initCells, updateCurrentPlayer, endGame };
+  function endGame() {
+    setInfoText("game over!");
+    showGameOverText();
+    deinitCells();
+  };
+
+  return { initCells, updateCurrentPlayer, blinkCell, endGame };
+  
 };
 
-const ui = UI();
-const winningPatterns = [
-  // Horizontal
+const board = Board();
+const winningCombinations = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
-  // Vertical
   [0, 3, 6],
   [1, 4, 7],
   [2, 5, 8],
-  // Diagonal
   [0, 4, 8],
   [6, 4, 2]
 ];
 
+// ----------------------------------------------------------------------------------- //
+
 let currentCells = [];
 let currentPlayer = "";
+let player01Name = "";
+let player02Name = "";
 
 function startGame() {
+  player01Name = document.getElementById("player01Name").value;
+  player02Name = document.getElementById("player02Name").value;
+
   currentCells = Array.from(Array(9).keys());
   currentPlayer = "X";
-  //currentPlayer = player01Name;
-  ui.updateCurrentPlayer(currentPlayer);
-  ui.initCells();
+  currentPlayerName = player01Name;
+  board.updateCurrentPlayer(currentPlayerName);
+  board.initCells();
 }
 
 function handleClick() {
@@ -84,10 +83,10 @@ function handleClick() {
   if (isCellValid(id)) {
     cell.textContent = currentPlayer;
     currentCells[id] = currentPlayer;
-    if (checkWin()) ui.endGame();
+    if (checkWin()) board.endGame();
     else togglePlayer();
   } else {
-    ui.blinkCell(cell);
+    board.blinkCell(cell);
   }
 }
 
@@ -97,12 +96,13 @@ function isCellValid(id) {
 
 function togglePlayer() {
   currentPlayer = currentPlayer === "X" ? "O" : "X";
-  ui.updateCurrentPlayer(currentPlayer);
+  currentPlayerName = currentPlayer === "X" ? player01Name : player02Name;
+  board.updateCurrentPlayer(currentPlayerName);
 }
 
 function checkWin() {
-  for (let i = 0; i < winningPatterns.length; i++) {
-    let pattern = winningPatterns[i];
+  for (let i = 0; i < winningCombinations.length; i++) {
+    let pattern = winningCombinations[i];
     let [a, b, c] = pattern;
     if (
       currentCells[a] === currentCells[b] &&
