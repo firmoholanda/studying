@@ -61,10 +61,9 @@ let currentPlayer = "";
 let player01Name = "";
 let player02Name = "";
 
+// start current game
 function startGame() {
-  player01Name = document.getElementById("player01Name").value;
-  player02Name = document.getElementById("player02Name").value;
-
+  setPlayesName();
   currentCells = Array.from(Array(9).keys());
   currentPlayer = "X";
   currentPlayerName = player01Name;
@@ -72,6 +71,7 @@ function startGame() {
   board.initCells();
 }
 
+// handle clicks on board
 function handleClick() {
   const cell = event.target;
   const id = cell.dataset.id;
@@ -89,16 +89,28 @@ function handleClick() {
   }
 }
 
+// set players name to default if not set on form
+function setPlayesName() {
+  player01Name = document.getElementById("player01Name").value;
+  if (player01Name == "") { player01Name = "player01" }
+
+  player02Name = document.getElementById("player02Name").value;
+  if (player02Name == "") { player02Name = "player02" }
+}
+
+// check if cell is valid on board
 function isCellValid(id) {
   return currentCells[id] == id;
 }
 
+// switch players
 function togglePlayer() {
   currentPlayer = currentPlayer === "X" ? "O" : "X";
   currentPlayerName = currentPlayer === "X" ? player01Name : player02Name;
   board.updateCurrentPlayer(currentPlayerName);
 }
 
+// check if game has a winning combination
 function checkWin() {
   for (let i = 0; i < winningCombinations.length; i++) {
     let pattern = winningCombinations[i];
@@ -110,6 +122,7 @@ function checkWin() {
   return false;
 }
 
+// check if game is a draw
 function checkDraw() {
   return currentCells.every(function (element) { return typeof element === 'string'; })
 }
