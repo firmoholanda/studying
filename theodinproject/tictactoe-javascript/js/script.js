@@ -25,20 +25,15 @@ const Board = function () {
     setInfoText(`${player} 's move`);
   };
 
-  // set game over text
-  const showGameOverText = () => {
-    gameOverText.textContent = `${currentPlayerName} wins!`;
-  };
-
   // end game and remove all eventes on board cells
   function endGame(draw) {
     if (draw) {
+      gameOverText.textContent = `no one wins...`;
       setInfoText("game was a draw!");
     } else {
+      gameOverText.textContent = `${currentPlayerName} wins!`;
       setInfoText("game over!");
     }
-
-    showGameOverText();
     deinitCells();
   };
 
@@ -108,18 +103,13 @@ function checkWin() {
   for (let i = 0; i < winningCombinations.length; i++) {
     let pattern = winningCombinations[i];
     let [a, b, c] = pattern;
-    if (
-      currentCells[a] === currentCells[b] &&
-      currentCells[b] === currentCells[c]
-      ) {
-        return true;
-      }
+    if ( currentCells[a] === currentCells[b] && currentCells[b] === currentCells[c] ) {
+      return true;
+    }
   }
   return false;
 }
 
 function checkDraw() {
-  console.log(currentCells)
-  console.log(currentCells.every(function (element) { return typeof element === 'string'; }))
-  currentCells.every(function (element) { return typeof element === 'string'; })
+  return currentCells.every(function (element) { return typeof element === 'string'; })
 }
