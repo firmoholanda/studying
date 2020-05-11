@@ -31,8 +31,13 @@ const Board = function () {
   };
 
   // end game and remove all eventes on board cells
-  function endGame() {
-    setInfoText("game over!");
+  function endGame(draw) {
+    if (draw) {
+      setInfoText("game was a draw!");
+    } else {
+      setInfoText("game over!");
+    }
+
     showGameOverText();
     deinitCells();
   };
@@ -78,10 +83,14 @@ function handleClick() {
   if (isCellValid(id)) {
     cell.textContent = currentPlayer;
     currentCells[id] = currentPlayer;
-    if (checkWin()) board.endGame();
-    else togglePlayer();
-  } else {
-    board.blinkCell(cell);
+    if (checkWin()) {
+      board.endGame(false);
+    } else if (checkDraw()) {
+      board.endGame(true);
+    }
+    else {
+      togglePlayer();
+    }
   }
 }
 
@@ -96,7 +105,6 @@ function togglePlayer() {
 }
 
 function checkWin() {
-  console.log(checkDraw());
   for (let i = 0; i < winningCombinations.length; i++) {
     let pattern = winningCombinations[i];
     let [a, b, c] = pattern;
@@ -111,6 +119,7 @@ function checkWin() {
 }
 
 function checkDraw() {
-  //console.log(currentCells)
-  currentCells.every(function (element) { return typeof element !== 'number'; })
+  console.log(currentCells)
+  console.log(currentCells.every(function (element) { return typeof element === 'string'; }))
+  currentCells.every(function (element) { return typeof element === 'string'; })
 }
