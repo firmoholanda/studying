@@ -2,12 +2,12 @@
 
 def happyLadybugs(b)
 
-  # if no spaces and ladybug occures only once
+  # if is not a space and current ladybug occures only once
   b.chars.each do |i|
     if (i != "_") && (b.count(i) == 1) then (return "NO") end
   end
 
-  # if no spaces
+  # if no spaces, checks for ladybug besides
   if (b.count("_") == 0)
     1.upto(b.size) do |i|
       if (b[i-1] != b[i] && b[i+1] != b[i]) then (return "NO") end
@@ -19,11 +19,11 @@ def happyLadybugs(b)
 end
 # ------------------------------------------------------------------------------------- #
 
-p happyLadybugs("RBY_YBR")
-#happyLadybugs("X_Y__X")
-#happyLadybugs("B_BRBR")
+#p happyLadybugs("RBY_YBR")
+#p happyLadybugs("X_Y__X")
+#p happyLadybugs("B_BRBR")
 
-#happyLadybugs("YYR_B_BR")
+p happyLadybugs("YYR_B_BR")
 
-#happyLadybugs("__")
-#happyLadybugs("AABCBC")
+#p happyLadybugs("__")
+#p happyLadybugs("AABCBC")
