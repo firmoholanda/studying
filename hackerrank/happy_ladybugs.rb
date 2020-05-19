@@ -2,24 +2,19 @@
 
 def happyLadybugs(b)
 
-  # if have space, sort
-  if b.chars.any?("_")   
-    arr = b.chars.sort
-    arr.delete("_")
-  else
-    arr = b.chars
+  # if no spaces and ladybug occures only once
+  b.chars.each do |i|
+    if (i != "_") && (b.count(i) == 1) then (return "NO") end
   end
 
-  while (arr.length > 1) && (arr[0] == arr[1])
-    if arr.count(arr[0]) > 1
-      adjacent_equal = true
-      arr.shift(arr.count(arr[0]))
+  # if no spaces
+  if (b.count("_") == 0)
+    1.upto(b.size) do |i|
+      if (b[i-1] != b[i] && b[i+1] != b[i]) then (return "NO") end
     end
   end
 
-  if (arr.length == 1) || (arr[0] != arr[1]) then (adjacent_equal = false) end
-
-  adjacent_equal ? (return "YES") : (return "NO")
+  return "YES"
 
 end
 # ------------------------------------------------------------------------------------- #
