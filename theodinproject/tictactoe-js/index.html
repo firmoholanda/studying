@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>tic-tac-toe javascript</title>
+  <!-- load bootstrap v4.3.1 css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- load my css -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- jumbotron -->
+  <div class="jumbotron m-3 p-3">
+    <h1 class="display-4">tic-tac-toe javascript</h1>
+    <p class="lead">this is a simple js tic-tac-toe app</p>
+    <!-- button trigger collapse -->
+    <button type="button" id="btnNewGame" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      new game
+    </button>
+    <hr class="my-4">
+    <div class="text-center">
+      <p> this is a tic-tac-toe game you can play in your browser. click on "new game" to strart. enter player name and
+        click start. </p>
+      <p> two players, X and O, who take turns marking the spaces in a 3×3 grid. the player who succeeds in placing
+        three of their marks in a horizontal, vertical, or diagonal row is the winner. (wikipedia.org) </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-items-center py-5">
+    <div class="col-md-10 col-sm-10 text-center">
+
+      <!-- modal form -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">please enter players names</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group row">
+                  <div class="col"> X
+                    <input id="player01Name" required="true" type="text" class="form-control" placeholder="player01">
+                  </div>
+                  <div class="col"> O
+                    <input id="player02Name" required="true" type="text" class="form-control" placeholder="player02">
+                  </div>
+                </div>
+                <fieldset class="form-group">
+                  <div class="row justify-content-between pt-3">
+                    <div class="col">
+                      <input type="button" class="btn btn-secondary" id="gameStart" value="start" data-dismiss="modal">
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- board -->
+      <table class="game-board">
+        <tr>
+          <td class="cell" id="cell0" data-id="0">X</td>
+          <td class="cell" id="cell1" data-id="1">O</td>
+          <td class="cell" id="cell2" data-id="2">X</td>
+        </tr>
+        <tr>
+          <td class="cell" id="cell3" data-id="3">X</td>
+          <td class="cell" id="cell4" data-id="4">O</td>
+          <td class="cell" id="cell5" data-id="5">X</td>
+        </tr>
+        <tr>
+          <td class="cell" id="cell6" data-id="6">X</td>
+          <td class="cell" id="cell7" data-id="7">O</td>
+          <td class="cell" id="cell8" data-id="8">X</td>
+        </tr>
+      </table>
+
+      <br><br>
+
+      <div id="info"></div>
+      <h3 id="winner-text"></h3>
+      <button type="button" id="btnReset" class="btn btn-success" style="display:none;">reset game</button>
+
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer m-3" id="footer">
+    <hr>
+    <small>
+      tic-tac-toe javascript created by:
+      <a href="https://github.com/Usagib">eduardo bonilla</a>
+      and
+      <a href="https://github.com/firmoholanda">firmo holanda</a>
+    </small>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="js/script.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+</body>
+
+</html>

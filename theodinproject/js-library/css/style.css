@@ -1,0 +1,14 @@
+/* universal */
+html {
+  overflow-x: hidden;
+}
+
+/* footer */
+footer {
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+footer small {
+  float: right;
+}
