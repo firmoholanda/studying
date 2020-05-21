@@ -7,14 +7,23 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  color: gray;
+}
+
+a:hover {
+  color: black;
+}
+
 /* imges */
 img {
   object-fit: cover;
 }
 
 /* footer */
+
 footer {
-  padding: 20px;
+  padding: 15px;
 }
 
 footer small {
