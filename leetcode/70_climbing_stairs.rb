@@ -6,16 +6,12 @@
 def climb_stairs(n)
 
   fibo_arr = [0, 1]
-  n.times do
-    # add to arr last 2 values
-    fibo_arr << (fibo_arr[-1] + fibo_arr[-2])
-  end
-
+  n.times do fibo_arr << (fibo_arr[-1] + fibo_arr[-2]) end
   p fibo_arr
   fibo_arr.last
 
 end
 # ------------------------------------------------------------------------------------- #
 
-p climb_stairs(3)
-p climb_stairs(7)
+#p climb_stairs(3)
+p climb_stairs(5)
