@@ -19,6 +19,8 @@ const home =
           <tr>
             <th scope="col">id</th>
             <th scope="col">title</th>
+            <th scope="col">edit</th>
+            <th scope="col">remove</th>
           </tr>
         </thead>
         <tbody id="project-table">
@@ -31,7 +33,7 @@ const home =
         <h3>todos</h3>
         <button class='btn btn-info' data-toggle="modal" data-target="#modalTodo">new todo</button>
       </div>
-      <table class="table table-striped table-hover">
+      <table class="table table-striped table-hover" id='todo-table-header' style="display:none">
         <thead>
           <tr>
             <th scope="col">id</th>

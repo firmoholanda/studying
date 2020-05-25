@@ -10,7 +10,6 @@ import Project from './controller/project';
 import Todo from './controller/todo';
 
 let projectList = [];
-let todoList = [];
 
 const main = document.querySelector('#content');
 
@@ -31,10 +30,11 @@ btnAddTodo.onclick = () => { addTodo(); };
 
 
 function addProject() {
-  const project = new Project(document.getElementById('new-project-title').value);
+  const projectTitle = document.getElementById('new-project-title').value;
+  const project = new Project(projectTitle);
   projectList.push(project);
 
-  render(projectList);
+  renderProjects(projectList);
 }
 
 function addTodo() {
@@ -46,65 +46,103 @@ function addTodo() {
   const todo = new Todo(todoTitle, todoDueDate, todoPriority, dotoDescription);
   todotList.push(todo);
 
-  render(projectList);
+  renderProjects(projectList);
 }
 
-function render(projectList, todoList) {
+function renderProjects(projectList) {
   const projectTable = document.getElementById('project-table');
   projectTable.innerHTML = '';
 
-  const todoTable = document.getElementById('todo-table');
-  todoTable.innerHTML = '';
-
   projectList.forEach((project) => {
     const tableRow = projectTable.insertRow();
-    const indexCol = document.createElement('th');
 
+    const indexCol = document.createElement('th');
     indexCol.innerHTML = project.id;
+
     tableRow.appendChild(indexCol);
 
     const titleCol = tableRow.insertCell(1);
     titleCol.innerHTML = project.title;
+    titleCol.style.cursor = "pointer";
+    titleCol.addEventListener('click', function () {
+      renderTodos(projectList[project.id - 1])
+    });
+
+    const editCol = tableRow.insertCell(2);
+    const editButton = document.createElement('button');
+    editButton.innerText = "edit";
+    editButton.classList.add("btn", "btn-outline-secondary", "btn-sm");
+    editButton.addEventListener('click', function (e) {
+      renderProjects(projectList);
+    });
+    editCol.appendChild(editButton);
+
+    const deleteCol = tableRow.insertCell(3);
+    const removeButton = document.createElement('button');
+    removeButton.innerText = "remove";
+    removeButton.classList.add("btn", "btn-outline-danger", "btn-sm");
+    removeButton.addEventListener('click', function (e) {
+      projectList.splice((project.id - 1), 1);
+      renderProjects(projectList);
+      alert(project.title + " deleted")
+    });
+    deleteCol.appendChild(removeButton);
   });
+}
 
-  todoList.forEach((todo) => {
-    const tableRow = todoTable.insertRow();
-    const indexCol = document.createElement('th');
+function renderTodos(project) {
+  const todoTable = document.getElementById('todo-table');
+  todoTable.innerHTML = '';
+  
+  //console.log(project.todos.lenght)
 
-    indexCol.innerHTML = todo.id;
-    tableRow.appendChild(indexCol);
+  //if (project.todos.lenght == 0) {
+  //  alert(project.todos.lenght)
+  //} else {
+    document.getElementById('todo-table-header').style.display = "block";
 
-    const titleCol = tableRow.insertCell(1);
-    titleCol.innerHTML = todo.title;
+    project.todos.forEach((todo) => {
 
-    const dueDateCol = tableRow.insertCell(2);
-    dueDateCol.innerHTML = todo.dueDate;
+      const tableRow = todoTable.insertRow();
+      const indexCol = document.createElement('th');
 
-    const priorityCol = tableRow.insertCell(3);
-    priorityCol.innerHTML = todo.priority;
+      indexCol.innerHTML = todo.id;
+      tableRow.appendChild(indexCol);
 
-    const descriptionCol = tableRow.insertCell(4);
-    descriptionCol.innerHTML = todo.description;
+      const titleCol = tableRow.insertCell(1);
+      titleCol.innerHTML = todo.title;
 
-  });
+      const dueDateCol = tableRow.insertCell(2);
+      dueDateCol.innerHTML = todo.dueDate;
+
+      const priorityCol = tableRow.insertCell(3);
+      priorityCol.innerHTML = todo.priority;
+
+      const descriptionCol = tableRow.insertCell(4);
+      descriptionCol.innerHTML = todo.description;
+    });
+  //}
+
 }
 
 function populateProjects() {
-  projectList.push(new Project("project-01"));
-  projectList.push(new Project("project-02"));
-  projectList.push(new Project("project-03"));
+  const todo01P01 = new Todo("todo-01-p1", "01/01/2021", "low", "this is my todo 01");
+  const todo02P01 = new Todo("todo-02-p1", "01/01/2022", "normal", "this is my todo 02");
+  const todo03P01 = new Todo("todo-03-p1", "01/01/2022", "important", "this is my todo 03");
+
+  const todo01P02 = new Todo("todo-01-p2", "01/01/2021", "low", "this is my todo 01");
+  const todo02P02 = new Todo("todo-02-p2", "01/01/2022", "normal", "this is my todo 02");
+
+  const todo01P03 = new Todo("todo-01-p3", "01/01/2022", "normal", "this is my todo 02");
+
+  projectList.push(new Project("project-01", [todo01P01, todo02P01, todo03P01]));
+  projectList.push(new Project("project-02", [todo01P02, todo02P02]));
+  projectList.push(new Project("project-03", [todo01P03]));
 }
 
-function populateTodos() {
-  todoList.push(new Todo("todo-01", "01/01/2021", "low", "this is my todo 01"));
-  todoList.push(new Todo("todo-02", "01/02/2022", "normal", "this is my todo 02"));
-  todoList.push(new Todo("todo-03", "01/03/2023", "important", "this is my todo 03"));
-  todoList.push(new Todo("todo-04", "01/02/2022", "normal", "this is my todo 02"));
-  todoList.push(new Todo("todo-04", "01/03/2023", "important", "this is my todo 03"));
-}
-
-console.log(todoList);
+//console.log(projectList);
 
 populateProjects();
-populateTodos();
-render(projectList, todoList);
+renderProjects(projectList);
+
+//renderTodos(projectList[0]);
