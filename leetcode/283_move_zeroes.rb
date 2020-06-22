@@ -14,7 +14,7 @@ def move_zeroes(nums)
 
   count = nums.count(0)             # counts total of 0
   nums.delete_if { |x| x == 0 }     # remove 0s
-  count.times {nums << 0}           # add 0s to the end
+  count.times { nums << 0 }           # add 0s to the end
 
   return nums
 
