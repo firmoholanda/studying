@@ -1,0 +1,29 @@
+{
+  "name": "testing-practice-js-jest",
+  "version": "1.0.0",
+  "description": "this is my personal portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firmoholanda/testing-practice-js-jest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firmoholanda/testing-practice-js-jest/issues"
+  },
+  "homepage": "https://github.com/firmoholanda/testing-practice-js-jest#readme",
+  "devDependencies": {
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^26.0.1",
+    "stylelint": "^13.6.0",
+    "stylelint-config-recommended": "^3.0.0"
+  },
+  "dependencies": {
+    "eslint-config-airbnb": "^18.1.0"
+  }
+}
