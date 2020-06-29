@@ -1,0 +1,48 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/* universal */
+html,
+body {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-shadow: 1px 1px 3px black;
+}
+
+a {
+  color: gray;
+}
+
+a:hover {
+  color: black;
+}
+
+/* table and badge */
+.table th, .table td {
+  padding: 0.5rem;
+  vertical-align: middle;
+  border-top: 0px;
+}
+
+.badge {
+  display: block;
+  margin-top: 0.5rem !important;
+  border: none;
+}
+
+/* imges */
+img {
+  object-fit: cover;
+}
+
+/* footer */
+
+footer {
+  padding: 15px;
+}
+
+footer small {
+  float: right;
+}
