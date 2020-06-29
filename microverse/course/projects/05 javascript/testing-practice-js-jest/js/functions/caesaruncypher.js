@@ -5,9 +5,9 @@ const decypher = (text, shift) => {
 
   for (let i = 0; i < text.length; i += 1) {
     let code = text.charCodeAt(i);
-    if(code >= 97 && code <= 122) {
+    if (code >= 97 && code <= 122) {
       code -= actualShift;
-      if(code < 97){
+      if (code < 97) {
         code -= 26;
       }
     }

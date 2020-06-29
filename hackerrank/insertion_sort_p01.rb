@@ -9,7 +9,7 @@ def insertionSort1(arr)
     while (j > 0) && (arr[j-1] > last_val)
       arr[j] = arr[j-1]
       j -= 1
-      #puts arr.join(" ")
+      puts arr.join(" ")
     end
     arr[j] = last_val
   end
@@ -18,5 +18,5 @@ def insertionSort1(arr)
 end
 # ------------------------------------------------------------------------------------- #
 
-#insertionSort1([1, 2, 4, 5, 3])
-insertionSort1([2, 4, 6, 8, 3])
+insertionSort1([1, 2, 4, 5, 3])
+#insertionSort1([2, 4, 6, 8, 3])

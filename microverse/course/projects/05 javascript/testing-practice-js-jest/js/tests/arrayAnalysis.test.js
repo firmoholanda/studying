@@ -5,6 +5,6 @@ test('array analysis should return correct values', () => {
     average: 4,
     min: 0,
     max: 13,
-    length: 8
-  })
+    length: 8,
+  });
 });
