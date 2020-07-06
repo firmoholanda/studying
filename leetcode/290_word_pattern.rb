@@ -12,6 +12,8 @@ def word_pattern(pattern, str)
 
   my_hash = Hash[p_arr.zip str_arr]
 
+  p my_hash
+
   if (my_hash.values.uniq.length != my_hash.values.length) 
     return false
   else
