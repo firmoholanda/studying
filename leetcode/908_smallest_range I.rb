@@ -5,7 +5,7 @@
 # @return {Integer}
 def smallest_range_i(a, k)
 
-  ((a.max - k) - (a.min + k)) < 0 ? (return 0):(return (a.max - k) - (a.min + k) )
+  ((a.max - k) - (a.min + k)) < 0 ? (return 0):(return (a.max - k) - (a.min + k))
   
 end
 # ------------------------------------------------------------------------------------- #
