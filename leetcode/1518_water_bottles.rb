@@ -8,13 +8,12 @@ def num_water_bottles(num_bottles, num_exchange)
   b_drunk = []
   b_remain = []
 
-  b_drunk << num_bottles
-  #b_remain << num_bottles.divmod(num_exchange)
+  b_drunk << num_bottles 
 
-  while (b_drunk.last / num_exchange) >= 1
-    p b_drunk.last.divmod(num_exchange)
-    b_drunk << (b_drunk.last + (num_bottles % num_exchange)) / num_exchange
-  #end
+  while (b_drunk.last >= num_exchange)
+    b_drunk << num_bottles / num_exchange
+    num_bottles = (num_bottles / num_exchange) + (num_bottles % num_exchange)
+  end
  
   #if b_drunk.last < num_exchange then ()
 
