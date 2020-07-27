@@ -15,9 +15,9 @@ def num_islands(grid)
 
   (0...grid.size).each do |i|
     #p i
-    #p grid[i]
     (0...grid[i].size).each do |j|
-      p j
+      #p j
+      p grid[i]
     end
   end  
 
