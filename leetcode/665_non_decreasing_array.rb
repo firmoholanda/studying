@@ -13,12 +13,15 @@ def check_possibility(nums)
     arr << (nums[i] <= nums[i + 1])
   end
 
-  arr.any?(true)
+  p arr
+  arr.any?
     
 end
 
 # ------------------------------------------------------------------------------------- #
 
-p check_possibility([4,2,3])
+#p check_possibility([4,2,3])
 
-p check_possibility([4,2,1])
+#p check_possibility([4,2,1])
+
+p check_possibility([3, 4, 2, 3])
