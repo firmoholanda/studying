@@ -12,13 +12,13 @@ def island_perim(grid)
 
   (0...col).each do |c|
     (0...row).each do |r|
-      if 1 == grid[c][r]
+      if grid[c][r] == 1
         perim = 4
         
-        perim -= 1 if (c-1 >= 0) && (grid[c-1][r] == 1)      # top
-        perim -= 1 if (r+1 < row) && (grid[c][r+1] == 1)     # right
-        perim -= 1 if (c+1 < col) && (grid[c+1][r] == 1)     # bottom        
-        perim -= 1 if (r-1 >= 0) && (grid[c][r-1] == 1)      # left
+        perim -= 1 if (c-1 >= 0)  && (grid[c-1][r] == 1)      # top
+        perim -= 1 if (r+1 < row) && (grid[c][r+1] == 1)      # right
+        perim -= 1 if (c+1 < col) && (grid[c+1][r] == 1)      # bottom        
+        perim -= 1 if (r-1 >= 0)  && (grid[c][r-1] == 1)      # left
 
         ans += perim
       end
@@ -34,5 +34,4 @@ p island_perim([[0,1,0,0],
                 [1,1,1,0],
                 [0,1,0,0],
                 [1,1,0,0]])
-
 # 16
