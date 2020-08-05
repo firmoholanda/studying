@@ -4,6 +4,8 @@
 #my_hash = a.inject(Hash.new(0)) { |total, e| total[e] += 1 ; total}
 #my_hash = a.tally
 
+#nums.slice_when { |prev, curr| curr < prev.next }.to_a
+
 #numbers_hash = Hash[(0...trip_durations.size).zip(trip_durations)]
 
 # partition on array
