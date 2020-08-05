@@ -2,6 +2,7 @@
 
 # creates a historygram into a hash
 #my_hash = a.inject(Hash.new(0)) { |total, e| total[e] += 1 ; total}
+#my_hash = a.tally
 
 #numbers_hash = Hash[(0...trip_durations.size).zip(trip_durations)]
 
