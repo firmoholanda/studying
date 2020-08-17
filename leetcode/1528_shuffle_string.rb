@@ -8,6 +8,13 @@ def restore_string(s, indices)
   #my_hash = Hash[s.chars.zip indices]
   #ans = []
   #(0..indices.size).each {|i| ans << my_hash.key(i)}
+  #p ans  
+  
+  #p my_arr
+  #p my_arr[1][0]
+  
+  #p my_arr.select{|x, y| y == 0}
+  #p my_arr.select{|x, y| y == 0}.map{|x, y| x}
   #p ans
   
   ans = []
@@ -17,15 +24,6 @@ def restore_string(s, indices)
   
   p ans.flatten.join
 
-  #p my_arr
-  #p my_arr[1][0]
-
-  #p my_arr.select{|x, y| y == 0}
-  #p my_arr.select{|x, y| y == 0}.map{|x, y| x}
-  #p ans
-
-
-  
 
 end
 # ------------------------------------------------------------------------------------- #
