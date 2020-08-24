@@ -1,12 +1,12 @@
 import React from 'react';
 
-import NavBar from './NavBar';
+import Header from './Header';
 import BooksList from '../containers/BooksList';
 import BooksForm from '../containers/BooksForm';
 
 const App = () => (
   <div className="app">
-    <NavBar />
+    <Header />
     <BooksList />
     <BooksForm />
   </div>

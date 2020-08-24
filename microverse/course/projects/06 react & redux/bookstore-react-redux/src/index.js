@@ -1,40 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 
 import App from './components/App';
-import rootReducer from './reducers';
+import configureStore from './configureStore';
+import initialState from './rawData';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import './assets/styles/index.css';
 
-var faker = require('faker');
-
-const booksArray = [
-  {
-    id: (Math.random() * (10 ** 9)),
-    title: faker.lorem.words(),
-    category: 'Action',
-  },
-  {
-    id: (Math.random() * (10 ** 9)),
-    title: faker.lorem.words(),
-    category: 'Learning',
-  },
-  {
-    id: (Math.random() * (10 ** 9)),
-    title: faker.lorem.words(),
-    category: 'Horror',
-  },
-];
-
-const initState = {
-  books: booksArray,
-};
-
-const store = createStore(rootReducer, initState);
+const store = configureStore(initialState);
 
 ReactDOM.render(
   <Provider store={store}>
