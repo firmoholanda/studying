@@ -10,9 +10,8 @@ def merge(nums1, nums2)
   #nums1.delete(0).zip(nums2).flatten
   #(nums1.delete(0) + nums2).sort
 
-  nums1.delete(0)
-  nums1 << nums2
-  nums1.flatten
+  p nums1[0...nums1.size-nums2.size].concat(nums2).sort!
+
 
 end
 # ------------------------------------------------------------------------------------- #
