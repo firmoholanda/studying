@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Inkpad (http://www.taptrix.com/) --><svg xmlns:inkpad="http://taptrix.com/inkpad/svg_extensions" height="774pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="999pt" version="1.1" viewBox="0,0,999,774">
+<defs>
+<linearGradient y1="1433.53" id="LinearGradient" x1="350.874" y2="337.449" x2="1357.88" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 -261 -174)">
+<stop stop-color="#ef37a4" offset="0"/>
+<stop stop-color="#fae62d" offset="1"/>
+</linearGradient>
+</defs>
+<g id="Untitled" inkpad:layerName="Untitled">
+<path d="M-260.092+234.296M243.306-105.311C381.009-212.896+579.858-188.499+687.424-50.8218C794.989+86.8556+770.556+285.7+632.853+393.286C591.895+425.286+545.526+445.494+497.768+454.655C516.052+461.952+532.753+473.952+545.76+490.6C584.969+540.786+576.062+613.273+525.867+652.49C478.398+689.577+411.057+683.622+370.703+640.453C363.149+648.535+355.086+656.288+346.092+663.315C252.838+736.173+118.22+719.657+45.3887+626.437C-27.4563+533.199-10.9152+398.585+82.3393+325.726C105.084+307.956+130.32+295.592+156.505+288.273C88.5015+155.889+121.682-10.2874+243.306-105.311ZM640.133+697.045C571.791+609.571+587.3+483.226+674.808+414.858C762.315+346.49+888.658+362.007+957.001+449.481C1025.36+536.972+1009.83+663.299+922.326+731.667C834.819+800.036+708.489+784.536+640.133+697.045Z" opacity="1" fill="url(#LinearGradient)"/>
+</g>
+</svg>
