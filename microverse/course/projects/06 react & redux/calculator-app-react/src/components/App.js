@@ -1,14 +1,16 @@
 import React from 'react';
 
 import Jumbotron from './Jumbotron';
-import Calculator from './Calculator';
+import Display from './Display';
+import ButtonPanel from './ButtonPanel';
 import Footer from './Footer';
 
 function App() {
   return (
     <div className="App">
       <Jumbotron />
-      <Calculator />
+      <Display />
+      <ButtonPanel />
       <Footer />
     </div>
   );
