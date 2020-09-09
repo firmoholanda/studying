@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>the odin project - fundamentals 1</title>
+</head>
+<body>
+    <script>
+
+        function add7(number) {
+            var result = number+7;
+            return result;
+        }
+
+        function multiply(number1, number2) {
+            var result = number1*number2;
+            return result;
+        }
+
+        function capitalize(str) {
+            //var result = string && string.charAt(0).toUpperCase() + string.substring(1);
+            var splitStr = str.toLowerCase().split(' ');
+            for (var i = 0; i < splitStr.length; i++) {
+                // You do not need to check if i is larger than splitStr length, as your for does that for you
+                // Assign it back to the array
+                splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+            }
+            // Directly return the joined string
+            result = splitStr.join(' '); 
+            return result;
+        }
+
+        function lastLetter(str) {
+            //var result = str.slice(-1);
+            var result = str.charAt(str.length-1);
+            return result;
+        }
+
+
+        //p1
+        console.log(add7(5));
+
+        //p2
+        console.log(multiply(3,5));
+
+        //p3
+        console.log(capitalize("lowercase, UPPERCASE or BoTh"));
+
+        //p4
+        console.log(lastLetter("abcd"));
+
+    </script>
+</body>
+</html>

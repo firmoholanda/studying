@@ -1,6 +1,23 @@
-tree a1c3e6b7a82c5a0b64e23f0235c38cc38a8ab42f
-parent 6efb646cf9a351c554bf19f165a9682c760a711b
-author DiegoServinHdn <54914983+DiegoServinHdn@users.noreply.github.com> 1567706987 -0500
-committer DiegoServinHdn <54914983+DiegoServinHdn@users.noreply.github.com> 1567706987 -0500
+tree 41c74bb89424fa532257ba27a670f25bf9a43199
+parent 77f012bb1caf43d292afee855109a7f61e1d7bf2
+author dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1571952984 +0000
+committer GitHub <noreply@github.com> 1571952984 +0000
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsBcBAABCAAQBQJdshlYCRBK7hj4Ov3rIwAAdHIIAG49m1mPinUBSNYS+l4UGBuB
+ ggxI1pQeiqNqMJ8BeA6HxQ6RgzyG4JcuPWTL/SM9gOqf6duORWaoyRj9oLLn+sRX
+ gL5nx0aWGMcA19Jg7RJ3gG8H7/UuBpX8ud/k8japQoQpRHiFjjiQQp8UgAy3lM1w
+ z/3efpm/agTkNEuOpsBzmkV/TFjOpBms/j+VOxVPt4Ev0CM2YPilCV4a3nM2tWDd
+ TSlvkSIbcNr9WCm8X6nATpY/XHKuTEZd2t6tRxhV6/9etjGC3ZXU66Eyy/PxOJwF
+ ztTOs9hjLPccs4LzZ0mfxZmWdLy4xgPErur2WGJqFn97IbzA2j9fXVXE655IjNk=
+ =66c/
+ -----END PGP SIGNATURE-----
+ 
 
-images
+Bump lodash
+
+Bumps [lodash](https://github.com/lodash/lodash) from 4.17.4 to 4.17.15.
+- [Release notes](https://github.com/lodash/lodash/releases)
+- [Commits](https://github.com/lodash/lodash/compare/4.17.4...4.17.15)
+
+Signed-off-by: dependabot[bot] <support@github.com>
