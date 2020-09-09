@@ -1,7 +1,1 @@
-Bump lodash
-
-Bumps [lodash](https://github.com/lodash/lodash) from 4.17.4 to 4.17.15.
-- [Release notes](https://github.com/lodash/lodash/releases)
-- [Commits](https://github.com/lodash/lodash/compare/4.17.4...4.17.15)
-
-Signed-off-by: dependabot[bot] <support@github.com>
+Update rest_client.rb
