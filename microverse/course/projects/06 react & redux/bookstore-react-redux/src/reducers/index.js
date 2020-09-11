@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
 
-import booksReducer from './books';
-import filterReducer from './filter';
+import bookReducer from './books';
 
 const rootReducer = combineReducers({
-  books: booksReducer,
-  filter: filterReducer,
+  books: bookReducer,
 });
 
 export default rootReducer;

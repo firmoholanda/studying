@@ -1,0 +1,70 @@
+react project - calculator
+
+calculator-app-react
+
+https://github.com/firmoholanda/calculator-app-react
+
+
+milestone 1: basic project structure
+milestone 2: components
+milestone 3: styling
+milestone 4: calculations
+milestone 5: event handlers
+
+
+---------------------------------------------------------------------------------
+milestone 1
+
+create-react-app calculator-app-react
+npm i big-js
+heroku create calculator-app-react-firmo-holanda --buildpack mars/create-react-npm install react-bootstrap bootstrap
+
+heroku app name:
+calculator-react-firmoholanda
+heroku logs --tail --app calculator-react-firmoholanda
+
+heroku create calculator-react-firmoholanda --buildpack mars/create-react-app
+
+pr for microverse tse approval: milestone 1 basic project structure
+
+
+Please add prop-types package.json for typechecking props (screenshot from Pathwright)
+I cannot see the linter configuration. Please add it by following the instructions in here
+
+add .eslintignore
+remove serviceWorker.js
+
+remove .env from github
+git filter-branch --index-filter "git rm -rf --cached --ignore-unmatch .env" HEAD
+git push --force
+
+git update-ref -d refs/original/refs/heads/milestone-3-styling
+
+remove eslintrc.js
+remove test dir
+remove .eslintingore
+remove webpack from package.json 'dependencies' section
+
+---------------------------------------------------------------------------------
+milestone 2
+
+
+git update-ref -d refs/original/refs/heads/milestone-2-components
+git push . :refs/original/refs/heads/milestone-2-components
+
+git filter-branch --force --index-filter "git rm --cached --ignore-unmatch .env" --prune-empty --tag-name-filter cat -- --all
+
+
+
+---------------------------------------------------------------------------------
+
+milestone 3
+
+
+
+---------------------------------------------------------------------------------
+
+pr for microverse tse approval: milestone 4 calculations
+
+in this pr, i implemented the folowing:
+

@@ -105,8 +105,6 @@ contributions, issues, and feature requests are welcome!<br/>feel free to check 
 
 ## 🤖 contributor
 
-cyrus kiprop - [gitHub](https://github.com/Cyrus-Kiprop)
-
 firmo holanda - [gitHub](https://github.com/firmoholanda)
 
 

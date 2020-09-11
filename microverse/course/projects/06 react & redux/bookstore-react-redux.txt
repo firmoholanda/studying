@@ -1,0 +1,30 @@
+bookstore-react-redux
+
+milestone 1: basic project structure
+milestone 2: components and redux store
+milestone 3: interactive form
+milestone 4: category filter
+milestone 5: ui
+milestone 6 (optional): backend
+
+
+
+---------------------------------------------------------------------------------
+milestone 1
+
+create-react-app bookstore-react-redux
+npm i react-redux redux react-bootstrap bootstrap faker prop-types uuid
+
+heroku app name:
+bookstore-react-redux-fholanda
+
+
+heroku create bookstore-react-redux-fholanda --buildpack mars/create-react-app
+git push heroku release
+
+
+---------------------------------------------------------------------------------
+
+
+ color: #0290ff;
+

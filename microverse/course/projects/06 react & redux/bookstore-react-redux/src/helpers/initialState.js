@@ -19,8 +19,8 @@ const booksArray = [
   },
 ];
 
-const initState = {
+const initialState = {
   books: booksArray,
 };
 
-export default initState;
+export default initialState;

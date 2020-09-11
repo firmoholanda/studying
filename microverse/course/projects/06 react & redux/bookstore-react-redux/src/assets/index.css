@@ -3,7 +3,6 @@ html,
 body {
   font-size: 16px;
   overflow-x: hidden;
-  background-color: #f5f6fa;
 }
 
 /* imges */
@@ -11,18 +10,9 @@ img {
   object-fit: cover;
 }
 
-/* header */
-.header {
-  background-color: #ffffff;
-}
-
-header h1 {
- color: #0290ff;
-}
-
 /* app */
-.app {
-  background-color: #fafafa;
+.book-list, .book-form {
+  margin: 0 auto;
 }
 
 /* footer */

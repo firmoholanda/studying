@@ -1,8 +1,16 @@
-export const createBook = book => ({ type: 'CREATE_BOOK', payload: book }); // action creators
+import { ADD_BOOK, REMOVE_BOOK, CHANGE_FILTER } from './actionTypes'
 
-export const removeBook = book => ({ type: 'REMOVE_BOOK', payload: book });
 
-export const changeFilter = (option = 'All') => ({
-  type: 'CHANGE_FILTER',
-  payload: option,
-});
+// action creators
+
+export function addBook(book) {
+  return { type: ADD_BOOK, payload: book }
+}
+
+export function removeBook(book) {
+  return { type: REMOVE_BOOK, payload: book }
+}
+
+export function filterCategory(filter) {
+  return { type: CHANGE_FILTER, payload: filter }
+}
