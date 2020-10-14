@@ -1,0 +1,17 @@
+chap
+page
+prob
+
+chap 1, page 1 and 2
+
+page[1]  = [1, 2, 3]
+page[2]  = [4]
+page[3]  = [1, 2]
+page[4]  = [1, 2, 3]
+page[5]  = [4, 5, 6]
+page[6]  = [1]
+page[7]  = [1, 2, 3]
+page[8]  = [4, 5, 6]
+page[9]  = [7, 8, 9]
+page[10] = [10]
+
